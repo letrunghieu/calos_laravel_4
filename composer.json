@@ -3,7 +3,8 @@
 	"description": "The Computer Aided Lightweight Organization System",
 	"keywords": ["calos", "organization", "team management"],
 	"require": {
-		"laravel/framework": "4.0.*"
+		"laravel/framework": "4.0.*",
+		"barryvdh/laravel-ide-helper": "1.*"
 	},
 	"autoload": {
 		"classmap": [
