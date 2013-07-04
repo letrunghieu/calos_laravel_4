@@ -3,3 +3,10 @@
 composer.phar
 composer.lock
 .DS_Store
+
+# Basset development collections
+/public/assets/compiled/public
+/public/assets/compiled/admin
+
+# Packages
+app/_ide_helpers.php
