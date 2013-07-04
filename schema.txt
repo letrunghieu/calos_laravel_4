@@ -1,0 +1,79 @@
+Option;
+    key string
+    value text
+    timestamps
+
+User; btmc Meta metavalues subject_id meta_id; btmc Vacancy; hm Announcement creator_id; hm Activity creator_id; hm Activity assignee_id;
+    first_name string 100
+    last_name string 100
+    email string 
+    password string 64
+    gender smallInteger; default "-1"
+    address string 2000
+    softDeletes
+    timestamps
+
+Unit; hm Vacancy; hm Announcement; hm Unit parent_id; hm Activity; hm Announcement;
+    name string 1000
+    description text
+    depth integer; default "0"
+    softDeletes
+    timestamps
+
+Activity; hm Comment subject_id; hm Activity parent_id;
+    title string 1000
+    content text
+    type smallInteger
+    creator_comment string 2000
+    deadline timestamp
+    assignee_id integer; unsigned; nullable
+    assigning_time timestamp; nullable
+    percentage integer; default "0"
+    complete_time timestamp; nullable
+    parent_id integer; unsigned; nullable
+    timestamps
+    softDeletes
+    
+
+Announcement; btmc User user_announcement; hm Comment subject_id;
+    title string 1000
+    content text
+    timestamps
+
+table user_announcement;
+    user_id integer; unsigned;
+    announcement_id integer; unsigned;
+    read_time timestamp
+    timestamps;
+
+Vacancy; btm Role;
+    name string
+    order integer; default "1000"
+    softDeletes
+    timestamps
+
+table user_vacancy;
+    user_id integer; unsigned
+    vacancy_id integer; unsigned
+    softDeletes
+    timestamps
+
+Role;
+    key string
+    permissions text
+
+Comment; hm Comment parent_id;
+    subject_id integer; unsigned
+    title string
+    content text
+    timestamps
+    softDeletes
+
+Meta;
+    key string
+
+table metavalues;
+    subject_id integer; unsigned
+    meta_id integer; unsigned
+    value text
+    timestamps
