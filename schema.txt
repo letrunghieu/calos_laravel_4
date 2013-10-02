@@ -1,6 +1,7 @@
 Option;
     key string
     value text
+    siteId integer
     timestamps
 
 User; btmc Meta metavalues subject_id meta_id; btmc Vacancy; hm Announcement creator_id; hm Activity creator_id; hm Activity assignee_id;
@@ -10,6 +11,9 @@ User; btmc Meta metavalues subject_id meta_id; btmc Vacancy; hm Announcement cre
     password string 64
     gender smallInteger; default "-1"
     address string 2000
+    mobilePhone string 15
+    verifyToken string 40
+    validated boolean; default "0"
     softDeletes
     timestamps
 
@@ -17,6 +21,8 @@ Unit; hm Vacancy; hm Announcement; hm Unit parent_id; hm Activity; hm Announceme
     name string 1000
     description text
     depth integer; default "0"
+    siteId integer
+    iconPath string 255
     softDeletes
     timestamps
 

@@ -5,15 +5,13 @@
     "license": "GPLv3",
     "require": {
 	"laravel/framework": "4.0.*",
-	"twitter/bootstrap": "dev-master",
 	"jasonlewis/basset": "dev-master",
-	"robclancy/presenter": "1.0.*",
-	"j20/php-uuid": "dev-master"
+	"j20/php-uuid": "dev-master",
+	"nesbot/Carbon": "*"
     },
     "require-dev": {
 	"barryvdh/laravel-ide-helper": "1.*",
 	"raahul/larryfour": "1.x",
-	"leafo/lessphp": "v0.3.9",
 	"natxet/CssMin": "dev-master",
 	"lmammino/jsmin4assetic": "1.0.*"
     },
