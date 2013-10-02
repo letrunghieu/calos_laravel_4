@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRolevacancyTable extends Migration {
+class CreateRoleVacancyTable extends Migration {
 
     /**
      * Run the migrations.

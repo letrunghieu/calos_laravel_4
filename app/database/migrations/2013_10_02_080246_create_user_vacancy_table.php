@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUservacancyTable extends Migration {
+class CreateUserVacancyTable extends Migration {
 
     /**
      * Run the migrations.
@@ -15,7 +15,6 @@ class CreateUservacancyTable extends Migration {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('vacancy_id')->unsigned();
-	    $table->timestamp('left_time')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

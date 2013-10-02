@@ -16,7 +16,7 @@ class CreateUnitsTable extends Migration {
             $table->string('name', 1000);
             $table->text('description')->nullable();
             $table->integer('depth');
-            $table->integer('site_id');
+            $table->integer('site_id')->nullable();
             $table->string('icon_path', 255)->nullable();
             $table->integer('parent_id')->unsigned();
             $table->timestamps();

@@ -12,7 +12,7 @@ class User extends Eloquent
 
     public function vacancies()
     {
-        return $this->belongsToMany('Vacancy')->withPivot('left_time')->withTimestamps();
+        return $this->belongsToMany('Vacancy')->withTimestamps();
     }
 
     public function announcements()
