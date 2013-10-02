@@ -2,27 +2,33 @@
 
 class Unit extends Eloquent
 {
+
     public $timestamps = true;
     protected $softDelete = true;
 
     public function vacancies()
     {
-        return $this->hasMany('Vacancy');
+	return $this->hasMany('Vacancy');
     }
 
     public function children()
     {
-        return $this->hasMany('Unit', 'parent_id');
+	return $this->hasMany('Unit', 'parent_id');
     }
 
-    public function parent()
+    public function parentUnit()
     {
-        return $this->belongsTo('Unit', 'parent_id');
+	return $this->belongsTo('Unit', 'parent_id');
     }
 
     public function activities()
     {
-        return $this->hasMany('Activity');
+	return $this->hasMany('Activity');
+    }
+
+    public static function create($attributes)
+    {
+	parent::create($attributes);
     }
 
 }
