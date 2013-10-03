@@ -17,13 +17,14 @@ class CreateUsersTable extends Migration {
             $table->string('last_name', 100);
             $table->string('email');
             $table->string('password', 64);
-            $table->smallInteger('gender')->default(-1);
-            $table->string('address', 2000);
-            $table->string('mobilePhone', 15);
-            $table->string('verifyToken', 40);
-            $table->boolean('validated')->default(0);
+            $table->smallInteger('gender')->default(User::GENDER_UNDEFINED);
+            $table->string('address', 2000)->nullable();
+            $table->string('mobile_phone', 15)->nullable();
+            $table->string('verify_token', 40);
             $table->timestamps();
             $table->softDeletes();
+	    
+	    $table->unique('email');
         });
     }
 

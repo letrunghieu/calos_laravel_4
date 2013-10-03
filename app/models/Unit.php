@@ -26,9 +26,23 @@ class Unit extends Eloquent
 	return $this->hasMany('Activity');
     }
 
-    public static function create($attributes)
+    public static function create(array $attributes)
     {
-	parent::create($attributes);
+	$obj = parent::create($attributes);
+	if ($obj)
+	{
+	    Vacancy::create(array(
+		'name' => trans('organization.vacancy.member'),
+		'order' => 1000,
+		'unit_id' => $obj->id
+	    ));
+	    Vacancy::create(array(
+		'name' => trans('organization.vacancy.leader'),
+		'order' => 0,
+		'unit_id' => $obj->id
+	    ));
+	}
+	return $obj;
     }
 
 }
