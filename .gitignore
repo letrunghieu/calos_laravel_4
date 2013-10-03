@@ -10,3 +10,4 @@ composer.lock
 
 # Packages
 app/_ide_helpers.php
+public/builds/*
