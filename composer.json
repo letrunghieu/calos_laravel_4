@@ -6,8 +6,11 @@
     "require": {
 	"laravel/framework": "4.0.*",
 	"jasonlewis/basset": "dev-master",
+	"twitter/bootstrap": "dev-master",
 	"j20/php-uuid": "dev-master",
-	"nesbot/Carbon": "*"
+	"nesbot/Carbon": "*",
+	"leafo/lessphp": "v0.4.0",
+	"fortawesome/font-awesome": "dev-4.0.0-wip"
     },
     "require-dev": {
 	"barryvdh/laravel-ide-helper": "1.*",
@@ -33,7 +36,9 @@
 	    "php artisan clear-compiled"
 	],
 	"post-update-cmd": [
-	    "php artisan optimize"
+	    "php artisan ide-helper:generate",
+	    "php artisan optimize",
+	    "php artisan basset:build -f"
 	],
 	"post-create-project-cmd": [
 	    "php artisan key:generate"

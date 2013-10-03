@@ -12,12 +12,11 @@ class App extends Illuminate\Support\Facades\App{
 	 * Create a new Illuminate application instance.
 	 *
 	 * @param \Illuminate\Http\Request  $request
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($request = null){
-		$root = new \Illuminate\Foundation\Application();
-		$root->__construct($request);
+		 Illuminate\Foundation\Application::__construct($request);
 	 }
 
 	/**
@@ -27,8 +26,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function setRequestForConsoleEnvironment(){
-		$root = new \Illuminate\Foundation\Application();
-		$root->setRequestForConsoleEnvironment();
+		 Illuminate\Foundation\Application::setRequestForConsoleEnvironment();
 	 }
 
 	/**
@@ -38,8 +36,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function redirectIfTrailingSlash(){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->redirectIfTrailingSlash();
+		return Illuminate\Foundation\Application::redirectIfTrailingSlash();
 	 }
 
 	/**
@@ -50,8 +47,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function bindInstallPaths($paths){
-		$root = new \Illuminate\Foundation\Application();
-		$root->bindInstallPaths($paths);
+		 Illuminate\Foundation\Application::bindInstallPaths($paths);
 	 }
 
 	/**
@@ -61,8 +57,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function getBootstrapFile(){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->getBootstrapFile();
+		return Illuminate\Foundation\Application::getBootstrapFile();
 	 }
 
 	/**
@@ -72,8 +67,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function startExceptionHandling(){
-		$root = new \Illuminate\Foundation\Application();
-		$root->startExceptionHandling();
+		 Illuminate\Foundation\Application::startExceptionHandling();
 	 }
 
 	/**
@@ -83,8 +77,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function environment(){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->environment();
+		return Illuminate\Foundation\Application::environment();
 	 }
 
 	/**
@@ -95,8 +88,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function detectEnvironment($environments){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->detectEnvironment($environments);
+		return Illuminate\Foundation\Application::detectEnvironment($environments);
 	 }
 
 	/**
@@ -106,8 +98,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function runningInConsole(){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->runningInConsole();
+		return Illuminate\Foundation\Application::runningInConsole();
 	 }
 
 	/**
@@ -117,8 +108,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function runningUnitTests(){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->runningUnitTests();
+		return Illuminate\Foundation\Application::runningUnitTests();
 	 }
 
 	/**
@@ -130,8 +120,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function register($provider, $options = array()){
-		$root = new \Illuminate\Foundation\Application();
-		$root->register($provider, $options);
+		 Illuminate\Foundation\Application::register($provider, $options);
 	 }
 
 	/**
@@ -141,8 +130,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function loadDeferredProviders(){
-		$root = new \Illuminate\Foundation\Application();
-		$root->loadDeferredProviders();
+		 Illuminate\Foundation\Application::loadDeferredProviders();
 	 }
 
 	/**
@@ -156,8 +144,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function make($abstract, $parameters = array()){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->make($abstract, $parameters);
+		return Illuminate\Foundation\Application::make($abstract, $parameters);
 	 }
 
 	/**
@@ -168,8 +155,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function before($callback){
-		$root = new \Illuminate\Foundation\Application();
-		$root->before($callback);
+		 Illuminate\Foundation\Application::before($callback);
 	 }
 
 	/**
@@ -180,8 +166,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function after($callback){
-		$root = new \Illuminate\Foundation\Application();
-		$root->after($callback);
+		 Illuminate\Foundation\Application::after($callback);
 	 }
 
 	/**
@@ -192,8 +177,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function close($callback){
-		$root = new \Illuminate\Foundation\Application();
-		$root->close($callback);
+		 Illuminate\Foundation\Application::close($callback);
 	 }
 
 	/**
@@ -204,8 +188,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function finish($callback){
-		$root = new \Illuminate\Foundation\Application();
-		$root->finish($callback);
+		 Illuminate\Foundation\Application::finish($callback);
 	 }
 
 	/**
@@ -216,8 +199,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function shutdown($callback = null){
-		$root = new \Illuminate\Foundation\Application();
-		$root->shutdown($callback);
+		 Illuminate\Foundation\Application::shutdown($callback);
 	 }
 
 	/**
@@ -227,8 +209,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function run(){
-		$root = new \Illuminate\Foundation\Application();
-		$root->run();
+		 Illuminate\Foundation\Application::run();
 	 }
 
 	/**
@@ -239,8 +220,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function dispatch($request){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->dispatch($request);
+		return Illuminate\Foundation\Application::dispatch($request);
 	 }
 
 	/**
@@ -256,8 +236,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function handle($request, $type = 1, $catch = true){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->handle($request, $type, $catch);
+		return Illuminate\Foundation\Application::handle($request, $type, $catch);
 	 }
 
 	/**
@@ -267,8 +246,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function boot(){
-		$root = new \Illuminate\Foundation\Application();
-		$root->boot();
+		 Illuminate\Foundation\Application::boot();
 	 }
 
 	/**
@@ -279,8 +257,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function booting($callback){
-		$root = new \Illuminate\Foundation\Application();
-		$root->booting($callback);
+		 Illuminate\Foundation\Application::booting($callback);
 	 }
 
 	/**
@@ -291,8 +268,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function booted($callback){
-		$root = new \Illuminate\Foundation\Application();
-		$root->booted($callback);
+		 Illuminate\Foundation\Application::booted($callback);
 	 }
 
 	/**
@@ -303,8 +279,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function prepareRequest($request){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->prepareRequest($request);
+		return Illuminate\Foundation\Application::prepareRequest($request);
 	 }
 
 	/**
@@ -315,8 +290,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function prepareResponse($value){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->prepareResponse($value);
+		return Illuminate\Foundation\Application::prepareResponse($value);
 	 }
 
 	/**
@@ -326,8 +300,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function isDownForMaintenance(){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->isDownForMaintenance();
+		return Illuminate\Foundation\Application::isDownForMaintenance();
 	 }
 
 	/**
@@ -338,8 +311,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function down($callback){
-		$root = new \Illuminate\Foundation\Application();
-		$root->down($callback);
+		 Illuminate\Foundation\Application::down($callback);
 	 }
 
 	/**
@@ -352,8 +324,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function abort($code, $message = '', $headers = array()){
-		$root = new \Illuminate\Foundation\Application();
-		$root->abort($code, $message, $headers);
+		 Illuminate\Foundation\Application::abort($code, $message, $headers);
 	 }
 
 	/**
@@ -364,8 +335,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function missing($callback){
-		$root = new \Illuminate\Foundation\Application();
-		$root->missing($callback);
+		 Illuminate\Foundation\Application::missing($callback);
 	 }
 
 	/**
@@ -376,8 +346,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function error($callback){
-		$root = new \Illuminate\Foundation\Application();
-		$root->error($callback);
+		 Illuminate\Foundation\Application::error($callback);
 	 }
 
 	/**
@@ -388,8 +357,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function pushError($callback){
-		$root = new \Illuminate\Foundation\Application();
-		$root->pushError($callback);
+		 Illuminate\Foundation\Application::pushError($callback);
 	 }
 
 	/**
@@ -400,8 +368,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function fatal($callback){
-		$root = new \Illuminate\Foundation\Application();
-		$root->fatal($callback);
+		 Illuminate\Foundation\Application::fatal($callback);
 	 }
 
 	/**
@@ -411,8 +378,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function getConfigLoader(){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->getConfigLoader();
+		return Illuminate\Foundation\Application::getConfigLoader();
 	 }
 
 	/**
@@ -422,8 +388,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function getProviderRepository(){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->getProviderRepository();
+		return Illuminate\Foundation\Application::getProviderRepository();
 	 }
 
 	/**
@@ -434,8 +399,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function setLocale($locale){
-		$root = new \Illuminate\Foundation\Application();
-		$root->setLocale($locale);
+		 Illuminate\Foundation\Application::setLocale($locale);
 	 }
 
 	/**
@@ -445,8 +409,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function getLoadedProviders(){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->getLoadedProviders();
+		return Illuminate\Foundation\Application::getLoadedProviders();
 	 }
 
 	/**
@@ -457,8 +420,30 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function setDeferredServices($services){
-		$root = new \Illuminate\Foundation\Application();
-		$root->setDeferredServices($services);
+		 Illuminate\Foundation\Application::setDeferredServices($services);
+	 }
+
+	/**
+	 * Get or set the request class for the application.
+	 *
+	 * @param string  $class
+	 * @return string
+	 * @static 
+	 */
+	 public static function requestClass($class = null){
+		return Illuminate\Foundation\Application::requestClass($class);
+	 }
+
+	/**
+	 * Call a method on the default request class.
+	 *
+	 * @param string  $method
+	 * @param array  $parameters
+	 * @return mixed
+	 * @static 
+	 */
+	 public static function onRequest($method, $parameters = array()){
+		return Illuminate\Foundation\Application::onRequest($method, $parameters);
 	 }
 
 	/**
@@ -469,8 +454,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function __get($key){
-		$root = new \Illuminate\Foundation\Application();
-		return $root->__get($key);
+		return Illuminate\Foundation\Application::__get($key);
 	 }
 
 	/**
@@ -482,8 +466,7 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function __set($key, $value){
-		$root = new \Illuminate\Foundation\Application();
-		$root->__set($key, $value);
+		 Illuminate\Foundation\Application::__set($key, $value);
 	 }
 
 	/**
@@ -494,8 +477,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function bound($abstract){
-		$root = new \Illuminate\Container\Container();
-		return $root->bound($abstract);
+		//Method inherited from Illuminate\Container\Container
+		return Illuminate\Foundation\Application::bound($abstract);
 	 }
 
 	/**
@@ -508,8 +491,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function bind($abstract, $concrete = null, $shared = false){
-		$root = new \Illuminate\Container\Container();
-		$root->bind($abstract, $concrete, $shared);
+		//Method inherited from Illuminate\Container\Container
+		 Illuminate\Foundation\Application::bind($abstract, $concrete, $shared);
 	 }
 
 	/**
@@ -522,8 +505,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function bindIf($abstract, $concrete = null, $shared = false){
-		$root = new \Illuminate\Container\Container();
-		return $root->bindIf($abstract, $concrete, $shared);
+		//Method inherited from Illuminate\Container\Container
+		return Illuminate\Foundation\Application::bindIf($abstract, $concrete, $shared);
 	 }
 
 	/**
@@ -535,8 +518,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function singleton($abstract, $concrete = null){
-		$root = new \Illuminate\Container\Container();
-		$root->singleton($abstract, $concrete);
+		//Method inherited from Illuminate\Container\Container
+		 Illuminate\Foundation\Application::singleton($abstract, $concrete);
 	 }
 
 	/**
@@ -547,8 +530,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function share($closure){
-		$root = new \Illuminate\Container\Container();
-		return $root->share($closure);
+		//Method inherited from Illuminate\Container\Container
+		return Illuminate\Foundation\Application::share($closure);
 	 }
 
 	/**
@@ -560,8 +543,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function extend($abstract, $closure){
-		$root = new \Illuminate\Container\Container();
-		$root->extend($abstract, $closure);
+		//Method inherited from Illuminate\Container\Container
+		 Illuminate\Foundation\Application::extend($abstract, $closure);
 	 }
 
 	/**
@@ -573,8 +556,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function instance($abstract, $instance){
-		$root = new \Illuminate\Container\Container();
-		$root->instance($abstract, $instance);
+		//Method inherited from Illuminate\Container\Container
+		 Illuminate\Foundation\Application::instance($abstract, $instance);
 	 }
 
 	/**
@@ -586,8 +569,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function alias($abstract, $alias){
-		$root = new \Illuminate\Container\Container();
-		$root->alias($abstract, $alias);
+		//Method inherited from Illuminate\Container\Container
+		 Illuminate\Foundation\Application::alias($abstract, $alias);
 	 }
 
 	/**
@@ -599,8 +582,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function build($concrete, $parameters = array()){
-		$root = new \Illuminate\Container\Container();
-		return $root->build($concrete, $parameters);
+		//Method inherited from Illuminate\Container\Container
+		return Illuminate\Foundation\Application::build($concrete, $parameters);
 	 }
 
 	/**
@@ -611,8 +594,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function resolving($callback){
-		$root = new \Illuminate\Container\Container();
-		$root->resolving($callback);
+		//Method inherited from Illuminate\Container\Container
+		 Illuminate\Foundation\Application::resolving($callback);
 	 }
 
 	/**
@@ -622,8 +605,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function getBindings(){
-		$root = new \Illuminate\Container\Container();
-		return $root->getBindings();
+		//Method inherited from Illuminate\Container\Container
+		return Illuminate\Foundation\Application::getBindings();
 	 }
 
 	/**
@@ -634,8 +617,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function offsetExists($key){
-		$root = new \Illuminate\Container\Container();
-		return $root->offsetExists($key);
+		//Method inherited from Illuminate\Container\Container
+		return Illuminate\Foundation\Application::offsetExists($key);
 	 }
 
 	/**
@@ -646,8 +629,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function offsetGet($key){
-		$root = new \Illuminate\Container\Container();
-		return $root->offsetGet($key);
+		//Method inherited from Illuminate\Container\Container
+		return Illuminate\Foundation\Application::offsetGet($key);
 	 }
 
 	/**
@@ -659,8 +642,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function offsetSet($key, $value){
-		$root = new \Illuminate\Container\Container();
-		$root->offsetSet($key, $value);
+		//Method inherited from Illuminate\Container\Container
+		 Illuminate\Foundation\Application::offsetSet($key, $value);
 	 }
 
 	/**
@@ -671,8 +654,8 @@ class App extends Illuminate\Support\Facades\App{
 	 * @static 
 	 */
 	 public static function offsetUnset($key){
-		$root = new \Illuminate\Container\Container();
-		$root->offsetUnset($key);
+		//Method inherited from Illuminate\Container\Container
+		 Illuminate\Foundation\Application::offsetUnset($key);
 	 }
 
 }
@@ -686,8 +669,7 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function start($app){
-		$root = new \Illuminate\Console\Application();
-		return $root->start($app);
+		return Illuminate\Console\Application::start($app);
 	 }
 
 	/**
@@ -698,20 +680,18 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function add($command){
-		$root = new \Illuminate\Console\Application();
-		return $root->add($command);
+		return Illuminate\Console\Application::add($command);
 	 }
 
 	/**
 	 * Add a command, resolving through the application.
 	 *
 	 * @param string  $command
-	 * @return void
+	 * @return \Symfony\Component\Console\Command\Command
 	 * @static 
 	 */
 	 public static function resolve($command){
-		$root = new \Illuminate\Console\Application();
-		$root->resolve($command);
+		return Illuminate\Console\Application::resolve($command);
 	 }
 
 	/**
@@ -722,21 +702,19 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function resolveCommands($commands){
-		$root = new \Illuminate\Console\Application();
-		$root->resolveCommands($commands);
+		 Illuminate\Console\Application::resolveCommands($commands);
 	 }
 
 	/**
 	 * Render the given exception.
 	 *
-	 * @param Exception  $e
+	 * @param \Exception  $e
 	 * @param \Symfony\Component\Console\Output\OutputInterface  $output
 	 * @return void
 	 * @static 
 	 */
 	 public static function renderException($e, $output){
-		$root = new \Illuminate\Console\Application();
-		$root->renderException($e, $output);
+		 Illuminate\Console\Application::renderException($e, $output);
 	 }
 
 	/**
@@ -747,8 +725,7 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function setExceptionHandler($handler){
-		$root = new \Illuminate\Console\Application();
-		$root->setExceptionHandler($handler);
+		 Illuminate\Console\Application::setExceptionHandler($handler);
 	 }
 
 	/**
@@ -759,8 +736,7 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function setLaravel($laravel){
-		$root = new \Illuminate\Console\Application();
-		$root->setLaravel($laravel);
+		 Illuminate\Console\Application::setLaravel($laravel);
 	 }
 
 	/**
@@ -772,8 +748,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function __construct($name = 'UNKNOWN', $version = 'UNKNOWN'){
-		$root = new \Symfony\Component\Console\Application();
-		$root->__construct($name, $version);
+		//Method inherited from Symfony\Component\Console\Application
+		 Illuminate\Console\Application::__construct($name, $version);
 	 }
 
 	/**
@@ -782,8 +758,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function setDispatcher($dispatcher){
-		$root = new \Symfony\Component\Console\Application();
-		$root->setDispatcher($dispatcher);
+		//Method inherited from Symfony\Component\Console\Application
+		 Illuminate\Console\Application::setDispatcher($dispatcher);
 	 }
 
 	/**
@@ -797,8 +773,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function run($input = null, $output = null){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->run($input, $output);
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::run($input, $output);
 	 }
 
 	/**
@@ -810,8 +786,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function doRun($input, $output){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->doRun($input, $output);
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::doRun($input, $output);
 	 }
 
 	/**
@@ -822,8 +798,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function setHelperSet($helperSet){
-		$root = new \Symfony\Component\Console\Application();
-		$root->setHelperSet($helperSet);
+		//Method inherited from Symfony\Component\Console\Application
+		 Illuminate\Console\Application::setHelperSet($helperSet);
 	 }
 
 	/**
@@ -834,8 +810,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function getHelperSet(){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->getHelperSet();
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::getHelperSet();
 	 }
 
 	/**
@@ -846,8 +822,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function setDefinition($definition){
-		$root = new \Symfony\Component\Console\Application();
-		$root->setDefinition($definition);
+		//Method inherited from Symfony\Component\Console\Application
+		 Illuminate\Console\Application::setDefinition($definition);
 	 }
 
 	/**
@@ -857,8 +833,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function getDefinition(){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->getDefinition();
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::getDefinition();
 	 }
 
 	/**
@@ -868,8 +844,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function getHelp(){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->getHelp();
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::getHelp();
 	 }
 
 	/**
@@ -880,8 +856,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function setCatchExceptions($boolean){
-		$root = new \Symfony\Component\Console\Application();
-		$root->setCatchExceptions($boolean);
+		//Method inherited from Symfony\Component\Console\Application
+		 Illuminate\Console\Application::setCatchExceptions($boolean);
 	 }
 
 	/**
@@ -892,8 +868,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function setAutoExit($boolean){
-		$root = new \Symfony\Component\Console\Application();
-		$root->setAutoExit($boolean);
+		//Method inherited from Symfony\Component\Console\Application
+		 Illuminate\Console\Application::setAutoExit($boolean);
 	 }
 
 	/**
@@ -904,8 +880,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function getName(){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->getName();
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::getName();
 	 }
 
 	/**
@@ -916,8 +892,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function setName($name){
-		$root = new \Symfony\Component\Console\Application();
-		$root->setName($name);
+		//Method inherited from Symfony\Component\Console\Application
+		 Illuminate\Console\Application::setName($name);
 	 }
 
 	/**
@@ -928,8 +904,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function getVersion(){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->getVersion();
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::getVersion();
 	 }
 
 	/**
@@ -940,8 +916,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function setVersion($version){
-		$root = new \Symfony\Component\Console\Application();
-		$root->setVersion($version);
+		//Method inherited from Symfony\Component\Console\Application
+		 Illuminate\Console\Application::setVersion($version);
 	 }
 
 	/**
@@ -952,8 +928,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function getLongVersion(){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->getLongVersion();
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::getLongVersion();
 	 }
 
 	/**
@@ -965,8 +941,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function register($name){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->register($name);
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::register($name);
 	 }
 
 	/**
@@ -977,8 +953,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function addCommands($commands){
-		$root = new \Symfony\Component\Console\Application();
-		$root->addCommands($commands);
+		//Method inherited from Symfony\Component\Console\Application
+		 Illuminate\Console\Application::addCommands($commands);
 	 }
 
 	/**
@@ -991,8 +967,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function get($name){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->get($name);
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::get($name);
 	 }
 
 	/**
@@ -1004,8 +980,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function has($name){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->has($name);
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::has($name);
 	 }
 
 	/**
@@ -1017,8 +993,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function getNamespaces(){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->getNamespaces();
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::getNamespaces();
 	 }
 
 	/**
@@ -1030,8 +1006,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function findNamespace($namespace){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->findNamespace($namespace);
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::findNamespace($namespace);
 	 }
 
 	/**
@@ -1047,8 +1023,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function find($name){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->find($name);
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::find($name);
 	 }
 
 	/**
@@ -1062,8 +1038,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function all($namespace = null){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->all($namespace);
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::all($namespace);
 	 }
 
 	/**
@@ -1074,8 +1050,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function getAbbreviations($names){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->getAbbreviations($names);
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::getAbbreviations($names);
 	 }
 
 	/**
@@ -1088,8 +1064,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function asText($namespace = null, $raw = false){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->asText($namespace, $raw);
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::asText($namespace, $raw);
 	 }
 
 	/**
@@ -1102,8 +1078,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function asXml($namespace = null, $asDom = false){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->asXml($namespace, $asDom);
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::asXml($namespace, $asDom);
 	 }
 
 	/**
@@ -1113,8 +1089,8 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function getTerminalDimensions(){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->getTerminalDimensions();
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::getTerminalDimensions();
 	 }
 
 	/**
@@ -1128,13 +1104,23 @@ class Artisan extends Illuminate\Support\Facades\Artisan{
 	 * @static 
 	 */
 	 public static function extractNamespace($name, $limit = null){
-		$root = new \Symfony\Component\Console\Application();
-		return $root->extractNamespace($name, $limit);
+		//Method inherited from Symfony\Component\Console\Application
+		return Illuminate\Console\Application::extractNamespace($name, $limit);
 	 }
 
 }
 
 class Auth extends Illuminate\Support\Facades\Auth{
+	/**
+	 * Create an instance of the database driver.
+	 *
+	 * @return \Illuminate\Auth\Guard
+	 * @static 
+	 */
+	 public static function createDatabaseDriver(){
+		return Illuminate\Auth\AuthManager::createDatabaseDriver();
+	 }
+
 	/**
 	 * Create an instance of the Eloquent driver.
 	 *
@@ -1142,20 +1128,19 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function createEloquentDriver(){
-		$root = new \Illuminate\Auth\AuthManager(null);
-		return $root->createEloquentDriver();
+		return Illuminate\Auth\AuthManager::createEloquentDriver();
 	 }
 
 	/**
 	 * Create a new manager instance.
 	 *
 	 * @param \Illuminate\Foundation\Application  $app
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($app){
-		$root = new \Illuminate\Auth\AuthManager(null);
-		$root->__construct($app);
+		//Method inherited from Illuminate\Support\Manager
+		 Illuminate\Auth\AuthManager::__construct($app);
 	 }
 
 	/**
@@ -1166,8 +1151,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function driver($driver = null){
-		$root = new \Illuminate\Auth\AuthManager(null);
-		return $root->driver($driver);
+		//Method inherited from Illuminate\Support\Manager
+		return Illuminate\Auth\AuthManager::driver($driver);
 	 }
 
 	/**
@@ -1179,8 +1164,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function extend($driver, $callback){
-		$root = new \Illuminate\Auth\AuthManager(null);
-		$root->extend($driver, $callback);
+		//Method inherited from Illuminate\Support\Manager
+		 Illuminate\Auth\AuthManager::extend($driver, $callback);
 	 }
 
 	/**
@@ -1190,8 +1175,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getDrivers(){
-		$root = new \Illuminate\Auth\AuthManager(null);
-		return $root->getDrivers();
+		//Method inherited from Illuminate\Support\Manager
+		return Illuminate\Auth\AuthManager::getDrivers();
 	 }
 
 	/**
@@ -1203,8 +1188,8 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function __call($method, $parameters){
-		$root = new \Illuminate\Auth\AuthManager(null);
-		return $root->__call($method, $parameters);
+		//Method inherited from Illuminate\Support\Manager
+		return Illuminate\Auth\AuthManager::__call($method, $parameters);
 	 }
 
 	/**
@@ -1214,8 +1199,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function check(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->check();
+		return Illuminate\Auth\Guard::check();
 	 }
 
 	/**
@@ -1225,8 +1209,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function guest(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->guest();
+		return Illuminate\Auth\Guard::guest();
 	 }
 
 	/**
@@ -1236,8 +1219,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function user(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->user();
+		return Illuminate\Auth\Guard::user();
 	 }
 
 	/**
@@ -1248,8 +1230,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function once($credentials = array()){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->once($credentials);
+		return Illuminate\Auth\Guard::once($credentials);
 	 }
 
 	/**
@@ -1260,8 +1241,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function validate($credentials = array()){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->validate($credentials);
+		return Illuminate\Auth\Guard::validate($credentials);
 	 }
 
 	/**
@@ -1273,8 +1253,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function basic($field = 'email', $request = null){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->basic($field, $request);
+		return Illuminate\Auth\Guard::basic($field, $request);
 	 }
 
 	/**
@@ -1286,8 +1265,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function onceBasic($field = 'email', $request = null){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->onceBasic($field, $request);
+		return Illuminate\Auth\Guard::onceBasic($field, $request);
 	 }
 
 	/**
@@ -1300,8 +1278,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function attempt($credentials = array(), $remember = false, $login = true){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->attempt($credentials, $remember, $login);
+		return Illuminate\Auth\Guard::attempt($credentials, $remember, $login);
 	 }
 
 	/**
@@ -1312,8 +1289,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function attempting($callback){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		$root->attempting($callback);
+		 Illuminate\Auth\Guard::attempting($callback);
 	 }
 
 	/**
@@ -1325,8 +1301,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function login($user, $remember = false){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		$root->login($user, $remember);
+		 Illuminate\Auth\Guard::login($user, $remember);
 	 }
 
 	/**
@@ -1338,8 +1313,18 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function loginUsingId($id, $remember = false){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->loginUsingId($id, $remember);
+		return Illuminate\Auth\Guard::loginUsingId($id, $remember);
+	 }
+
+	/**
+	 * Log the given user ID into the application without sessions or cookies.
+	 *
+	 * @param mixed  $id
+	 * @return bool
+	 * @static 
+	 */
+	 public static function onceUsingId($id){
+		return Illuminate\Auth\Guard::onceUsingId($id);
 	 }
 
 	/**
@@ -1349,8 +1334,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function logout(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		$root->logout();
+		 Illuminate\Auth\Guard::logout();
 	 }
 
 	/**
@@ -1360,8 +1344,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getQueuedCookies(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->getQueuedCookies();
+		return Illuminate\Auth\Guard::getQueuedCookies();
 	 }
 
 	/**
@@ -1371,8 +1354,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getCookieJar(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->getCookieJar();
+		return Illuminate\Auth\Guard::getCookieJar();
 	 }
 
 	/**
@@ -1383,8 +1365,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function setCookieJar($cookie){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		$root->setCookieJar($cookie);
+		 Illuminate\Auth\Guard::setCookieJar($cookie);
 	 }
 
 	/**
@@ -1394,8 +1375,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getDispatcher(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->getDispatcher();
+		return Illuminate\Auth\Guard::getDispatcher();
 	 }
 
 	/**
@@ -1405,8 +1385,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function setDispatcher($events){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		$root->setDispatcher($events);
+		 Illuminate\Auth\Guard::setDispatcher($events);
 	 }
 
 	/**
@@ -1416,8 +1395,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getSession(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->getSession();
+		return Illuminate\Auth\Guard::getSession();
 	 }
 
 	/**
@@ -1427,8 +1405,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getProvider(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->getProvider();
+		return Illuminate\Auth\Guard::getProvider();
 	 }
 
 	/**
@@ -1439,8 +1416,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function setProvider($provider){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		$root->setProvider($provider);
+		 Illuminate\Auth\Guard::setProvider($provider);
 	 }
 
 	/**
@@ -1450,8 +1426,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getUser(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->getUser();
+		return Illuminate\Auth\Guard::getUser();
 	 }
 
 	/**
@@ -1462,8 +1437,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function setUser($user){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		$root->setUser($user);
+		 Illuminate\Auth\Guard::setUser($user);
 	 }
 
 	/**
@@ -1473,8 +1447,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getRequest(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->getRequest();
+		return Illuminate\Auth\Guard::getRequest();
 	 }
 
 	/**
@@ -1485,8 +1458,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function setRequest($request){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->setRequest($request);
+		return Illuminate\Auth\Guard::setRequest($request);
 	 }
 
 	/**
@@ -1496,8 +1468,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getName(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->getName();
+		return Illuminate\Auth\Guard::getName();
 	 }
 
 	/**
@@ -1507,8 +1478,7 @@ class Auth extends Illuminate\Support\Facades\Auth{
 	 * @static 
 	 */
 	 public static function getRecallerName(){
-		$root = new \Illuminate\Auth\Guard(null,null);
-		return $root->getRecallerName();
+		return Illuminate\Auth\Guard::getRecallerName();
 	 }
 
 }
@@ -1522,8 +1492,7 @@ class Blade extends Illuminate\Support\Facades\Blade{
 	 * @static 
 	 */
 	 public static function compile($path){
-		$root = new \Illuminate\View\Compilers\BladeCompiler(null,null);
-		$root->compile($path);
+		 Illuminate\View\Compilers\BladeCompiler::compile($path);
 	 }
 
 	/**
@@ -1534,8 +1503,7 @@ class Blade extends Illuminate\Support\Facades\Blade{
 	 * @static 
 	 */
 	 public static function compileString($value){
-		$root = new \Illuminate\View\Compilers\BladeCompiler(null,null);
-		return $root->compileString($value);
+		return Illuminate\View\Compilers\BladeCompiler::compileString($value);
 	 }
 
 	/**
@@ -1546,8 +1514,7 @@ class Blade extends Illuminate\Support\Facades\Blade{
 	 * @static 
 	 */
 	 public static function extend($compiler){
-		$root = new \Illuminate\View\Compilers\BladeCompiler(null,null);
-		$root->extend($compiler);
+		 Illuminate\View\Compilers\BladeCompiler::extend($compiler);
 	 }
 
 	/**
@@ -1558,8 +1525,7 @@ class Blade extends Illuminate\Support\Facades\Blade{
 	 * @static 
 	 */
 	 public static function createMatcher($function){
-		$root = new \Illuminate\View\Compilers\BladeCompiler(null,null);
-		return $root->createMatcher($function);
+		return Illuminate\View\Compilers\BladeCompiler::createMatcher($function);
 	 }
 
 	/**
@@ -1570,8 +1536,7 @@ class Blade extends Illuminate\Support\Facades\Blade{
 	 * @static 
 	 */
 	 public static function createOpenMatcher($function){
-		$root = new \Illuminate\View\Compilers\BladeCompiler(null,null);
-		return $root->createOpenMatcher($function);
+		return Illuminate\View\Compilers\BladeCompiler::createOpenMatcher($function);
 	 }
 
 	/**
@@ -1582,8 +1547,7 @@ class Blade extends Illuminate\Support\Facades\Blade{
 	 * @static 
 	 */
 	 public static function createPlainMatcher($function){
-		$root = new \Illuminate\View\Compilers\BladeCompiler(null,null);
-		return $root->createPlainMatcher($function);
+		return Illuminate\View\Compilers\BladeCompiler::createPlainMatcher($function);
 	 }
 
 	/**
@@ -1596,8 +1560,7 @@ class Blade extends Illuminate\Support\Facades\Blade{
 	 * @static 
 	 */
 	 public static function setContentTags($openTag, $closeTag, $escaped = false){
-		$root = new \Illuminate\View\Compilers\BladeCompiler(null,null);
-		$root->setContentTags($openTag, $closeTag, $escaped);
+		 Illuminate\View\Compilers\BladeCompiler::setContentTags($openTag, $closeTag, $escaped);
 	 }
 
 	/**
@@ -1609,8 +1572,7 @@ class Blade extends Illuminate\Support\Facades\Blade{
 	 * @static 
 	 */
 	 public static function setEscapedContentTags($openTag, $closeTag){
-		$root = new \Illuminate\View\Compilers\BladeCompiler(null,null);
-		$root->setEscapedContentTags($openTag, $closeTag);
+		 Illuminate\View\Compilers\BladeCompiler::setEscapedContentTags($openTag, $closeTag);
 	 }
 
 	/**
@@ -1618,12 +1580,12 @@ class Blade extends Illuminate\Support\Facades\Blade{
 	 *
 	 * @param \Illuminate\Filesystem\Filesystem  $files
 	 * @param string  $cachePath
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($files, $cachePath){
-		$root = new \Illuminate\View\Compilers\BladeCompiler(null,null);
-		$root->__construct($files, $cachePath);
+		//Method inherited from Illuminate\View\Compilers\Compiler
+		 Illuminate\View\Compilers\BladeCompiler::__construct($files, $cachePath);
 	 }
 
 	/**
@@ -1634,8 +1596,8 @@ class Blade extends Illuminate\Support\Facades\Blade{
 	 * @static 
 	 */
 	 public static function getCompiledPath($path){
-		$root = new \Illuminate\View\Compilers\BladeCompiler(null,null);
-		return $root->getCompiledPath($path);
+		//Method inherited from Illuminate\View\Compilers\Compiler
+		return Illuminate\View\Compilers\BladeCompiler::getCompiledPath($path);
 	 }
 
 	/**
@@ -1646,8 +1608,8 @@ class Blade extends Illuminate\Support\Facades\Blade{
 	 * @static 
 	 */
 	 public static function isExpired($path){
-		$root = new \Illuminate\View\Compilers\BladeCompiler(null,null);
-		return $root->isExpired($path);
+		//Method inherited from Illuminate\View\Compilers\Compiler
+		return Illuminate\View\Compilers\BladeCompiler::isExpired($path);
 	 }
 
 }
@@ -1660,20 +1622,19 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function getPrefix(){
-		$root = new \Illuminate\Cache\CacheManager(null);
-		return $root->getPrefix();
+		return Illuminate\Cache\CacheManager::getPrefix();
 	 }
 
 	/**
 	 * Create a new manager instance.
 	 *
 	 * @param \Illuminate\Foundation\Application  $app
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($app){
-		$root = new \Illuminate\Cache\CacheManager(null);
-		$root->__construct($app);
+		//Method inherited from Illuminate\Support\Manager
+		 Illuminate\Cache\CacheManager::__construct($app);
 	 }
 
 	/**
@@ -1684,8 +1645,8 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function driver($driver = null){
-		$root = new \Illuminate\Cache\CacheManager(null);
-		return $root->driver($driver);
+		//Method inherited from Illuminate\Support\Manager
+		return Illuminate\Cache\CacheManager::driver($driver);
 	 }
 
 	/**
@@ -1697,8 +1658,8 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function extend($driver, $callback){
-		$root = new \Illuminate\Cache\CacheManager(null);
-		$root->extend($driver, $callback);
+		//Method inherited from Illuminate\Support\Manager
+		 Illuminate\Cache\CacheManager::extend($driver, $callback);
 	 }
 
 	/**
@@ -1708,8 +1669,8 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function getDrivers(){
-		$root = new \Illuminate\Cache\CacheManager(null);
-		return $root->getDrivers();
+		//Method inherited from Illuminate\Support\Manager
+		return Illuminate\Cache\CacheManager::getDrivers();
 	 }
 
 	/**
@@ -1721,8 +1682,8 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function __call($method, $parameters){
-		$root = new \Illuminate\Cache\CacheManager(null);
-		return $root->__call($method, $parameters);
+		//Method inherited from Illuminate\Support\Manager
+		return Illuminate\Cache\CacheManager::__call($method, $parameters);
 	 }
 
 	/**
@@ -1733,8 +1694,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function has($key){
-		$root = new \Illuminate\Cache\Repository(null);
-		return $root->has($key);
+		return Illuminate\Cache\Repository::has($key);
 	 }
 
 	/**
@@ -1746,8 +1706,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function get($key, $default = null){
-		$root = new \Illuminate\Cache\Repository(null);
-		return $root->get($key, $default);
+		return Illuminate\Cache\Repository::get($key, $default);
 	 }
 
 	/**
@@ -1760,8 +1719,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function add($key, $value, $minutes){
-		$root = new \Illuminate\Cache\Repository(null);
-		$root->add($key, $value, $minutes);
+		 Illuminate\Cache\Repository::add($key, $value, $minutes);
 	 }
 
 	/**
@@ -1774,8 +1732,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function remember($key, $minutes, $callback){
-		$root = new \Illuminate\Cache\Repository(null);
-		return $root->remember($key, $minutes, $callback);
+		return Illuminate\Cache\Repository::remember($key, $minutes, $callback);
 	 }
 
 	/**
@@ -1787,8 +1744,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function sear($key, $callback){
-		$root = new \Illuminate\Cache\Repository(null);
-		return $root->sear($key, $callback);
+		return Illuminate\Cache\Repository::sear($key, $callback);
 	 }
 
 	/**
@@ -1800,8 +1756,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function rememberForever($key, $callback){
-		$root = new \Illuminate\Cache\Repository(null);
-		return $root->rememberForever($key, $callback);
+		return Illuminate\Cache\Repository::rememberForever($key, $callback);
 	 }
 
 	/**
@@ -1811,8 +1766,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function getDefaultCacheTime(){
-		$root = new \Illuminate\Cache\Repository(null);
-		return $root->getDefaultCacheTime();
+		return Illuminate\Cache\Repository::getDefaultCacheTime();
 	 }
 
 	/**
@@ -1823,8 +1777,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function setDefaultCacheTime($minutes){
-		$root = new \Illuminate\Cache\Repository(null);
-		$root->setDefaultCacheTime($minutes);
+		 Illuminate\Cache\Repository::setDefaultCacheTime($minutes);
 	 }
 
 	/**
@@ -1834,8 +1787,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function getStore(){
-		$root = new \Illuminate\Cache\Repository(null);
-		return $root->getStore();
+		return Illuminate\Cache\Repository::getStore();
 	 }
 
 	/**
@@ -1846,8 +1798,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function offsetExists($key){
-		$root = new \Illuminate\Cache\Repository(null);
-		return $root->offsetExists($key);
+		return Illuminate\Cache\Repository::offsetExists($key);
 	 }
 
 	/**
@@ -1858,8 +1809,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function offsetGet($key){
-		$root = new \Illuminate\Cache\Repository(null);
-		return $root->offsetGet($key);
+		return Illuminate\Cache\Repository::offsetGet($key);
 	 }
 
 	/**
@@ -1871,8 +1821,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function offsetSet($key, $value){
-		$root = new \Illuminate\Cache\Repository(null);
-		$root->offsetSet($key, $value);
+		 Illuminate\Cache\Repository::offsetSet($key, $value);
 	 }
 
 	/**
@@ -1883,8 +1832,7 @@ class Cache extends Illuminate\Support\Facades\Cache{
 	 * @static 
 	 */
 	 public static function offsetUnset($key){
-		$root = new \Illuminate\Cache\Repository(null);
-		$root->offsetUnset($key);
+		 Illuminate\Cache\Repository::offsetUnset($key);
 	 }
 
 }
@@ -1898,12 +1846,11 @@ class Config extends Illuminate\Support\Facades\Config{
 	 *
 	 * @param \Illuminate\Config\LoaderInterface  $loader
 	 * @param string  $environment
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($loader, $environment){
-		$root = new \Illuminate\Config\Repository(null,null);
-		$root->__construct($loader, $environment);
+		 Illuminate\Config\Repository::__construct($loader, $environment);
 	 }
 
 	/**
@@ -1914,8 +1861,7 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function has($key){
-		$root = new \Illuminate\Config\Repository(null,null);
-		return $root->has($key);
+		return Illuminate\Config\Repository::has($key);
 	 }
 
 	/**
@@ -1926,8 +1872,7 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function hasGroup($key){
-		$root = new \Illuminate\Config\Repository(null,null);
-		return $root->hasGroup($key);
+		return Illuminate\Config\Repository::hasGroup($key);
 	 }
 
 	/**
@@ -1939,8 +1884,7 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function get($key, $default = null){
-		$root = new \Illuminate\Config\Repository(null,null);
-		return $root->get($key, $default);
+		return Illuminate\Config\Repository::get($key, $default);
 	 }
 
 	/**
@@ -1952,8 +1896,7 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function set($key, $value){
-		$root = new \Illuminate\Config\Repository(null,null);
-		$root->set($key, $value);
+		 Illuminate\Config\Repository::set($key, $value);
 	 }
 
 	/**
@@ -1966,21 +1909,19 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function package($package, $hint, $namespace = null){
-		$root = new \Illuminate\Config\Repository(null,null);
-		$root->package($package, $hint, $namespace);
+		 Illuminate\Config\Repository::package($package, $hint, $namespace);
 	 }
 
 	/**
 	 * Register an after load callback for a given namespace.
 	 *
 	 * @param string   $namespace
-	 * @param Closure  $callback
+	 * @param \Closure  $callback
 	 * @return void
 	 * @static 
 	 */
 	 public static function afterLoading($namespace, $callback){
-		$root = new \Illuminate\Config\Repository(null,null);
-		$root->afterLoading($namespace, $callback);
+		 Illuminate\Config\Repository::afterLoading($namespace, $callback);
 	 }
 
 	/**
@@ -1992,8 +1933,7 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function addNamespace($namespace, $hint){
-		$root = new \Illuminate\Config\Repository(null,null);
-		$root->addNamespace($namespace, $hint);
+		 Illuminate\Config\Repository::addNamespace($namespace, $hint);
 	 }
 
 	/**
@@ -2004,8 +1944,7 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function getNamespaces(){
-		$root = new \Illuminate\Config\Repository(null,null);
-		return $root->getNamespaces();
+		return Illuminate\Config\Repository::getNamespaces();
 	 }
 
 	/**
@@ -2015,8 +1954,7 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function getLoader(){
-		$root = new \Illuminate\Config\Repository(null,null);
-		return $root->getLoader();
+		return Illuminate\Config\Repository::getLoader();
 	 }
 
 	/**
@@ -2027,8 +1965,7 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function setLoader($loader){
-		$root = new \Illuminate\Config\Repository(null,null);
-		$root->setLoader($loader);
+		 Illuminate\Config\Repository::setLoader($loader);
 	 }
 
 	/**
@@ -2038,8 +1975,7 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function getEnvironment(){
-		$root = new \Illuminate\Config\Repository(null,null);
-		return $root->getEnvironment();
+		return Illuminate\Config\Repository::getEnvironment();
 	 }
 
 	/**
@@ -2049,8 +1985,7 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function getAfterLoadCallbacks(){
-		$root = new \Illuminate\Config\Repository(null,null);
-		return $root->getAfterLoadCallbacks();
+		return Illuminate\Config\Repository::getAfterLoadCallbacks();
 	 }
 
 	/**
@@ -2060,8 +1995,7 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function getItems(){
-		$root = new \Illuminate\Config\Repository(null,null);
-		return $root->getItems();
+		return Illuminate\Config\Repository::getItems();
 	 }
 
 	/**
@@ -2072,33 +2006,30 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function offsetExists($key){
-		$root = new \Illuminate\Config\Repository(null,null);
-		return $root->offsetExists($key);
+		return Illuminate\Config\Repository::offsetExists($key);
 	 }
 
 	/**
 	 * Get a configuration option.
 	 *
 	 * @param string  $key
-	 * @return bool
+	 * @return mixed
 	 * @static 
 	 */
 	 public static function offsetGet($key){
-		$root = new \Illuminate\Config\Repository(null,null);
-		return $root->offsetGet($key);
+		return Illuminate\Config\Repository::offsetGet($key);
 	 }
 
 	/**
 	 * Set a configuration option.
 	 *
 	 * @param string  $key
-	 * @param string  $value
+	 * @param mixed  $value
 	 * @return void
 	 * @static 
 	 */
 	 public static function offsetSet($key, $value){
-		$root = new \Illuminate\Config\Repository(null,null);
-		$root->offsetSet($key, $value);
+		 Illuminate\Config\Repository::offsetSet($key, $value);
 	 }
 
 	/**
@@ -2109,8 +2040,7 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function offsetUnset($key){
-		$root = new \Illuminate\Config\Repository(null,null);
-		$root->offsetUnset($key);
+		 Illuminate\Config\Repository::offsetUnset($key);
 	 }
 
 	/**
@@ -2121,8 +2051,8 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function parseKey($key){
-		$root = new \Illuminate\Support\NamespacedItemResolver();
-		return $root->parseKey($key);
+		//Method inherited from Illuminate\Support\NamespacedItemResolver
+		return Illuminate\Config\Repository::parseKey($key);
 	 }
 
 	/**
@@ -2134,8 +2064,8 @@ class Config extends Illuminate\Support\Facades\Config{
 	 * @static 
 	 */
 	 public static function setParsedKey($key, $parsed){
-		$root = new \Illuminate\Support\NamespacedItemResolver();
-		$root->setParsedKey($key, $parsed);
+		//Method inherited from Illuminate\Support\NamespacedItemResolver
+		 Illuminate\Config\Repository::setParsedKey($key, $parsed);
 	 }
 
 }
@@ -2149,12 +2079,11 @@ class Cookie extends Illuminate\Support\Facades\Cookie{
 	 *
 	 * @param \Symfony\Component\HttpFoundation\Request  $request
 	 * @param \Illuminate\Encryption\Encrypter  $encrypter
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($request, $encrypter){
-		$root = new \Illuminate\Cookie\CookieJar(null,null);
-		$root->__construct($request, $encrypter);
+		 Illuminate\Cookie\CookieJar::__construct($request, $encrypter);
 	 }
 
 	/**
@@ -2165,8 +2094,7 @@ class Cookie extends Illuminate\Support\Facades\Cookie{
 	 * @static 
 	 */
 	 public static function has($key){
-		$root = new \Illuminate\Cookie\CookieJar(null,null);
-		return $root->has($key);
+		return Illuminate\Cookie\CookieJar::has($key);
 	 }
 
 	/**
@@ -2178,8 +2106,7 @@ class Cookie extends Illuminate\Support\Facades\Cookie{
 	 * @static 
 	 */
 	 public static function get($key, $default = null){
-		$root = new \Illuminate\Cookie\CookieJar(null,null);
-		return $root->get($key, $default);
+		return Illuminate\Cookie\CookieJar::get($key, $default);
 	 }
 
 	/**
@@ -2196,8 +2123,7 @@ class Cookie extends Illuminate\Support\Facades\Cookie{
 	 * @static 
 	 */
 	 public static function make($name, $value, $minutes = 0, $path = null, $domain = null, $secure = false, $httpOnly = true){
-		$root = new \Illuminate\Cookie\CookieJar(null,null);
-		return $root->make($name, $value, $minutes, $path, $domain, $secure, $httpOnly);
+		return Illuminate\Cookie\CookieJar::make($name, $value, $minutes, $path, $domain, $secure, $httpOnly);
 	 }
 
 	/**
@@ -2213,8 +2139,7 @@ class Cookie extends Illuminate\Support\Facades\Cookie{
 	 * @static 
 	 */
 	 public static function forever($name, $value, $path = null, $domain = null, $secure = false, $httpOnly = true){
-		$root = new \Illuminate\Cookie\CookieJar(null,null);
-		return $root->forever($name, $value, $path, $domain, $secure, $httpOnly);
+		return Illuminate\Cookie\CookieJar::forever($name, $value, $path, $domain, $secure, $httpOnly);
 	 }
 
 	/**
@@ -2225,8 +2150,7 @@ class Cookie extends Illuminate\Support\Facades\Cookie{
 	 * @static 
 	 */
 	 public static function forget($name){
-		$root = new \Illuminate\Cookie\CookieJar(null,null);
-		return $root->forget($name);
+		return Illuminate\Cookie\CookieJar::forget($name);
 	 }
 
 	/**
@@ -2238,8 +2162,7 @@ class Cookie extends Illuminate\Support\Facades\Cookie{
 	 * @static 
 	 */
 	 public static function setDefaultPathAndDomain($path, $domain){
-		$root = new \Illuminate\Cookie\CookieJar(null,null);
-		$root->setDefaultPathAndDomain($path, $domain);
+		 Illuminate\Cookie\CookieJar::setDefaultPathAndDomain($path, $domain);
 	 }
 
 	/**
@@ -2249,8 +2172,7 @@ class Cookie extends Illuminate\Support\Facades\Cookie{
 	 * @static 
 	 */
 	 public static function getRequest(){
-		$root = new \Illuminate\Cookie\CookieJar(null,null);
-		return $root->getRequest();
+		return Illuminate\Cookie\CookieJar::getRequest();
 	 }
 
 	/**
@@ -2260,8 +2182,7 @@ class Cookie extends Illuminate\Support\Facades\Cookie{
 	 * @static 
 	 */
 	 public static function getEncrypter(){
-		$root = new \Illuminate\Cookie\CookieJar(null,null);
-		return $root->getEncrypter();
+		return Illuminate\Cookie\CookieJar::getEncrypter();
 	 }
 
 }
@@ -2271,12 +2192,11 @@ class Crypt extends Illuminate\Support\Facades\Crypt{
 	 * Create a new encrypter instance.
 	 *
 	 * @param string  $key
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($key){
-		$root = new \Illuminate\Encryption\Encrypter(null);
-		$root->__construct($key);
+		 Illuminate\Encryption\Encrypter::__construct($key);
 	 }
 
 	/**
@@ -2287,8 +2207,7 @@ class Crypt extends Illuminate\Support\Facades\Crypt{
 	 * @static 
 	 */
 	 public static function encrypt($value){
-		$root = new \Illuminate\Encryption\Encrypter(null);
-		return $root->encrypt($value);
+		return Illuminate\Encryption\Encrypter::encrypt($value);
 	 }
 
 	/**
@@ -2299,8 +2218,7 @@ class Crypt extends Illuminate\Support\Facades\Crypt{
 	 * @static 
 	 */
 	 public static function decrypt($payload){
-		$root = new \Illuminate\Encryption\Encrypter(null);
-		return $root->decrypt($payload);
+		return Illuminate\Encryption\Encrypter::decrypt($payload);
 	 }
 
 	/**
@@ -2311,8 +2229,7 @@ class Crypt extends Illuminate\Support\Facades\Crypt{
 	 * @static 
 	 */
 	 public static function setKey($key){
-		$root = new \Illuminate\Encryption\Encrypter(null);
-		$root->setKey($key);
+		 Illuminate\Encryption\Encrypter::setKey($key);
 	 }
 
 	/**
@@ -2323,8 +2240,7 @@ class Crypt extends Illuminate\Support\Facades\Crypt{
 	 * @static 
 	 */
 	 public static function setCipher($cipher){
-		$root = new \Illuminate\Encryption\Encrypter(null);
-		$root->setCipher($cipher);
+		 Illuminate\Encryption\Encrypter::setCipher($cipher);
 	 }
 
 	/**
@@ -2335,8 +2251,7 @@ class Crypt extends Illuminate\Support\Facades\Crypt{
 	 * @static 
 	 */
 	 public static function setMode($mode){
-		$root = new \Illuminate\Encryption\Encrypter(null);
-		$root->setMode($mode);
+		 Illuminate\Encryption\Encrypter::setMode($mode);
 	 }
 
 }
@@ -2347,12 +2262,11 @@ class DB extends Illuminate\Support\Facades\DB{
 	 *
 	 * @param \Illuminate\Foundation\Application  $app
 	 * @param \Illuminate\Database\Connectors\ConnectionFactory  $factory
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($app, $factory){
-		$root = new \Illuminate\Database\DatabaseManager(null,null);
-		$root->__construct($app, $factory);
+		 Illuminate\Database\DatabaseManager::__construct($app, $factory);
 	 }
 
 	/**
@@ -2363,8 +2277,7 @@ class DB extends Illuminate\Support\Facades\DB{
 	 * @static 
 	 */
 	 public static function connection($name = null){
-		$root = new \Illuminate\Database\DatabaseManager(null,null);
-		return $root->connection($name);
+		return Illuminate\Database\DatabaseManager::connection($name);
 	 }
 
 	/**
@@ -2375,8 +2288,18 @@ class DB extends Illuminate\Support\Facades\DB{
 	 * @static 
 	 */
 	 public static function reconnect($name = null){
-		$root = new \Illuminate\Database\DatabaseManager(null,null);
-		return $root->reconnect($name);
+		return Illuminate\Database\DatabaseManager::reconnect($name);
+	 }
+
+	/**
+	 * Disconnect from the given database.
+	 *
+	 * @param string  $name
+	 * @return void
+	 * @static 
+	 */
+	 public static function disconnect($name = null){
+		 Illuminate\Database\DatabaseManager::disconnect($name);
 	 }
 
 	/**
@@ -2386,8 +2309,7 @@ class DB extends Illuminate\Support\Facades\DB{
 	 * @static 
 	 */
 	 public static function getDefaultConnection(){
-		$root = new \Illuminate\Database\DatabaseManager(null,null);
-		return $root->getDefaultConnection();
+		return Illuminate\Database\DatabaseManager::getDefaultConnection();
 	 }
 
 	/**
@@ -2398,8 +2320,7 @@ class DB extends Illuminate\Support\Facades\DB{
 	 * @static 
 	 */
 	 public static function setDefaultConnection($name){
-		$root = new \Illuminate\Database\DatabaseManager(null,null);
-		$root->setDefaultConnection($name);
+		 Illuminate\Database\DatabaseManager::setDefaultConnection($name);
 	 }
 
 	/**
@@ -2411,8 +2332,17 @@ class DB extends Illuminate\Support\Facades\DB{
 	 * @static 
 	 */
 	 public static function extend($name, $resolver){
-		$root = new \Illuminate\Database\DatabaseManager(null,null);
-		$root->extend($name, $resolver);
+		 Illuminate\Database\DatabaseManager::extend($name, $resolver);
+	 }
+
+	/**
+	 * Return all of the created connections.
+	 *
+	 * @return array
+	 * @static 
+	 */
+	 public static function getConnections(){
+		return Illuminate\Database\DatabaseManager::getConnections();
 	 }
 
 	/**
@@ -2424,11 +2354,643 @@ class DB extends Illuminate\Support\Facades\DB{
 	 * @static 
 	 */
 	 public static function __call($method, $parameters){
-		$root = new \Illuminate\Database\DatabaseManager(null,null);
-		return $root->__call($method, $parameters);
+		return Illuminate\Database\DatabaseManager::__call($method, $parameters);
 	 }
 
+	/**
+	 * Get a schema builder instance for the connection.
+	 *
+	 * @return \Illuminate\Database\Schema\Builder
+	 * @static 
+	 */
+	 public static function getSchemaBuilder(){
+		return Illuminate\Database\MySqlConnection::getSchemaBuilder();
+	 }
+
+	/**
+	 * Set the query grammar to the default implementation.
+	 *
+	 * @return void
+	 * @static 
+	 */
+	 public static function useDefaultQueryGrammar(){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::useDefaultQueryGrammar();
+	 }
+
+	/**
+	 * Set the schema grammar to the default implementation.
+	 *
+	 * @return void
+	 * @static 
+	 */
+	 public static function useDefaultSchemaGrammar(){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::useDefaultSchemaGrammar();
+	 }
+
+	/**
+	 * Set the query post processor to the default implementation.
+	 *
+	 * @return void
+	 * @static 
+	 */
+	 public static function useDefaultPostProcessor(){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::useDefaultPostProcessor();
+	 }
+
+	/**
+	 * Begin a fluent query against a database table.
+	 *
+	 * @param string  $table
+	 * @return \Illuminate\Database\Query\Builder
+	 * @static 
+	 */
+	 public static function table($table){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::table($table);
+	 }
+
+	/**
+	 * Get a new raw query expression.
+	 *
+	 * @param mixed  $value
+	 * @return \Illuminate\Database\Query\Expression
+	 * @static 
+	 */
+	 public static function raw($value){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::raw($value);
+	 }
+
+	/**
+	 * Run a select statement and return a single result.
+	 *
+	 * @param string  $query
+	 * @param array   $bindings
+	 * @return mixed
+	 * @static 
+	 */
+	 public static function selectOne($query, $bindings = array()){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::selectOne($query, $bindings);
+	 }
+
+	/**
+	 * Run a select statement against the database.
+	 *
+	 * @param string  $query
+	 * @param array   $bindings
+	 * @return array
+	 * @static 
+	 */
+	 public static function select($query, $bindings = array()){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::select($query, $bindings);
+	 }
+
+	/**
+	 * Run an insert statement against the database.
+	 *
+	 * @param string  $query
+	 * @param array   $bindings
+	 * @return bool
+	 * @static 
+	 */
+	 public static function insert($query, $bindings = array()){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::insert($query, $bindings);
+	 }
+
+	/**
+	 * Run an update statement against the database.
+	 *
+	 * @param string  $query
+	 * @param array   $bindings
+	 * @return int
+	 * @static 
+	 */
+	 public static function update($query, $bindings = array()){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::update($query, $bindings);
+	 }
+
+	/**
+	 * Run a delete statement against the database.
+	 *
+	 * @param string  $query
+	 * @param array   $bindings
+	 * @return int
+	 * @static 
+	 */
+	 public static function delete($query, $bindings = array()){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::delete($query, $bindings);
+	 }
+
+	/**
+	 * Execute an SQL statement and return the boolean result.
+	 *
+	 * @param string  $query
+	 * @param array   $bindings
+	 * @return bool
+	 * @static 
+	 */
+	 public static function statement($query, $bindings = array()){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::statement($query, $bindings);
+	 }
+
+	/**
+	 * Run an SQL statement and get the number of rows affected.
+	 *
+	 * @param string  $query
+	 * @param array   $bindings
+	 * @return int
+	 * @static 
+	 */
+	 public static function affectingStatement($query, $bindings = array()){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::affectingStatement($query, $bindings);
+	 }
+
+	/**
+	 * Run a raw, unprepared query against the PDO connection.
+	 *
+	 * @param string  $query
+	 * @return bool
+	 * @static 
+	 */
+	 public static function unprepared($query){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::unprepared($query);
+	 }
+
+	/**
+	 * Prepare the query bindings for execution.
+	 *
+	 * @param array  $bindings
+	 * @return array
+	 * @static 
+	 */
+	 public static function prepareBindings($bindings){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::prepareBindings($bindings);
+	 }
+
+	/**
+	 * Execute a Closure within a transaction.
+	 *
+	 * @param Closure  $callback
+	 * @return mixed
+	 * @static 
+	 */
+	 public static function transaction($callback){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::transaction($callback);
+	 }
+
+	/**
+	 * Start a new database transaction.
+	 *
+	 * @return void
+	 * @static 
+	 */
+	 public static function beginTransaction(){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::beginTransaction();
+	 }
+
+	/**
+	 * Commit the active database transaction.
+	 *
+	 * @return void
+	 * @static 
+	 */
+	 public static function commit(){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::commit();
+	 }
+
+	/**
+	 * Rollback the active database transaction.
+	 *
+	 * @return void
+	 * @static 
+	 */
+	 public static function rollBack(){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::rollBack();
+	 }
+
+	/**
+	 * Execute the given callback in "dry run" mode.
+	 *
+	 * @param Closure  $callback
+	 * @return array
+	 * @static 
+	 */
+	 public static function pretend($callback){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::pretend($callback);
+	 }
+
+	/**
+	 * Log a query in the connection's query log.
+	 *
+	 * @param string  $query
+	 * @param array   $bindings
+	 * @param $time
+	 * @return void
+	 * @static 
+	 */
+	 public static function logQuery($query, $bindings, $time = null){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::logQuery($query, $bindings, $time);
+	 }
+
+	/**
+	 * Register a database query listener with the connection.
+	 *
+	 * @param Closure  $callback
+	 * @return void
+	 * @static 
+	 */
+	 public static function listen($callback){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::listen($callback);
+	 }
+
+	/**
+	 * Get a Doctrine Schema Column instance.
+	 *
+	 * @param string  $table
+	 * @param string  $column
+	 * @return \Doctrine\DBAL\Schema\Column
+	 * @static 
+	 */
+	 public static function getDoctrineColumn($table, $column){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getDoctrineColumn($table, $column);
+	 }
+
+	/**
+	 * Get the Doctrine DBAL schema manager for the connection.
+	 *
+	 * @return \Doctrine\DBAL\Schema\AbstractSchemaManager
+	 * @static 
+	 */
+	 public static function getDoctrineSchemaManager(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getDoctrineSchemaManager();
+	 }
+
+	/**
+	 * Get the Doctrine DBAL database connection instance.
+	 *
+	 * @return \Doctrine\DBAL\Connection
+	 * @static 
+	 */
+	 public static function getDoctrineConnection(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getDoctrineConnection();
+	 }
+
+	/**
+	 * Get the currently used PDO connection.
+	 *
+	 * @return PDO
+	 * @static 
+	 */
+	 public static function getPdo(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getPdo();
+	 }
+
+	/**
+	 * Get the database connection name.
+	 *
+	 * @return string|null
+	 * @static 
+	 */
+	 public static function getName(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getName();
+	 }
+
+	/**
+	 * Get an option from the configuration options.
+	 *
+	 * @param string  $option
+	 * @return mixed
+	 * @static 
+	 */
+	 public static function getConfig($option){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getConfig($option);
+	 }
+
+	/**
+	 * Get the PDO driver name.
+	 *
+	 * @return string
+	 * @static 
+	 */
+	 public static function getDriverName(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getDriverName();
+	 }
+
+	/**
+	 * Get the query grammar used by the connection.
+	 *
+	 * @return \Illuminate\Database\Query\Grammars\Grammar
+	 * @static 
+	 */
+	 public static function getQueryGrammar(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getQueryGrammar();
+	 }
+
+	/**
+	 * Set the query grammar used by the connection.
+	 *
+	 * @param \Illuminate\Database\Query\Grammars\Grammar
+	 * @return void
+	 * @static 
+	 */
+	 public static function setQueryGrammar($grammar){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::setQueryGrammar($grammar);
+	 }
+
+	/**
+	 * Get the schema grammar used by the connection.
+	 *
+	 * @return \Illuminate\Database\Query\Grammars\Grammar
+	 * @static 
+	 */
+	 public static function getSchemaGrammar(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getSchemaGrammar();
+	 }
+
+	/**
+	 * Set the schema grammar used by the connection.
+	 *
+	 * @param \Illuminate\Database\Schema\Grammars\Grammar
+	 * @return void
+	 * @static 
+	 */
+	 public static function setSchemaGrammar($grammar){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::setSchemaGrammar($grammar);
+	 }
+
+	/**
+	 * Get the query post processor used by the connection.
+	 *
+	 * @return \Illuminate\Database\Query\Processors\Processor
+	 * @static 
+	 */
+	 public static function getPostProcessor(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getPostProcessor();
+	 }
+
+	/**
+	 * Set the query post processor used by the connection.
+	 *
+	 * @param \Illuminate\Database\Query\Processors\Processor
+	 * @return void
+	 * @static 
+	 */
+	 public static function setPostProcessor($processor){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::setPostProcessor($processor);
+	 }
+
+	/**
+	 * Get the event dispatcher used by the connection.
+	 *
+	 * @return \Illuminate\Events\Dispatcher
+	 * @static 
+	 */
+	 public static function getEventDispatcher(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getEventDispatcher();
+	 }
+
+	/**
+	 * Set the event dispatcher instance on the connection.
+	 *
+	 * @param \Illuminate\Events\Dispatcher
+	 * @return void
+	 * @static 
+	 */
+	 public static function setEventDispatcher($events){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::setEventDispatcher($events);
+	 }
+
+	/**
+	 * Get the paginator environment instance.
+	 *
+	 * @return \Illuminate\Pagination\Environment
+	 * @static 
+	 */
+	 public static function getPaginator(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getPaginator();
+	 }
+
+	/**
+	 * Set the pagination environment instance.
+	 *
+	 * @param \Illuminate\Pagination\Environment|\Closure  $paginator
+	 * @return void
+	 * @static 
+	 */
+	 public static function setPaginator($paginator){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::setPaginator($paginator);
+	 }
+
+	/**
+	 * Get the cache manager instance.
+	 *
+	 * @return \Illuminate\Cache\CacheManager
+	 * @static 
+	 */
+	 public static function getCacheManager(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getCacheManager();
+	 }
+
+	/**
+	 * Set the cache manager instance on the connection.
+	 *
+	 * @param \Illuminate\Cache\CacheManager|\Closure  $cache
+	 * @return void
+	 * @static 
+	 */
+	 public static function setCacheManager($cache){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::setCacheManager($cache);
+	 }
+
+	/**
+	 * Determine if the connection in a "dry run".
+	 *
+	 * @return bool
+	 * @static 
+	 */
+	 public static function pretending(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::pretending();
+	 }
+
+	/**
+	 * Get the default fetch mode for the connection.
+	 *
+	 * @return int
+	 * @static 
+	 */
+	 public static function getFetchMode(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getFetchMode();
+	 }
+
+	/**
+	 * Set the default fetch mode for the connection.
+	 *
+	 * @param int  $fetchMode
+	 * @return int
+	 * @static 
+	 */
+	 public static function setFetchMode($fetchMode){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::setFetchMode($fetchMode);
+	 }
+
+	/**
+	 * Get the connection query log.
+	 *
+	 * @return array
+	 * @static 
+	 */
+	 public static function getQueryLog(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getQueryLog();
+	 }
+
+	/**
+	 * Clear the query log.
+	 *
+	 * @return void
+	 * @static 
+	 */
+	 public static function flushQueryLog(){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::flushQueryLog();
+	 }
+
+	/**
+	 * Enable the query log on the connection.
+	 *
+	 * @return void
+	 * @static 
+	 */
+	 public static function enableQueryLog(){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::enableQueryLog();
+	 }
+
+	/**
+	 * Disable the query log on the connection.
+	 *
+	 * @return void
+	 * @static 
+	 */
+	 public static function disableQueryLog(){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::disableQueryLog();
+	 }
+
+	/**
+	 * Get the name of the connected database.
+	 *
+	 * @return string
+	 * @static 
+	 */
+	 public static function getDatabaseName(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getDatabaseName();
+	 }
+
+	/**
+	 * Set the name of the connected database.
+	 *
+	 * @param string  $database
+	 * @return string
+	 * @static 
+	 */
+	 public static function setDatabaseName($database){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::setDatabaseName($database);
+	 }
+
+	/**
+	 * Get the table prefix for the connection.
+	 *
+	 * @return string
+	 * @static 
+	 */
+	 public static function getTablePrefix(){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::getTablePrefix();
+	 }
+
+	/**
+	 * Set the table prefix in use by the connection.
+	 *
+	 * @param string  $prefix
+	 * @return void
+	 * @static 
+	 */
+	 public static function setTablePrefix($prefix){
+		//Method inherited from Illuminate\Database\Connection
+		 Illuminate\Database\MySqlConnection::setTablePrefix($prefix);
+	 }
+
+	/**
+	 * Set the table prefix and return the grammar.
+	 *
+	 * @param \Illuminate\Database\Grammar  $grammar
+	 * @return \Illuminate\Database\Grammar
+	 * @static 
+	 */
+	 public static function withTablePrefix($grammar){
+		//Method inherited from Illuminate\Database\Connection
+		return Illuminate\Database\MySqlConnection::withTablePrefix($grammar);
+	 }
+
+}
+
 class Eloquent extends Illuminate\Database\Eloquent\Model{
+	/**
+	 * Find a model by its primary key.
+	 *
+	 * @param array  $id
+	 * @param array  $columns
+	 * @return \Illuminate\Database\Eloquent\Model|Collection|static
+	 * @static 
+	 */
+	 public static function findMany($id, $columns = array()){
+		return Illuminate\Database\Eloquent\Builder::findMany($id, $columns);
+	 }
+
 	/**
 	 * Execute the query and get the first result.
 	 *
@@ -2437,8 +2999,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function first($columns = array()){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->first($columns);
+		return Illuminate\Database\Eloquent\Builder::first($columns);
 	 }
 
 	/**
@@ -2449,8 +3010,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function firstOrFail($columns = array()){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->firstOrFail($columns);
+		return Illuminate\Database\Eloquent\Builder::firstOrFail($columns);
 	 }
 
 	/**
@@ -2461,8 +3021,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function get($columns = array()){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->get($columns);
+		return Illuminate\Database\Eloquent\Builder::get($columns);
 	 }
 
 	/**
@@ -2473,8 +3032,19 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function pluck($column){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->pluck($column);
+		return Illuminate\Database\Eloquent\Builder::pluck($column);
+	 }
+
+	/**
+	 * Chunk the results of the query.
+	 *
+	 * @param int  $count
+	 * @param callable  $callback
+	 * @return void
+	 * @static 
+	 */
+	 public static function chunk($count, $callback){
+		 Illuminate\Database\Eloquent\Builder::chunk($count, $callback);
 	 }
 
 	/**
@@ -2486,8 +3056,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function lists($column, $key = null){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->lists($column, $key);
+		return Illuminate\Database\Eloquent\Builder::lists($column, $key);
 	 }
 
 	/**
@@ -2499,8 +3068,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function paginate($perPage = null, $columns = array()){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->paginate($perPage, $columns);
+		return Illuminate\Database\Eloquent\Builder::paginate($perPage, $columns);
 	 }
 
 	/**
@@ -2513,8 +3081,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function increment($column, $amount = 1, $extra = array()){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->increment($column, $amount, $extra);
+		return Illuminate\Database\Eloquent\Builder::increment($column, $amount, $extra);
 	 }
 
 	/**
@@ -2527,8 +3094,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function decrement($column, $amount = 1, $extra = array()){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->decrement($column, $amount, $extra);
+		return Illuminate\Database\Eloquent\Builder::decrement($column, $amount, $extra);
 	 }
 
 	/**
@@ -2539,8 +3105,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function getModels($columns = array()){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->getModels($columns);
+		return Illuminate\Database\Eloquent\Builder::getModels($columns);
 	 }
 
 	/**
@@ -2551,8 +3116,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function eagerLoadRelations($models){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->eagerLoadRelations($models);
+		return Illuminate\Database\Eloquent\Builder::eagerLoadRelations($models);
 	 }
 
 	/**
@@ -2566,8 +3130,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function has($relation, $operator = '>=', $count = 1, $boolean = 'and'){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->has($relation, $operator, $count, $boolean);
+		return Illuminate\Database\Eloquent\Builder::has($relation, $operator, $count, $boolean);
 	 }
 
 	/**
@@ -2580,8 +3143,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function orHas($relation, $operator = '>=', $count = 1){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->orHas($relation, $operator, $count);
+		return Illuminate\Database\Eloquent\Builder::orHas($relation, $operator, $count);
 	 }
 
 	/**
@@ -2591,8 +3153,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function getQuery(){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->getQuery();
+		return Illuminate\Database\Eloquent\Builder::getQuery();
 	 }
 
 	/**
@@ -2603,8 +3164,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function setQuery($query){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		$root->setQuery($query);
+		 Illuminate\Database\Eloquent\Builder::setQuery($query);
 	 }
 
 	/**
@@ -2614,8 +3174,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function getEagerLoads(){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->getEagerLoads();
+		return Illuminate\Database\Eloquent\Builder::getEagerLoads();
 	 }
 
 	/**
@@ -2626,8 +3185,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function setEagerLoads($eagerLoad){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		$root->setEagerLoads($eagerLoad);
+		 Illuminate\Database\Eloquent\Builder::setEagerLoads($eagerLoad);
 	 }
 
 	/**
@@ -2637,8 +3195,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function getModel(){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->getModel();
+		return Illuminate\Database\Eloquent\Builder::getModel();
 	 }
 
 	/**
@@ -2649,8 +3206,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function setModel($model){
-		$root = new \Illuminate\Database\Eloquent\Builder(null);
-		return $root->setModel($model);
+		return Illuminate\Database\Eloquent\Builder::setModel($model);
 	 }
 
 	/**
@@ -2661,8 +3217,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function select($columns = array()){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->select($columns);
+		return Illuminate\Database\Query\Builder::select($columns);
 	 }
 
 	/**
@@ -2673,8 +3228,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function addSelect($column){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->addSelect($column);
+		return Illuminate\Database\Query\Builder::addSelect($column);
 	 }
 
 	/**
@@ -2684,8 +3238,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function distinct(){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->distinct();
+		return Illuminate\Database\Query\Builder::distinct();
 	 }
 
 	/**
@@ -2696,8 +3249,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function from($table){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->from($table);
+		return Illuminate\Database\Query\Builder::from($table);
 	 }
 
 	/**
@@ -2712,8 +3264,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function join($table, $first, $operator = null, $second = null, $type = 'inner'){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->join($table, $first, $operator, $second, $type);
+		return Illuminate\Database\Query\Builder::join($table, $first, $operator, $second, $type);
 	 }
 
 	/**
@@ -2727,8 +3278,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function leftJoin($table, $first, $operator = null, $second = null){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->leftJoin($table, $first, $operator, $second);
+		return Illuminate\Database\Query\Builder::leftJoin($table, $first, $operator, $second);
 	 }
 
 	/**
@@ -2742,8 +3292,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function where($column, $operator = null, $value = null, $boolean = 'and'){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->where($column, $operator, $value, $boolean);
+		return Illuminate\Database\Query\Builder::where($column, $operator, $value, $boolean);
 	 }
 
 	/**
@@ -2756,8 +3305,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function orWhere($column, $operator = null, $value = null){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->orWhere($column, $operator, $value);
+		return Illuminate\Database\Query\Builder::orWhere($column, $operator, $value);
 	 }
 
 	/**
@@ -2770,8 +3318,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function whereRaw($sql, $bindings = array(), $boolean = 'and'){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->whereRaw($sql, $bindings, $boolean);
+		return Illuminate\Database\Query\Builder::whereRaw($sql, $bindings, $boolean);
 	 }
 
 	/**
@@ -2783,8 +3330,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function orWhereRaw($sql, $bindings = array()){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->orWhereRaw($sql, $bindings);
+		return Illuminate\Database\Query\Builder::orWhereRaw($sql, $bindings);
 	 }
 
 	/**
@@ -2797,8 +3343,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function whereBetween($column, $values, $boolean = 'and'){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->whereBetween($column, $values, $boolean);
+		return Illuminate\Database\Query\Builder::whereBetween($column, $values, $boolean);
 	 }
 
 	/**
@@ -2810,8 +3355,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function orWhereBetween($column, $values){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->orWhereBetween($column, $values);
+		return Illuminate\Database\Query\Builder::orWhereBetween($column, $values);
 	 }
 
 	/**
@@ -2823,8 +3367,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function whereNested($callback, $boolean = 'and'){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->whereNested($callback, $boolean);
+		return Illuminate\Database\Query\Builder::whereNested($callback, $boolean);
 	 }
 
 	/**
@@ -2837,8 +3380,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function whereExists($callback, $boolean = 'and', $not = false){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->whereExists($callback, $boolean, $not);
+		return Illuminate\Database\Query\Builder::whereExists($callback, $boolean, $not);
 	 }
 
 	/**
@@ -2850,8 +3392,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function orWhereExists($callback, $not = false){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->orWhereExists($callback, $not);
+		return Illuminate\Database\Query\Builder::orWhereExists($callback, $not);
 	 }
 
 	/**
@@ -2863,8 +3404,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function whereNotExists($callback, $boolean = 'and'){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->whereNotExists($callback, $boolean);
+		return Illuminate\Database\Query\Builder::whereNotExists($callback, $boolean);
 	 }
 
 	/**
@@ -2875,8 +3415,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function orWhereNotExists($callback){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->orWhereNotExists($callback);
+		return Illuminate\Database\Query\Builder::orWhereNotExists($callback);
 	 }
 
 	/**
@@ -2890,8 +3429,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function whereIn($column, $values, $boolean = 'and', $not = false){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->whereIn($column, $values, $boolean, $not);
+		return Illuminate\Database\Query\Builder::whereIn($column, $values, $boolean, $not);
 	 }
 
 	/**
@@ -2903,8 +3441,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function orWhereIn($column, $values){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->orWhereIn($column, $values);
+		return Illuminate\Database\Query\Builder::orWhereIn($column, $values);
 	 }
 
 	/**
@@ -2917,8 +3454,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function whereNotIn($column, $values, $boolean = 'and'){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->whereNotIn($column, $values, $boolean);
+		return Illuminate\Database\Query\Builder::whereNotIn($column, $values, $boolean);
 	 }
 
 	/**
@@ -2930,8 +3466,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function orWhereNotIn($column, $values){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->orWhereNotIn($column, $values);
+		return Illuminate\Database\Query\Builder::orWhereNotIn($column, $values);
 	 }
 
 	/**
@@ -2944,8 +3479,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function whereNull($column, $boolean = 'and', $not = false){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->whereNull($column, $boolean, $not);
+		return Illuminate\Database\Query\Builder::whereNull($column, $boolean, $not);
 	 }
 
 	/**
@@ -2956,8 +3490,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function orWhereNull($column){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->orWhereNull($column);
+		return Illuminate\Database\Query\Builder::orWhereNull($column);
 	 }
 
 	/**
@@ -2969,8 +3502,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function whereNotNull($column, $boolean = 'and'){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->whereNotNull($column, $boolean);
+		return Illuminate\Database\Query\Builder::whereNotNull($column, $boolean);
 	 }
 
 	/**
@@ -2981,8 +3513,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function orWhereNotNull($column){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->orWhereNotNull($column);
+		return Illuminate\Database\Query\Builder::orWhereNotNull($column);
 	 }
 
 	/**
@@ -2994,8 +3525,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function dynamicWhere($method, $parameters){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->dynamicWhere($method, $parameters);
+		return Illuminate\Database\Query\Builder::dynamicWhere($method, $parameters);
 	 }
 
 	/**
@@ -3006,8 +3536,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function groupBy(){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->groupBy();
+		return Illuminate\Database\Query\Builder::groupBy();
 	 }
 
 	/**
@@ -3020,8 +3549,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function having($column, $operator = null, $value = null){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->having($column, $operator, $value);
+		return Illuminate\Database\Query\Builder::having($column, $operator, $value);
 	 }
 
 	/**
@@ -3034,8 +3562,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function havingRaw($sql, $bindings = array(), $boolean = 'and'){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->havingRaw($sql, $bindings, $boolean);
+		return Illuminate\Database\Query\Builder::havingRaw($sql, $bindings, $boolean);
 	 }
 
 	/**
@@ -3047,8 +3574,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function orHavingRaw($sql, $bindings = array()){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->orHavingRaw($sql, $bindings);
+		return Illuminate\Database\Query\Builder::orHavingRaw($sql, $bindings);
 	 }
 
 	/**
@@ -3060,8 +3586,19 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function orderBy($column, $direction = 'asc'){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->orderBy($column, $direction);
+		return Illuminate\Database\Query\Builder::orderBy($column, $direction);
+	 }
+
+	/**
+	 * Add a raw "order by" clause to the query.
+	 *
+	 * @param string  $sql
+	 * @param array  $bindings
+	 * @return \Illuminate\Database\Query\Builder|static
+	 * @static 
+	 */
+	 public static function orderByRaw($sql, $bindings = array()){
+		return Illuminate\Database\Query\Builder::orderByRaw($sql, $bindings);
 	 }
 
 	/**
@@ -3071,9 +3608,19 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @return \Illuminate\Database\Query\Builder|static
 	 * @static 
 	 */
+	 public static function offset($value){
+		return Illuminate\Database\Query\Builder::offset($value);
+	 }
+
+	/**
+	 * Alias to set the "offset" value of the query.
+	 *
+	 * @param int  $value
+	 * @return \Illuminate\Database\Query\Builder|static
+	 * @static 
+	 */
 	 public static function skip($value){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->skip($value);
+		return Illuminate\Database\Query\Builder::skip($value);
 	 }
 
 	/**
@@ -3083,9 +3630,19 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @return \Illuminate\Database\Query\Builder|static
 	 * @static 
 	 */
+	 public static function limit($value){
+		return Illuminate\Database\Query\Builder::limit($value);
+	 }
+
+	/**
+	 * Alias to set the "limit" value of the query.
+	 *
+	 * @param int  $value
+	 * @return \Illuminate\Database\Query\Builder|static
+	 * @static 
+	 */
 	 public static function take($value){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->take($value);
+		return Illuminate\Database\Query\Builder::take($value);
 	 }
 
 	/**
@@ -3097,8 +3654,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function forPage($page, $perPage = 15){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->forPage($page, $perPage);
+		return Illuminate\Database\Query\Builder::forPage($page, $perPage);
 	 }
 
 	/**
@@ -3110,8 +3666,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function union($query, $all = false){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->union($query, $all);
+		return Illuminate\Database\Query\Builder::union($query, $all);
 	 }
 
 	/**
@@ -3122,8 +3677,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function unionAll($query){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->unionAll($query);
+		return Illuminate\Database\Query\Builder::unionAll($query);
 	 }
 
 	/**
@@ -3133,8 +3687,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function toSql(){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->toSql();
+		return Illuminate\Database\Query\Builder::toSql();
 	 }
 
 	/**
@@ -3146,8 +3699,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function remember($minutes, $key = null){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->remember($minutes, $key);
+		return Illuminate\Database\Query\Builder::remember($minutes, $key);
 	 }
 
 	/**
@@ -3158,8 +3710,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function getFresh($columns = array()){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->getFresh($columns);
+		return Illuminate\Database\Query\Builder::getFresh($columns);
 	 }
 
 	/**
@@ -3170,8 +3721,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function getCached($columns = array()){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->getCached($columns);
+		return Illuminate\Database\Query\Builder::getCached($columns);
 	 }
 
 	/**
@@ -3181,8 +3731,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function getCacheKey(){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->getCacheKey();
+		return Illuminate\Database\Query\Builder::getCacheKey();
 	 }
 
 	/**
@@ -3192,8 +3741,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function generateCacheKey(){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->generateCacheKey();
+		return Illuminate\Database\Query\Builder::generateCacheKey();
 	 }
 
 	/**
@@ -3205,8 +3753,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function implode($column, $glue = null){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->implode($column, $glue);
+		return Illuminate\Database\Query\Builder::implode($column, $glue);
 	 }
 
 	/**
@@ -3219,8 +3766,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function buildRawPaginator($paginator, $results, $perPage){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->buildRawPaginator($paginator, $results, $perPage);
+		return Illuminate\Database\Query\Builder::buildRawPaginator($paginator, $results, $perPage);
 	 }
 
 	/**
@@ -3230,8 +3776,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function getPaginationCount(){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->getPaginationCount();
+		return Illuminate\Database\Query\Builder::getPaginationCount();
 	 }
 
 	/**
@@ -3241,8 +3786,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function exists(){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->exists();
+		return Illuminate\Database\Query\Builder::exists();
 	 }
 
 	/**
@@ -3253,8 +3797,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function count($column = '*'){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->count($column);
+		return Illuminate\Database\Query\Builder::count($column);
 	 }
 
 	/**
@@ -3265,8 +3808,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function min($column){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->min($column);
+		return Illuminate\Database\Query\Builder::min($column);
 	 }
 
 	/**
@@ -3277,8 +3819,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function max($column){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->max($column);
+		return Illuminate\Database\Query\Builder::max($column);
 	 }
 
 	/**
@@ -3289,8 +3830,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function sum($column){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->sum($column);
+		return Illuminate\Database\Query\Builder::sum($column);
 	 }
 
 	/**
@@ -3301,8 +3841,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function avg($column){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->avg($column);
+		return Illuminate\Database\Query\Builder::avg($column);
 	 }
 
 	/**
@@ -3314,8 +3853,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function aggregate($function, $columns = array()){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->aggregate($function, $columns);
+		return Illuminate\Database\Query\Builder::aggregate($function, $columns);
 	 }
 
 	/**
@@ -3326,8 +3864,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function insert($values){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->insert($values);
+		return Illuminate\Database\Query\Builder::insert($values);
 	 }
 
 	/**
@@ -3339,8 +3876,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function insertGetId($values, $sequence = null){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->insertGetId($values, $sequence);
+		return Illuminate\Database\Query\Builder::insertGetId($values, $sequence);
 	 }
 
 	/**
@@ -3350,8 +3886,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function truncate(){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		$root->truncate();
+		 Illuminate\Database\Query\Builder::truncate();
 	 }
 
 	/**
@@ -3363,19 +3898,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function mergeWheres($wheres, $bindings){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		$root->mergeWheres($wheres, $bindings);
-	 }
-
-	/**
-	 * Get a copy of the where clauses and bindings in an array.
-	 *
-	 * @return array
-	 * @static 
-	 */
-	 public static function getAndResetWheres(){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->getAndResetWheres();
+		 Illuminate\Database\Query\Builder::mergeWheres($wheres, $bindings);
 	 }
 
 	/**
@@ -3386,8 +3909,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function raw($value){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->raw($value);
+		return Illuminate\Database\Query\Builder::raw($value);
 	 }
 
 	/**
@@ -3397,20 +3919,18 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function getBindings(){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->getBindings();
+		return Illuminate\Database\Query\Builder::getBindings();
 	 }
 
 	/**
 	 * Set the bindings on the query builder.
 	 *
 	 * @param array  $bindings
-	 * @return void
+	 * @return \Illuminate\Database\Query\Builder
 	 * @static 
 	 */
 	 public static function setBindings($bindings){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		$root->setBindings($bindings);
+		return Illuminate\Database\Query\Builder::setBindings($bindings);
 	 }
 
 	/**
@@ -3421,8 +3941,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function mergeBindings($query){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->mergeBindings($query);
+		return Illuminate\Database\Query\Builder::mergeBindings($query);
 	 }
 
 	/**
@@ -3432,8 +3951,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function getProcessor(){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->getProcessor();
+		return Illuminate\Database\Query\Builder::getProcessor();
 	 }
 
 	/**
@@ -3443,8 +3961,7 @@ class Eloquent extends Illuminate\Database\Eloquent\Model{
 	 * @static 
 	 */
 	 public static function getGrammar(){
-		$root = new \Illuminate\Database\Query\Builder(null,null,null);
-		return $root->getGrammar();
+		return Illuminate\Database\Query\Builder::getGrammar();
 	 }
 
 }
@@ -3454,12 +3971,11 @@ class Event extends Illuminate\Support\Facades\Event{
 	 * Create a new event dispatcher instance.
 	 *
 	 * @param \Illuminate\Container\Container  $container
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($container = null){
-		$root = new \Illuminate\Events\Dispatcher();
-		$root->__construct($container);
+		 Illuminate\Events\Dispatcher::__construct($container);
 	 }
 
 	/**
@@ -3472,8 +3988,7 @@ class Event extends Illuminate\Support\Facades\Event{
 	 * @static 
 	 */
 	 public static function listen($event, $listener, $priority = 0){
-		$root = new \Illuminate\Events\Dispatcher();
-		$root->listen($event, $listener, $priority);
+		 Illuminate\Events\Dispatcher::listen($event, $listener, $priority);
 	 }
 
 	/**
@@ -3484,8 +3999,7 @@ class Event extends Illuminate\Support\Facades\Event{
 	 * @static 
 	 */
 	 public static function hasListeners($eventName){
-		$root = new \Illuminate\Events\Dispatcher();
-		return $root->hasListeners($eventName);
+		return Illuminate\Events\Dispatcher::hasListeners($eventName);
 	 }
 
 	/**
@@ -3497,8 +4011,7 @@ class Event extends Illuminate\Support\Facades\Event{
 	 * @static 
 	 */
 	 public static function queue($event, $payload = array()){
-		$root = new \Illuminate\Events\Dispatcher();
-		$root->queue($event, $payload);
+		 Illuminate\Events\Dispatcher::queue($event, $payload);
 	 }
 
 	/**
@@ -3509,8 +4022,7 @@ class Event extends Illuminate\Support\Facades\Event{
 	 * @static 
 	 */
 	 public static function subscribe($subscriber){
-		$root = new \Illuminate\Events\Dispatcher();
-		$root->subscribe($subscriber);
+		 Illuminate\Events\Dispatcher::subscribe($subscriber);
 	 }
 
 	/**
@@ -3522,8 +4034,7 @@ class Event extends Illuminate\Support\Facades\Event{
 	 * @static 
 	 */
 	 public static function until($event, $payload = array()){
-		$root = new \Illuminate\Events\Dispatcher();
-		return $root->until($event, $payload);
+		return Illuminate\Events\Dispatcher::until($event, $payload);
 	 }
 
 	/**
@@ -3534,8 +4045,7 @@ class Event extends Illuminate\Support\Facades\Event{
 	 * @static 
 	 */
 	 public static function flush($event){
-		$root = new \Illuminate\Events\Dispatcher();
-		$root->flush($event);
+		 Illuminate\Events\Dispatcher::flush($event);
 	 }
 
 	/**
@@ -3543,13 +4053,12 @@ class Event extends Illuminate\Support\Facades\Event{
 	 *
 	 * @param string  $event
 	 * @param mixed   $payload
-	 * @param boolean $halt
-	 * @return void
+	 * @param bool    $halt
+	 * @return array|null
 	 * @static 
 	 */
 	 public static function fire($event, $payload = array(), $halt = false){
-		$root = new \Illuminate\Events\Dispatcher();
-		$root->fire($event, $payload, $halt);
+		return Illuminate\Events\Dispatcher::fire($event, $payload, $halt);
 	 }
 
 	/**
@@ -3560,32 +4069,29 @@ class Event extends Illuminate\Support\Facades\Event{
 	 * @static 
 	 */
 	 public static function getListeners($eventName){
-		$root = new \Illuminate\Events\Dispatcher();
-		return $root->getListeners($eventName);
+		return Illuminate\Events\Dispatcher::getListeners($eventName);
 	 }
 
 	/**
 	 * Register an event listener with the dispatcher.
 	 *
 	 * @param mixed   $listener
-	 * @return void
+	 * @return mixed
 	 * @static 
 	 */
 	 public static function makeListener($listener){
-		$root = new \Illuminate\Events\Dispatcher();
-		$root->makeListener($listener);
+		return Illuminate\Events\Dispatcher::makeListener($listener);
 	 }
 
 	/**
 	 * Create a class based listener using the IoC container.
 	 *
 	 * @param mixed    $listener
-	 * @return Closure
+	 * @return \Closure
 	 * @static 
 	 */
 	 public static function createClassListener($listener){
-		$root = new \Illuminate\Events\Dispatcher();
-		return $root->createClassListener($listener);
+		return Illuminate\Events\Dispatcher::createClassListener($listener);
 	 }
 
 	/**
@@ -3596,8 +4102,7 @@ class Event extends Illuminate\Support\Facades\Event{
 	 * @static 
 	 */
 	 public static function forget($event){
-		$root = new \Illuminate\Events\Dispatcher();
-		$root->forget($event);
+		 Illuminate\Events\Dispatcher::forget($event);
 	 }
 
 }
@@ -3611,8 +4116,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function exists($path){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->exists($path);
+		return Illuminate\Filesystem\Filesystem::exists($path);
 	 }
 
 	/**
@@ -3623,8 +4127,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function get($path){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->get($path);
+		return Illuminate\Filesystem\Filesystem::get($path);
 	 }
 
 	/**
@@ -3635,8 +4138,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function getRemote($path){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->getRemote($path);
+		return Illuminate\Filesystem\Filesystem::getRemote($path);
 	 }
 
 	/**
@@ -3647,8 +4149,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function getRequire($path){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->getRequire($path);
+		return Illuminate\Filesystem\Filesystem::getRequire($path);
 	 }
 
 	/**
@@ -3659,8 +4160,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function requireOnce($file){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		$root->requireOnce($file);
+		 Illuminate\Filesystem\Filesystem::requireOnce($file);
 	 }
 
 	/**
@@ -3672,8 +4172,19 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function put($path, $contents){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->put($path, $contents);
+		return Illuminate\Filesystem\Filesystem::put($path, $contents);
+	 }
+
+	/**
+	 * Prepend to a file.
+	 *
+	 * @param string  $path
+	 * @param string  $data
+	 * @return int
+	 * @static 
+	 */
+	 public static function prepend($path, $data){
+		return Illuminate\Filesystem\Filesystem::prepend($path, $data);
 	 }
 
 	/**
@@ -3685,8 +4196,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function append($path, $data){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->append($path, $data);
+		return Illuminate\Filesystem\Filesystem::append($path, $data);
 	 }
 
 	/**
@@ -3697,8 +4207,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function delete($path){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->delete($path);
+		return Illuminate\Filesystem\Filesystem::delete($path);
 	 }
 
 	/**
@@ -3706,12 +4215,11 @@ class File extends Illuminate\Support\Facades\File{
 	 *
 	 * @param string  $path
 	 * @param string  $target
-	 * @return void
+	 * @return bool
 	 * @static 
 	 */
 	 public static function move($path, $target){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		$root->move($path, $target);
+		return Illuminate\Filesystem\Filesystem::move($path, $target);
 	 }
 
 	/**
@@ -3719,12 +4227,11 @@ class File extends Illuminate\Support\Facades\File{
 	 *
 	 * @param string  $path
 	 * @param string  $target
-	 * @return void
+	 * @return bool
 	 * @static 
 	 */
 	 public static function copy($path, $target){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		$root->copy($path, $target);
+		return Illuminate\Filesystem\Filesystem::copy($path, $target);
 	 }
 
 	/**
@@ -3735,8 +4242,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function extension($path){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->extension($path);
+		return Illuminate\Filesystem\Filesystem::extension($path);
 	 }
 
 	/**
@@ -3747,8 +4253,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function type($path){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->type($path);
+		return Illuminate\Filesystem\Filesystem::type($path);
 	 }
 
 	/**
@@ -3759,8 +4264,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function size($path){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->size($path);
+		return Illuminate\Filesystem\Filesystem::size($path);
 	 }
 
 	/**
@@ -3771,8 +4275,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function lastModified($path){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->lastModified($path);
+		return Illuminate\Filesystem\Filesystem::lastModified($path);
 	 }
 
 	/**
@@ -3783,8 +4286,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function isDirectory($directory){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->isDirectory($directory);
+		return Illuminate\Filesystem\Filesystem::isDirectory($directory);
 	 }
 
 	/**
@@ -3795,8 +4297,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function isWritable($path){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->isWritable($path);
+		return Illuminate\Filesystem\Filesystem::isWritable($path);
 	 }
 
 	/**
@@ -3807,8 +4308,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function isFile($file){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->isFile($file);
+		return Illuminate\Filesystem\Filesystem::isFile($file);
 	 }
 
 	/**
@@ -3820,8 +4320,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function glob($pattern, $flags = 0){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->glob($pattern, $flags);
+		return Illuminate\Filesystem\Filesystem::glob($pattern, $flags);
 	 }
 
 	/**
@@ -3832,8 +4331,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function files($directory){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->files($directory);
+		return Illuminate\Filesystem\Filesystem::files($directory);
 	 }
 
 	/**
@@ -3844,8 +4342,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function allFiles($directory){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->allFiles($directory);
+		return Illuminate\Filesystem\Filesystem::allFiles($directory);
 	 }
 
 	/**
@@ -3856,8 +4353,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function directories($directory){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->directories($directory);
+		return Illuminate\Filesystem\Filesystem::directories($directory);
 	 }
 
 	/**
@@ -3870,8 +4366,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function makeDirectory($path, $mode = 511, $recursive = false){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		return $root->makeDirectory($path, $mode, $recursive);
+		return Illuminate\Filesystem\Filesystem::makeDirectory($path, $mode, $recursive);
 	 }
 
 	/**
@@ -3880,12 +4375,11 @@ class File extends Illuminate\Support\Facades\File{
 	 * @param string  $directory
 	 * @param string  $destination
 	 * @param int     $options
-	 * @return void
+	 * @return bool
 	 * @static 
 	 */
 	 public static function copyDirectory($directory, $destination, $options = null){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		$root->copyDirectory($directory, $destination, $options);
+		return Illuminate\Filesystem\Filesystem::copyDirectory($directory, $destination, $options);
 	 }
 
 	/**
@@ -3899,8 +4393,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function deleteDirectory($directory, $preserve = false){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		$root->deleteDirectory($directory, $preserve);
+		 Illuminate\Filesystem\Filesystem::deleteDirectory($directory, $preserve);
 	 }
 
 	/**
@@ -3911,8 +4404,7 @@ class File extends Illuminate\Support\Facades\File{
 	 * @static 
 	 */
 	 public static function cleanDirectory($directory){
-		$root = new \Illuminate\Filesystem\Filesystem();
-		$root->cleanDirectory($directory);
+		 Illuminate\Filesystem\Filesystem::cleanDirectory($directory);
 	 }
 
 }
@@ -3924,12 +4416,11 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @param \Illuminate\Routing\UrlGenerator  $url
 	 * @param \Illuminate\Html\HtmlBuilder  $html
 	 * @param string  $csrfToken
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($html, $url, $csrfToken){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		$root->__construct($html, $url, $csrfToken);
+		 Illuminate\Html\FormBuilder::__construct($html, $url, $csrfToken);
 	 }
 
 	/**
@@ -3940,8 +4431,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function open($options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->open($options);
+		return Illuminate\Html\FormBuilder::open($options);
 	 }
 
 	/**
@@ -3953,8 +4443,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function model($model, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->model($model, $options);
+		return Illuminate\Html\FormBuilder::model($model, $options);
 	 }
 
 	/**
@@ -3964,8 +4453,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function close(){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->close();
+		return Illuminate\Html\FormBuilder::close();
 	 }
 
 	/**
@@ -3975,8 +4463,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function token(){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->token();
+		return Illuminate\Html\FormBuilder::token();
 	 }
 
 	/**
@@ -3989,8 +4476,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function label($name, $value = null, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->label($name, $value, $options);
+		return Illuminate\Html\FormBuilder::label($name, $value, $options);
 	 }
 
 	/**
@@ -4004,8 +4490,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function input($type, $name, $value = null, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->input($type, $name, $value, $options);
+		return Illuminate\Html\FormBuilder::input($type, $name, $value, $options);
 	 }
 
 	/**
@@ -4018,8 +4503,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function text($name, $value = null, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->text($name, $value, $options);
+		return Illuminate\Html\FormBuilder::text($name, $value, $options);
 	 }
 
 	/**
@@ -4031,8 +4515,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function password($name, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->password($name, $options);
+		return Illuminate\Html\FormBuilder::password($name, $options);
 	 }
 
 	/**
@@ -4045,8 +4528,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function hidden($name, $value = null, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->hidden($name, $value, $options);
+		return Illuminate\Html\FormBuilder::hidden($name, $value, $options);
 	 }
 
 	/**
@@ -4059,8 +4541,20 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function email($name, $value = null, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->email($name, $value, $options);
+		return Illuminate\Html\FormBuilder::email($name, $value, $options);
+	 }
+
+	/**
+	 * Create a url input field.
+	 *
+	 * @param string  $name
+	 * @param string  $value
+	 * @param array   $options
+	 * @return string
+	 * @static 
+	 */
+	 public static function url($name, $value = null, $options = array()){
+		return Illuminate\Html\FormBuilder::url($name, $value, $options);
 	 }
 
 	/**
@@ -4072,8 +4566,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function file($name, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->file($name, $options);
+		return Illuminate\Html\FormBuilder::file($name, $options);
 	 }
 
 	/**
@@ -4086,8 +4579,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function textarea($name, $value = null, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->textarea($name, $value, $options);
+		return Illuminate\Html\FormBuilder::textarea($name, $value, $options);
 	 }
 
 	/**
@@ -4101,8 +4593,50 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function select($name, $list = array(), $selected = null, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->select($name, $list, $selected, $options);
+		return Illuminate\Html\FormBuilder::select($name, $list, $selected, $options);
+	 }
+
+	/**
+	 * Create a select range field.
+	 *
+	 * @param string  $name
+	 * @param string  $begin
+	 * @param string  $end
+	 * @param string  $selected
+	 * @param array   $options
+	 * @return string
+	 * @static 
+	 */
+	 public static function selectRange($name, $begin, $end, $selected = null, $options = array()){
+		return Illuminate\Html\FormBuilder::selectRange($name, $begin, $end, $selected, $options);
+	 }
+
+	/**
+	 * Create a select year field.
+	 *
+	 * @param string  $name
+	 * @param string  $begin
+	 * @param string  $end
+	 * @param string  $selected
+	 * @param array   $options
+	 * @return string
+	 * @static 
+	 */
+	 public static function selectYear(){
+		return Illuminate\Html\FormBuilder::selectYear();
+	 }
+
+	/**
+	 * Create a select month field.
+	 *
+	 * @param string  $name
+	 * @param string  $selected
+	 * @param array   $options
+	 * @return string
+	 * @static 
+	 */
+	 public static function selectMonth($name, $selected = null, $options = array()){
+		return Illuminate\Html\FormBuilder::selectMonth($name, $selected, $options);
 	 }
 
 	/**
@@ -4116,8 +4650,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function checkbox($name, $value = 1, $checked = null, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->checkbox($name, $value, $checked, $options);
+		return Illuminate\Html\FormBuilder::checkbox($name, $value, $checked, $options);
 	 }
 
 	/**
@@ -4131,8 +4664,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function radio($name, $value = null, $checked = null, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->radio($name, $value, $checked, $options);
+		return Illuminate\Html\FormBuilder::radio($name, $value, $checked, $options);
 	 }
 
 	/**
@@ -4144,8 +4676,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function reset($value, $attributes = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->reset($value, $attributes);
+		return Illuminate\Html\FormBuilder::reset($value, $attributes);
 	 }
 
 	/**
@@ -4158,8 +4689,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function image($url, $name = null, $attributes = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->image($url, $name, $attributes);
+		return Illuminate\Html\FormBuilder::image($url, $name, $attributes);
 	 }
 
 	/**
@@ -4171,8 +4701,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function submit($value = null, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->submit($value, $options);
+		return Illuminate\Html\FormBuilder::submit($value, $options);
 	 }
 
 	/**
@@ -4184,8 +4713,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function button($value = null, $options = array()){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->button($value, $options);
+		return Illuminate\Html\FormBuilder::button($value, $options);
 	 }
 
 	/**
@@ -4197,8 +4725,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function macro($name, $macro){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		$root->macro($name, $macro);
+		 Illuminate\Html\FormBuilder::macro($name, $macro);
 	 }
 
 	/**
@@ -4210,8 +4737,28 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function getValueAttribute($name, $value = null){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->getValueAttribute($name, $value);
+		return Illuminate\Html\FormBuilder::getValueAttribute($name, $value);
+	 }
+
+	/**
+	 * Get a value from the session's old input.
+	 *
+	 * @param string  $name
+	 * @return string
+	 * @static 
+	 */
+	 public static function old($name){
+		return Illuminate\Html\FormBuilder::old($name);
+	 }
+
+	/**
+	 * Determine if the old input is empty.
+	 *
+	 * @return bool
+	 * @static 
+	 */
+	 public static function oldInputIsEmpty(){
+		return Illuminate\Html\FormBuilder::oldInputIsEmpty();
 	 }
 
 	/**
@@ -4221,8 +4768,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function getSessionStore(){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->getSessionStore();
+		return Illuminate\Html\FormBuilder::getSessionStore();
 	 }
 
 	/**
@@ -4233,8 +4779,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function setSessionStore($session){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->setSessionStore($session);
+		return Illuminate\Html\FormBuilder::setSessionStore($session);
 	 }
 
 	/**
@@ -4246,8 +4791,7 @@ class Form extends Illuminate\Support\Facades\Form{
 	 * @static 
 	 */
 	 public static function __call($method, $parameters){
-		$root = new \Illuminate\Html\FormBuilder(null,null,null);
-		return $root->__call($method, $parameters);
+		return Illuminate\Html\FormBuilder::__call($method, $parameters);
 	 }
 
 }
@@ -4262,8 +4806,7 @@ class Hash extends Illuminate\Support\Facades\Hash{
 	 * @static 
 	 */
 	 public static function make($value, $options = array()){
-		$root = new \Illuminate\Hashing\BcryptHasher();
-		return $root->make($value, $options);
+		return Illuminate\Hashing\BcryptHasher::make($value, $options);
 	 }
 
 	/**
@@ -4276,8 +4819,7 @@ class Hash extends Illuminate\Support\Facades\Hash{
 	 * @static 
 	 */
 	 public static function check($value, $hashedValue, $options = array()){
-		$root = new \Illuminate\Hashing\BcryptHasher();
-		return $root->check($value, $hashedValue, $options);
+		return Illuminate\Hashing\BcryptHasher::check($value, $hashedValue, $options);
 	 }
 
 	/**
@@ -4289,8 +4831,7 @@ class Hash extends Illuminate\Support\Facades\Hash{
 	 * @static 
 	 */
 	 public static function needsRehash($hashedValue, $options = array()){
-		$root = new \Illuminate\Hashing\BcryptHasher();
-		return $root->needsRehash($hashedValue, $options);
+		return Illuminate\Hashing\BcryptHasher::needsRehash($hashedValue, $options);
 	 }
 
 }
@@ -4300,12 +4841,11 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * Create a new HTML builder instance.
 	 *
 	 * @param \Illuminate\Routing\UrlGenerator  $url
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($url = null){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		$root->__construct($url);
+		 Illuminate\Html\HtmlBuilder::__construct($url);
 	 }
 
 	/**
@@ -4317,8 +4857,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function macro($name, $macro){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		$root->macro($name, $macro);
+		 Illuminate\Html\HtmlBuilder::macro($name, $macro);
 	 }
 
 	/**
@@ -4329,8 +4868,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function entities($value){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->entities($value);
+		return Illuminate\Html\HtmlBuilder::entities($value);
 	 }
 
 	/**
@@ -4341,8 +4879,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function decode($value){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->decode($value);
+		return Illuminate\Html\HtmlBuilder::decode($value);
 	 }
 
 	/**
@@ -4354,8 +4891,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function script($url, $attributes = array()){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->script($url, $attributes);
+		return Illuminate\Html\HtmlBuilder::script($url, $attributes);
 	 }
 
 	/**
@@ -4367,8 +4903,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function style($url, $attributes = array()){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->style($url, $attributes);
+		return Illuminate\Html\HtmlBuilder::style($url, $attributes);
 	 }
 
 	/**
@@ -4381,8 +4916,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function image($url, $alt = null, $attributes = array()){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->image($url, $alt, $attributes);
+		return Illuminate\Html\HtmlBuilder::image($url, $alt, $attributes);
 	 }
 
 	/**
@@ -4396,8 +4930,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function link($url, $title = null, $attributes = array(), $secure = null){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->link($url, $title, $attributes, $secure);
+		return Illuminate\Html\HtmlBuilder::link($url, $title, $attributes, $secure);
 	 }
 
 	/**
@@ -4410,8 +4943,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function secureLink($url, $title = null, $attributes = array()){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->secureLink($url, $title, $attributes);
+		return Illuminate\Html\HtmlBuilder::secureLink($url, $title, $attributes);
 	 }
 
 	/**
@@ -4425,8 +4957,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function linkAsset($url, $title = null, $attributes = array(), $secure = null){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->linkAsset($url, $title, $attributes, $secure);
+		return Illuminate\Html\HtmlBuilder::linkAsset($url, $title, $attributes, $secure);
 	 }
 
 	/**
@@ -4439,8 +4970,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function linkSecureAsset($url, $title = null, $attributes = array()){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->linkSecureAsset($url, $title, $attributes);
+		return Illuminate\Html\HtmlBuilder::linkSecureAsset($url, $title, $attributes);
 	 }
 
 	/**
@@ -4454,8 +4984,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function linkRoute($name, $title = null, $parameters = array(), $attributes = array()){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->linkRoute($name, $title, $parameters, $attributes);
+		return Illuminate\Html\HtmlBuilder::linkRoute($name, $title, $parameters, $attributes);
 	 }
 
 	/**
@@ -4469,8 +4998,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function linkAction($action, $title = null, $parameters = array(), $attributes = array()){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->linkAction($action, $title, $parameters, $attributes);
+		return Illuminate\Html\HtmlBuilder::linkAction($action, $title, $parameters, $attributes);
 	 }
 
 	/**
@@ -4483,8 +5011,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function mailto($email, $title = null, $attributes = array()){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->mailto($email, $title, $attributes);
+		return Illuminate\Html\HtmlBuilder::mailto($email, $title, $attributes);
 	 }
 
 	/**
@@ -4495,8 +5022,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function email($email){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->email($email);
+		return Illuminate\Html\HtmlBuilder::email($email);
 	 }
 
 	/**
@@ -4508,8 +5034,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function ol($list, $attributes = array()){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->ol($list, $attributes);
+		return Illuminate\Html\HtmlBuilder::ol($list, $attributes);
 	 }
 
 	/**
@@ -4521,8 +5046,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function ul($list, $attributes = array()){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->ul($list, $attributes);
+		return Illuminate\Html\HtmlBuilder::ul($list, $attributes);
 	 }
 
 	/**
@@ -4533,8 +5057,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function attributes($attributes){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->attributes($attributes);
+		return Illuminate\Html\HtmlBuilder::attributes($attributes);
 	 }
 
 	/**
@@ -4545,8 +5068,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function obfuscate($value){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->obfuscate($value);
+		return Illuminate\Html\HtmlBuilder::obfuscate($value);
 	 }
 
 	/**
@@ -4558,8 +5080,7 @@ class HTML extends Illuminate\Support\Facades\HTML{
 	 * @static 
 	 */
 	 public static function __call($method, $parameters){
-		$root = new \Illuminate\Html\HtmlBuilder();
-		return $root->__call($method, $parameters);
+		return Illuminate\Html\HtmlBuilder::__call($method, $parameters);
 	 }
 
 }
@@ -4572,8 +5093,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function instance(){
-		$root = new \Illuminate\Http\Request();
-		return $root->instance();
+		return Illuminate\Http\Request::instance();
 	 }
 
 	/**
@@ -4583,8 +5103,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function root(){
-		$root = new \Illuminate\Http\Request();
-		return $root->root();
+		return Illuminate\Http\Request::root();
 	 }
 
 	/**
@@ -4594,8 +5113,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function url(){
-		$root = new \Illuminate\Http\Request();
-		return $root->url();
+		return Illuminate\Http\Request::url();
 	 }
 
 	/**
@@ -4605,8 +5123,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function fullUrl(){
-		$root = new \Illuminate\Http\Request();
-		return $root->fullUrl();
+		return Illuminate\Http\Request::fullUrl();
 	 }
 
 	/**
@@ -4616,8 +5133,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function path(){
-		$root = new \Illuminate\Http\Request();
-		return $root->path();
+		return Illuminate\Http\Request::path();
 	 }
 
 	/**
@@ -4629,8 +5145,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function segment($index, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->segment($index, $default);
+		return Illuminate\Http\Request::segment($index, $default);
 	 }
 
 	/**
@@ -4640,8 +5155,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function segments(){
-		$root = new \Illuminate\Http\Request();
-		return $root->segments();
+		return Illuminate\Http\Request::segments();
 	 }
 
 	/**
@@ -4652,8 +5166,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function is($pattern){
-		$root = new \Illuminate\Http\Request();
-		return $root->is($pattern);
+		return Illuminate\Http\Request::is($pattern);
 	 }
 
 	/**
@@ -4663,8 +5176,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function ajax(){
-		$root = new \Illuminate\Http\Request();
-		return $root->ajax();
+		return Illuminate\Http\Request::ajax();
 	 }
 
 	/**
@@ -4674,8 +5186,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function secure(){
-		$root = new \Illuminate\Http\Request();
-		return $root->secure();
+		return Illuminate\Http\Request::secure();
 	 }
 
 	/**
@@ -4686,8 +5197,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function has($key){
-		$root = new \Illuminate\Http\Request();
-		return $root->has($key);
+		return Illuminate\Http\Request::has($key);
 	 }
 
 	/**
@@ -4697,8 +5207,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function all(){
-		$root = new \Illuminate\Http\Request();
-		return $root->all();
+		return Illuminate\Http\Request::all();
 	 }
 
 	/**
@@ -4710,8 +5219,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function input($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->input($key, $default);
+		return Illuminate\Http\Request::input($key, $default);
 	 }
 
 	/**
@@ -4722,8 +5230,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function only($keys){
-		$root = new \Illuminate\Http\Request();
-		return $root->only($keys);
+		return Illuminate\Http\Request::only($keys);
 	 }
 
 	/**
@@ -4734,8 +5241,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function except($keys){
-		$root = new \Illuminate\Http\Request();
-		return $root->except($keys);
+		return Illuminate\Http\Request::except($keys);
 	 }
 
 	/**
@@ -4747,8 +5253,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function query($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->query($key, $default);
+		return Illuminate\Http\Request::query($key, $default);
 	 }
 
 	/**
@@ -4760,8 +5265,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function cookie($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->cookie($key, $default);
+		return Illuminate\Http\Request::cookie($key, $default);
 	 }
 
 	/**
@@ -4769,12 +5273,11 @@ class Input extends Illuminate\Support\Facades\Input{
 	 *
 	 * @param string  $key
 	 * @param mixed   $default
-	 * @return \Symfony\Component\HttpFoundation\File\UploadedFile
+	 * @return \Symfony\Component\HttpFoundation\File\UploadedFile|array
 	 * @static 
 	 */
 	 public static function file($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->file($key, $default);
+		return Illuminate\Http\Request::file($key, $default);
 	 }
 
 	/**
@@ -4785,8 +5288,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function hasFile($key){
-		$root = new \Illuminate\Http\Request();
-		return $root->hasFile($key);
+		return Illuminate\Http\Request::hasFile($key);
 	 }
 
 	/**
@@ -4798,8 +5300,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function header($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->header($key, $default);
+		return Illuminate\Http\Request::header($key, $default);
 	 }
 
 	/**
@@ -4811,8 +5312,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function server($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->server($key, $default);
+		return Illuminate\Http\Request::server($key, $default);
 	 }
 
 	/**
@@ -4824,8 +5324,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function old($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->old($key, $default);
+		return Illuminate\Http\Request::old($key, $default);
 	 }
 
 	/**
@@ -4837,8 +5336,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function flash($filter = null, $keys = array()){
-		$root = new \Illuminate\Http\Request();
-		$root->flash($filter, $keys);
+		 Illuminate\Http\Request::flash($filter, $keys);
 	 }
 
 	/**
@@ -4849,8 +5347,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function flashOnly($keys){
-		$root = new \Illuminate\Http\Request();
-		$root->flashOnly($keys);
+		 Illuminate\Http\Request::flashOnly($keys);
 	 }
 
 	/**
@@ -4861,8 +5358,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function flashExcept($keys){
-		$root = new \Illuminate\Http\Request();
-		$root->flashExcept($keys);
+		 Illuminate\Http\Request::flashExcept($keys);
 	 }
 
 	/**
@@ -4872,8 +5368,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function flush(){
-		$root = new \Illuminate\Http\Request();
-		$root->flush();
+		 Illuminate\Http\Request::flush();
 	 }
 
 	/**
@@ -4884,8 +5379,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function merge($input){
-		$root = new \Illuminate\Http\Request();
-		$root->merge($input);
+		 Illuminate\Http\Request::merge($input);
 	 }
 
 	/**
@@ -4896,8 +5390,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function replace($input){
-		$root = new \Illuminate\Http\Request();
-		$root->replace($input);
+		 Illuminate\Http\Request::replace($input);
 	 }
 
 	/**
@@ -4909,8 +5402,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function json($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->json($key, $default);
+		return Illuminate\Http\Request::json($key, $default);
 	 }
 
 	/**
@@ -4920,8 +5412,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function isJson(){
-		$root = new \Illuminate\Http\Request();
-		return $root->isJson();
+		return Illuminate\Http\Request::isJson();
 	 }
 
 	/**
@@ -4931,8 +5422,17 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function wantsJson(){
-		$root = new \Illuminate\Http\Request();
-		return $root->wantsJson();
+		return Illuminate\Http\Request::wantsJson();
+	 }
+
+	/**
+	 * Get the data format expected in the response.
+	 *
+	 * @return string
+	 * @static 
+	 */
+	 public static function format($default = 'html'){
+		return Illuminate\Http\Request::format($default);
 	 }
 
 	/**
@@ -4942,8 +5442,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getSessionStore(){
-		$root = new \Illuminate\Http\Request();
-		return $root->getSessionStore();
+		return Illuminate\Http\Request::getSessionStore();
 	 }
 
 	/**
@@ -4954,8 +5453,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function setSessionStore($session){
-		$root = new \Illuminate\Http\Request();
-		$root->setSessionStore($session);
+		 Illuminate\Http\Request::setSessionStore($session);
 	 }
 
 	/**
@@ -4965,8 +5463,7 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function hasSessionStore(){
-		$root = new \Illuminate\Http\Request();
-		return $root->hasSessionStore();
+		return Illuminate\Http\Request::hasSessionStore();
 	 }
 
 	/**
@@ -4983,8 +5480,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function __construct($query = array(), $request = array(), $attributes = array(), $cookies = array(), $files = array(), $server = array(), $content = null){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->__construct($query, $request, $attributes, $cookies, $files, $server, $content);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::__construct($query, $request, $attributes, $cookies, $files, $server, $content);
 	 }
 
 	/**
@@ -5003,8 +5500,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function initialize($query = array(), $request = array(), $attributes = array(), $cookies = array(), $files = array(), $server = array(), $content = null){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->initialize($query, $request, $attributes, $cookies, $files, $server, $content);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::initialize($query, $request, $attributes, $cookies, $files, $server, $content);
 	 }
 
 	/**
@@ -5015,8 +5512,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function createFromGlobals(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->createFromGlobals();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::createFromGlobals();
 	 }
 
 	/**
@@ -5037,8 +5534,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function create($uri, $method = 'GET', $parameters = array(), $cookies = array(), $files = array(), $server = array(), $content = null){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->create($uri, $method, $parameters, $cookies, $files, $server, $content);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::create($uri, $method, $parameters, $cookies, $files, $server, $content);
 	 }
 
 	/**
@@ -5055,8 +5552,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function duplicate($query = null, $request = null, $attributes = null, $cookies = null, $files = null, $server = null){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->duplicate($query, $request, $attributes, $cookies, $files, $server);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::duplicate($query, $request, $attributes, $cookies, $files, $server);
 	 }
 
 	/**
@@ -5066,8 +5563,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function __toString(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->__toString();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::__toString();
 	 }
 
 	/**
@@ -5080,8 +5577,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function overrideGlobals(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->overrideGlobals();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::overrideGlobals();
 	 }
 
 	/**
@@ -5094,8 +5591,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function setTrustedProxies($proxies){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setTrustedProxies($proxies);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setTrustedProxies($proxies);
 	 }
 
 	/**
@@ -5105,8 +5602,32 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getTrustedProxies(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getTrustedProxies();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getTrustedProxies();
+	 }
+
+	/**
+	 * Sets a list of trusted host patterns.
+	 * 
+	 * You should only list the hosts you manage using regexs.
+	 *
+	 * @param array $hostPatterns A list of trusted host patterns
+	 * @static 
+	 */
+	 public static function setTrustedHosts($hostPatterns){
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setTrustedHosts($hostPatterns);
+	 }
+
+	/**
+	 * Gets the list of trusted host patterns.
+	 *
+	 * @return array An array of trusted host patterns.
+	 * @static 
+	 */
+	 public static function getTrustedHosts(){
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getTrustedHosts();
 	 }
 
 	/**
@@ -5127,8 +5648,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function setTrustedHeaderName($key, $value){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setTrustedHeaderName($key, $value);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setTrustedHeaderName($key, $value);
 	 }
 
 	/**
@@ -5140,8 +5661,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getTrustedHeaderName($key){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getTrustedHeaderName($key);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getTrustedHeaderName($key);
 	 }
 
 	/**
@@ -5155,8 +5676,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function normalizeQueryString($qs){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->normalizeQueryString($qs);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::normalizeQueryString($qs);
 	 }
 
 	/**
@@ -5170,8 +5691,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function enableHttpMethodParameterOverride(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->enableHttpMethodParameterOverride();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::enableHttpMethodParameterOverride();
 	 }
 
 	/**
@@ -5181,8 +5702,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getHttpMethodParameterOverride(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getHttpMethodParameterOverride();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getHttpMethodParameterOverride();
 	 }
 
 	/**
@@ -5207,8 +5728,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function get($key, $default = null, $deep = false){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->get($key, $default, $deep);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::get($key, $default, $deep);
 	 }
 
 	/**
@@ -5219,8 +5740,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getSession(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getSession();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getSession();
 	 }
 
 	/**
@@ -5232,8 +5753,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function hasPreviousSession(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->hasPreviousSession();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::hasPreviousSession();
 	 }
 
 	/**
@@ -5248,8 +5769,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function hasSession(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->hasSession();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::hasSession();
 	 }
 
 	/**
@@ -5260,16 +5781,16 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function setSession($session){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setSession($session);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setSession($session);
 	 }
 
 	/**
 	 * Returns the client IP addresses.
 	 * 
-	 * The most trusted IP address is first, and the less trusted one last.
-	 * The "real" client IP address is the last one, but this is also the
-	 * less trusted one.
+	 * The least trusted IP address is first, and the most trusted one last.
+	 * The "real" client IP address is the first one, but this is also the
+	 * least trusted one.
 	 * 
 	 * Use this method carefully; you should use getClientIp() instead.
 	 *
@@ -5278,8 +5799,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getClientIps(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getClientIps();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getClientIps();
 	 }
 
 	/**
@@ -5302,8 +5823,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getClientIp(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getClientIp();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getClientIp();
 	 }
 
 	/**
@@ -5314,8 +5835,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getScriptName(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getScriptName();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getScriptName();
 	 }
 
 	/**
@@ -5335,8 +5856,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getPathInfo(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getPathInfo();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getPathInfo();
 	 }
 
 	/**
@@ -5354,8 +5875,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getBasePath(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getBasePath();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getBasePath();
 	 }
 
 	/**
@@ -5371,8 +5892,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getBaseUrl(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getBaseUrl();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getBaseUrl();
 	 }
 
 	/**
@@ -5383,8 +5904,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getScheme(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getScheme();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getScheme();
 	 }
 
 	/**
@@ -5403,8 +5924,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getPort(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getPort();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getPort();
 	 }
 
 	/**
@@ -5414,8 +5935,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getUser(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getUser();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getUser();
 	 }
 
 	/**
@@ -5425,8 +5946,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getPassword(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getPassword();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getPassword();
 	 }
 
 	/**
@@ -5436,8 +5957,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getUserInfo(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getUserInfo();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getUserInfo();
 	 }
 
 	/**
@@ -5450,8 +5971,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getHttpHost(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getHttpHost();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getHttpHost();
 	 }
 
 	/**
@@ -5462,8 +5983,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getRequestUri(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getRequestUri();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getRequestUri();
 	 }
 
 	/**
@@ -5476,8 +5997,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getSchemeAndHttpHost(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getSchemeAndHttpHost();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getSchemeAndHttpHost();
 	 }
 
 	/**
@@ -5489,8 +6010,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getUri(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getUri();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getUri();
 	 }
 
 	/**
@@ -5502,8 +6023,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getUriForPath($path){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getUriForPath($path);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getUriForPath($path);
 	 }
 
 	/**
@@ -5517,8 +6038,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getQueryString(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getQueryString();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getQueryString();
 	 }
 
 	/**
@@ -5538,8 +6059,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function isSecure(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->isSecure();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::isSecure();
 	 }
 
 	/**
@@ -5559,8 +6080,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getHost(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getHost();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getHost();
 	 }
 
 	/**
@@ -5571,8 +6092,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function setMethod($method){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setMethod($method);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setMethod($method);
 	 }
 
 	/**
@@ -5592,8 +6113,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getMethod(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getMethod();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getMethod();
 	 }
 
 	/**
@@ -5604,8 +6125,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getRealMethod(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getRealMethod();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getRealMethod();
 	 }
 
 	/**
@@ -5617,8 +6138,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getMimeType($format){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getMimeType($format);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getMimeType($format);
 	 }
 
 	/**
@@ -5630,8 +6151,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getFormat($mimeType){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getFormat($mimeType);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getFormat($mimeType);
 	 }
 
 	/**
@@ -5643,8 +6164,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function setFormat($format, $mimeTypes){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setFormat($format, $mimeTypes);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setFormat($format, $mimeTypes);
 	 }
 
 	/**
@@ -5662,8 +6183,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getRequestFormat($default = 'html'){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getRequestFormat($default);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getRequestFormat($default);
 	 }
 
 	/**
@@ -5674,8 +6195,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function setRequestFormat($format){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setRequestFormat($format);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setRequestFormat($format);
 	 }
 
 	/**
@@ -5686,8 +6207,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getContentType(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getContentType();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getContentType();
 	 }
 
 	/**
@@ -5698,8 +6219,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function setDefaultLocale($locale){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setDefaultLocale($locale);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setDefaultLocale($locale);
 	 }
 
 	/**
@@ -5710,8 +6231,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function setLocale($locale){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setLocale($locale);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setLocale($locale);
 	 }
 
 	/**
@@ -5721,8 +6242,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getLocale(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getLocale();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getLocale();
 	 }
 
 	/**
@@ -5733,8 +6254,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function isMethod($method){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->isMethod($method);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::isMethod($method);
 	 }
 
 	/**
@@ -5745,8 +6266,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function isMethodSafe(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->isMethodSafe();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::isMethodSafe();
 	 }
 
 	/**
@@ -5758,8 +6279,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getContent($asResource = false){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getContent($asResource);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getContent($asResource);
 	 }
 
 	/**
@@ -5769,8 +6290,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getETags(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getETags();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getETags();
 	 }
 
 	/**
@@ -5780,8 +6301,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function isNoCache(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->isNoCache();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::isNoCache();
 	 }
 
 	/**
@@ -5793,8 +6314,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getPreferredLanguage($locales = null){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getPreferredLanguage($locales);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getPreferredLanguage($locales);
 	 }
 
 	/**
@@ -5805,8 +6326,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getLanguages(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getLanguages();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getLanguages();
 	 }
 
 	/**
@@ -5817,8 +6338,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getCharsets(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getCharsets();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getCharsets();
 	 }
 
 	/**
@@ -5829,8 +6350,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function getAcceptableContentTypes(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getAcceptableContentTypes();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getAcceptableContentTypes();
 	 }
 
 	/**
@@ -5845,8 +6366,8 @@ class Input extends Illuminate\Support\Facades\Input{
 	 * @static 
 	 */
 	 public static function isXmlHttpRequest(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->isXmlHttpRequest();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::isXmlHttpRequest();
 	 }
 
 }
@@ -5857,12 +6378,11 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 *
 	 * @param \Illuminate\Translation\LoaderInterface  $loader
 	 * @param string  $locale
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($loader, $locale){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		$root->__construct($loader, $locale);
+		 Illuminate\Translation\Translator::__construct($loader, $locale);
 	 }
 
 	/**
@@ -5874,8 +6394,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function has($key, $locale = null){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		return $root->has($key, $locale);
+		return Illuminate\Translation\Translator::has($key, $locale);
 	 }
 
 	/**
@@ -5888,8 +6407,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function get($key, $replace = array(), $locale = null){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		return $root->get($key, $replace, $locale);
+		return Illuminate\Translation\Translator::get($key, $replace, $locale);
 	 }
 
 	/**
@@ -5903,8 +6421,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function choice($key, $number, $replace = array(), $locale = null){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		return $root->choice($key, $number, $replace, $locale);
+		return Illuminate\Translation\Translator::choice($key, $number, $replace, $locale);
 	 }
 
 	/**
@@ -5918,8 +6435,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function trans($id, $parameters = array(), $domain = 'messages', $locale = null){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		return $root->trans($id, $parameters, $domain, $locale);
+		return Illuminate\Translation\Translator::trans($id, $parameters, $domain, $locale);
 	 }
 
 	/**
@@ -5934,8 +6450,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function transChoice($id, $number, $parameters = array(), $domain = 'messages', $locale = null){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		return $root->transChoice($id, $number, $parameters, $domain, $locale);
+		return Illuminate\Translation\Translator::transChoice($id, $number, $parameters, $domain, $locale);
 	 }
 
 	/**
@@ -5948,8 +6463,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function load($namespace, $group, $locale){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		$root->load($namespace, $group, $locale);
+		 Illuminate\Translation\Translator::load($namespace, $group, $locale);
 	 }
 
 	/**
@@ -5961,8 +6475,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function addNamespace($namespace, $hint){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		$root->addNamespace($namespace, $hint);
+		 Illuminate\Translation\Translator::addNamespace($namespace, $hint);
 	 }
 
 	/**
@@ -5973,8 +6486,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function parseKey($key){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		return $root->parseKey($key);
+		return Illuminate\Translation\Translator::parseKey($key);
 	 }
 
 	/**
@@ -5984,8 +6496,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function getSelector(){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		return $root->getSelector();
+		return Illuminate\Translation\Translator::getSelector();
 	 }
 
 	/**
@@ -5996,8 +6507,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function setSelector($selector){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		$root->setSelector($selector);
+		 Illuminate\Translation\Translator::setSelector($selector);
 	 }
 
 	/**
@@ -6007,8 +6517,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function getLoader(){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		return $root->getLoader();
+		return Illuminate\Translation\Translator::getLoader();
 	 }
 
 	/**
@@ -6018,8 +6527,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function locale(){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		return $root->locale();
+		return Illuminate\Translation\Translator::locale();
 	 }
 
 	/**
@@ -6029,8 +6537,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function getLocale(){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		return $root->getLocale();
+		return Illuminate\Translation\Translator::getLocale();
 	 }
 
 	/**
@@ -6041,8 +6548,7 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function setLocale($locale){
-		$root = new \Illuminate\Translation\Translator(null,null);
-		$root->setLocale($locale);
+		 Illuminate\Translation\Translator::setLocale($locale);
 	 }
 
 	/**
@@ -6054,8 +6560,8 @@ class Lang extends Illuminate\Support\Facades\Lang{
 	 * @static 
 	 */
 	 public static function setParsedKey($key, $parsed){
-		$root = new \Illuminate\Support\NamespacedItemResolver();
-		$root->setParsedKey($key, $parsed);
+		//Method inherited from Illuminate\Support\NamespacedItemResolver
+		 Illuminate\Translation\Translator::setParsedKey($key, $parsed);
 	 }
 
 }
@@ -6066,12 +6572,11 @@ class Log extends Illuminate\Support\Facades\Log{
 	 *
 	 * @param \Monolog\Logger  $monolog
 	 * @param \Illuminate\Events\Dispatcher  $dispatcher
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($monolog, $dispatcher = null){
-		$root = new \Illuminate\Log\Writer(null);
-		$root->__construct($monolog, $dispatcher);
+		 Illuminate\Log\Writer::__construct($monolog, $dispatcher);
 	 }
 
 	/**
@@ -6083,8 +6588,7 @@ class Log extends Illuminate\Support\Facades\Log{
 	 * @static 
 	 */
 	 public static function useFiles($path, $level = 'debug'){
-		$root = new \Illuminate\Log\Writer(null);
-		$root->useFiles($path, $level);
+		 Illuminate\Log\Writer::useFiles($path, $level);
 	 }
 
 	/**
@@ -6097,8 +6601,7 @@ class Log extends Illuminate\Support\Facades\Log{
 	 * @static 
 	 */
 	 public static function useDailyFiles($path, $days = 0, $level = 'debug'){
-		$root = new \Illuminate\Log\Writer(null);
-		$root->useDailyFiles($path, $days, $level);
+		 Illuminate\Log\Writer::useDailyFiles($path, $days, $level);
 	 }
 
 	/**
@@ -6108,8 +6611,7 @@ class Log extends Illuminate\Support\Facades\Log{
 	 * @static 
 	 */
 	 public static function getMonolog(){
-		$root = new \Illuminate\Log\Writer(null);
-		return $root->getMonolog();
+		return Illuminate\Log\Writer::getMonolog();
 	 }
 
 	/**
@@ -6121,8 +6623,7 @@ class Log extends Illuminate\Support\Facades\Log{
 	 * @static 
 	 */
 	 public static function listen($callback){
-		$root = new \Illuminate\Log\Writer(null);
-		$root->listen($callback);
+		 Illuminate\Log\Writer::listen($callback);
 	 }
 
 	/**
@@ -6132,8 +6633,7 @@ class Log extends Illuminate\Support\Facades\Log{
 	 * @static 
 	 */
 	 public static function getEventDispatcher(){
-		$root = new \Illuminate\Log\Writer(null);
-		return $root->getEventDispatcher();
+		return Illuminate\Log\Writer::getEventDispatcher();
 	 }
 
 	/**
@@ -6144,8 +6644,7 @@ class Log extends Illuminate\Support\Facades\Log{
 	 * @static 
 	 */
 	 public static function setEventDispatcher($dispatcher){
-		$root = new \Illuminate\Log\Writer(null);
-		$root->setEventDispatcher($dispatcher);
+		 Illuminate\Log\Writer::setEventDispatcher($dispatcher);
 	 }
 
 	/**
@@ -6157,8 +6656,103 @@ class Log extends Illuminate\Support\Facades\Log{
 	 * @static 
 	 */
 	 public static function __call($method, $parameters){
-		$root = new \Illuminate\Log\Writer(null);
-		return $root->__call($method, $parameters);
+		return Illuminate\Log\Writer::__call($method, $parameters);
+	 }
+
+	/**
+	 * Adds a log record at the DEBUG level.
+	 *
+	 * @param string  $message The log message
+	 * @param array   $context The log context
+	 * @return Boolean Whether the record has been processed
+	 * @static 
+	 */
+	 public static function debug($message, $context = array()){
+		return Monolog\Logger::addDebug($message, $context);
+	 }
+
+	/**
+	 * Adds a log record at the INFO level.
+	 *
+	 * @param string  $message The log message
+	 * @param array   $context The log context
+	 * @return Boolean Whether the record has been processed
+	 * @static 
+	 */
+	 public static function info($message, $context = array()){
+		return Monolog\Logger::addInfo($message, $context);
+	 }
+
+	/**
+	 * Adds a log record at the NOTICE level.
+	 *
+	 * @param string  $message The log message
+	 * @param array   $context The log context
+	 * @return Boolean Whether the record has been processed
+	 * @static 
+	 */
+	 public static function notice($message, $context = array()){
+		return Monolog\Logger::addNotice($message, $context);
+	 }
+
+	/**
+	 * Adds a log record at the WARNING level.
+	 *
+	 * @param string  $message The log message
+	 * @param array   $context The log context
+	 * @return Boolean Whether the record has been processed
+	 * @static 
+	 */
+	 public static function warning($message, $context = array()){
+		return Monolog\Logger::addWarning($message, $context);
+	 }
+
+	/**
+	 * Adds a log record at the ERROR level.
+	 *
+	 * @param string  $message The log message
+	 * @param array   $context The log context
+	 * @return Boolean Whether the record has been processed
+	 * @static 
+	 */
+	 public static function error($message, $context = array()){
+		return Monolog\Logger::addError($message, $context);
+	 }
+
+	/**
+	 * Adds a log record at the CRITICAL level.
+	 *
+	 * @param string  $message The log message
+	 * @param array   $context The log context
+	 * @return Boolean Whether the record has been processed
+	 * @static 
+	 */
+	 public static function critical($message, $context = array()){
+		return Monolog\Logger::addCritical($message, $context);
+	 }
+
+	/**
+	 * Adds a log record at the ALERT level.
+	 *
+	 * @param string  $message The log message
+	 * @param array   $context The log context
+	 * @return Boolean Whether the record has been processed
+	 * @static 
+	 */
+	 public static function alert($message, $context = array()){
+		return Monolog\Logger::addAlert($message, $context);
+	 }
+
+	/**
+	 * Adds a log record at the EMERGENCY level.
+	 *
+	 * @param string  $message The log message
+	 * @param array   $context The log context
+	 * @return Boolean Whether the record has been processed
+	 * @static 
+	 */
+	 public static function emergency($message, $context = array()){
+		return Monolog\Logger::addEmergency($message, $context);
 	 }
 
 }
@@ -6169,12 +6763,11 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 *
 	 * @param \Illuminate\View\Environment  $views
 	 * @param Swift_Mailer  $swift
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($views, $swift){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		$root->__construct($views, $swift);
+		 Illuminate\Mail\Mailer::__construct($views, $swift);
 	 }
 
 	/**
@@ -6186,8 +6779,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function alwaysFrom($address, $name = null){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		$root->alwaysFrom($address, $name);
+		 Illuminate\Mail\Mailer::alwaysFrom($address, $name);
 	 }
 
 	/**
@@ -6200,8 +6792,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function plain($view, $data, $callback){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		$root->plain($view, $data, $callback);
+		 Illuminate\Mail\Mailer::plain($view, $data, $callback);
 	 }
 
 	/**
@@ -6214,8 +6805,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function send($view, $data, $callback){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		$root->send($view, $data, $callback);
+		 Illuminate\Mail\Mailer::send($view, $data, $callback);
 	 }
 
 	/**
@@ -6229,8 +6819,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function queue($view, $data, $callback, $queue = null){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		$root->queue($view, $data, $callback, $queue);
+		 Illuminate\Mail\Mailer::queue($view, $data, $callback, $queue);
 	 }
 
 	/**
@@ -6244,8 +6833,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function queueOn($queue, $view, $data, $callback){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		$root->queueOn($queue, $view, $data, $callback);
+		 Illuminate\Mail\Mailer::queueOn($queue, $view, $data, $callback);
 	 }
 
 	/**
@@ -6260,8 +6848,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function later($delay, $view, $data, $callback, $queue = null){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		$root->later($delay, $view, $data, $callback, $queue);
+		 Illuminate\Mail\Mailer::later($delay, $view, $data, $callback, $queue);
 	 }
 
 	/**
@@ -6276,8 +6863,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function laterOn($queue, $delay, $view, $data, $callback){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		$root->laterOn($queue, $delay, $view, $data, $callback);
+		 Illuminate\Mail\Mailer::laterOn($queue, $delay, $view, $data, $callback);
 	 }
 
 	/**
@@ -6289,8 +6875,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function handleQueuedMessage($job, $data){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		$root->handleQueuedMessage($job, $data);
+		 Illuminate\Mail\Mailer::handleQueuedMessage($job, $data);
 	 }
 
 	/**
@@ -6301,8 +6886,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function pretend($value = true){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		$root->pretend($value);
+		 Illuminate\Mail\Mailer::pretend($value);
 	 }
 
 	/**
@@ -6312,8 +6896,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function getViewEnvironment(){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		return $root->getViewEnvironment();
+		return Illuminate\Mail\Mailer::getViewEnvironment();
 	 }
 
 	/**
@@ -6323,8 +6906,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function getSwiftMailer(){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		return $root->getSwiftMailer();
+		return Illuminate\Mail\Mailer::getSwiftMailer();
 	 }
 
 	/**
@@ -6335,8 +6917,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function setSwiftMailer($swift){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		$root->setSwiftMailer($swift);
+		 Illuminate\Mail\Mailer::setSwiftMailer($swift);
 	 }
 
 	/**
@@ -6347,8 +6928,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function setLogger($logger){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		return $root->setLogger($logger);
+		return Illuminate\Mail\Mailer::setLogger($logger);
 	 }
 
 	/**
@@ -6359,8 +6939,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function setQueue($queue){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		return $root->setQueue($queue);
+		return Illuminate\Mail\Mailer::setQueue($queue);
 	 }
 
 	/**
@@ -6371,8 +6950,7 @@ class Mail extends Illuminate\Support\Facades\Mail{
 	 * @static 
 	 */
 	 public static function setContainer($container){
-		$root = new \Illuminate\Mail\Mailer(null,null);
-		$root->setContainer($container);
+		 Illuminate\Mail\Mailer::setContainer($container);
 	 }
 
 }
@@ -6385,12 +6963,11 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @param \Illuminate\View\Environment  $view
 	 * @param \Symfony\Component\Translation\TranslatorInterface  $trans
 	 * @param string  $pageName
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($request, $view, $trans, $pageName = 'page'){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		$root->__construct($request, $view, $trans, $pageName);
+		 Illuminate\Pagination\Environment::__construct($request, $view, $trans, $pageName);
 	 }
 
 	/**
@@ -6403,8 +6980,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function make($items, $total, $perPage){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		return $root->make($items, $total, $perPage);
+		return Illuminate\Pagination\Environment::make($items, $total, $perPage);
 	 }
 
 	/**
@@ -6415,8 +6991,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function getPaginationView($paginator){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		return $root->getPaginationView($paginator);
+		return Illuminate\Pagination\Environment::getPaginationView($paginator);
 	 }
 
 	/**
@@ -6426,8 +7001,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function getCurrentPage(){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		return $root->getCurrentPage();
+		return Illuminate\Pagination\Environment::getCurrentPage();
 	 }
 
 	/**
@@ -6438,8 +7012,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function setCurrentPage($number){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		$root->setCurrentPage($number);
+		 Illuminate\Pagination\Environment::setCurrentPage($number);
 	 }
 
 	/**
@@ -6449,8 +7022,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function getCurrentUrl(){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		return $root->getCurrentUrl();
+		return Illuminate\Pagination\Environment::getCurrentUrl();
 	 }
 
 	/**
@@ -6461,8 +7033,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function setBaseUrl($baseUrl){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		$root->setBaseUrl($baseUrl);
+		 Illuminate\Pagination\Environment::setBaseUrl($baseUrl);
 	 }
 
 	/**
@@ -6473,8 +7044,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function setPageName($pageName){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		$root->setPageName($pageName);
+		 Illuminate\Pagination\Environment::setPageName($pageName);
 	 }
 
 	/**
@@ -6484,8 +7054,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function getPageName(){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		return $root->getPageName();
+		return Illuminate\Pagination\Environment::getPageName();
 	 }
 
 	/**
@@ -6495,8 +7064,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function getViewName(){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		return $root->getViewName();
+		return Illuminate\Pagination\Environment::getViewName();
 	 }
 
 	/**
@@ -6507,8 +7075,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function setViewName($viewName){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		$root->setViewName($viewName);
+		 Illuminate\Pagination\Environment::setViewName($viewName);
 	 }
 
 	/**
@@ -6518,8 +7085,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function getLocale(){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		return $root->getLocale();
+		return Illuminate\Pagination\Environment::getLocale();
 	 }
 
 	/**
@@ -6530,8 +7096,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function setLocale($locale){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		$root->setLocale($locale);
+		 Illuminate\Pagination\Environment::setLocale($locale);
 	 }
 
 	/**
@@ -6541,8 +7106,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function getRequest(){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		return $root->getRequest();
+		return Illuminate\Pagination\Environment::getRequest();
 	 }
 
 	/**
@@ -6553,8 +7117,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function setRequest($request){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		$root->setRequest($request);
+		 Illuminate\Pagination\Environment::setRequest($request);
 	 }
 
 	/**
@@ -6564,8 +7127,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function getViewDriver(){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		return $root->getViewDriver();
+		return Illuminate\Pagination\Environment::getViewDriver();
 	 }
 
 	/**
@@ -6576,8 +7138,7 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function setViewDriver($view){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		$root->setViewDriver($view);
+		 Illuminate\Pagination\Environment::setViewDriver($view);
 	 }
 
 	/**
@@ -6587,8 +7148,73 @@ class Paginator extends Illuminate\Support\Facades\Paginator{
 	 * @static 
 	 */
 	 public static function getTranslator(){
-		$root = new \Illuminate\Pagination\Environment(null,null,null);
-		return $root->getTranslator();
+		return Illuminate\Pagination\Environment::getTranslator();
+	 }
+
+}
+
+class Password extends Illuminate\Support\Facades\Password{
+	/**
+	 * Create a new password broker instance.
+	 *
+	 * @param \Illuminate\Auth\Reminders\ReminderRepositoryInterface  $reminders
+	 * @param \Illuminate\Auth\UserProviderInterface  $users
+	 * @param \Illuminate\Routing\Redirector  $redirect
+	 * @param \Illuminate\Mail\Mailer  $mailer
+	 * @param string  $reminderView
+	 * @return void
+	 * @static 
+	 */
+	 public static function __construct($reminders, $users, $redirect, $mailer, $reminderView){
+		 Illuminate\Auth\Reminders\PasswordBroker::__construct($reminders, $users, $redirect, $mailer, $reminderView);
+	 }
+
+	/**
+	 * Send a password reminder to a user.
+	 *
+	 * @param array    $credentials
+	 * @param Closure  $callback
+	 * @return \Illuminate\Http\RedirectResponse
+	 * @static 
+	 */
+	 public static function remind($credentials, $callback = null){
+		return Illuminate\Auth\Reminders\PasswordBroker::remind($credentials, $callback);
+	 }
+
+	/**
+	 * Send the password reminder e-mail.
+	 *
+	 * @param \Illuminate\Auth\Reminders\RemindableInterface  $user
+	 * @param string   $token
+	 * @param Closure  $callback
+	 * @return void
+	 * @static 
+	 */
+	 public static function sendReminder($user, $token, $callback = null){
+		 Illuminate\Auth\Reminders\PasswordBroker::sendReminder($user, $token, $callback);
+	 }
+
+	/**
+	 * Reset the password for the given token.
+	 *
+	 * @param array    $credentials
+	 * @param Closure  $callback
+	 * @return mixed
+	 * @static 
+	 */
+	 public static function reset($credentials, $callback){
+		return Illuminate\Auth\Reminders\PasswordBroker::reset($credentials, $callback);
+	 }
+
+	/**
+	 * Get the user for the given credentials.
+	 *
+	 * @param array  $credentials
+	 * @return \Illuminate\Auth\Reminders\RemindableInterface
+	 * @static 
+	 */
+	 public static function getUser($credentials){
+		return Illuminate\Auth\Reminders\PasswordBroker::getUser($credentials);
 	 }
 
 }
@@ -6598,12 +7224,11 @@ class Queue extends Illuminate\Support\Facades\Queue{
 	 * Create a new queue manager instance.
 	 *
 	 * @param \Illuminate\Foundation\Application  $app
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($app){
-		$root = new \Illuminate\Queue\QueueManager(null);
-		$root->__construct($app);
+		 Illuminate\Queue\QueueManager::__construct($app);
 	 }
 
 	/**
@@ -6614,8 +7239,7 @@ class Queue extends Illuminate\Support\Facades\Queue{
 	 * @static 
 	 */
 	 public static function connection($name = null){
-		$root = new \Illuminate\Queue\QueueManager(null);
-		return $root->connection($name);
+		return Illuminate\Queue\QueueManager::connection($name);
 	 }
 
 	/**
@@ -6627,8 +7251,7 @@ class Queue extends Illuminate\Support\Facades\Queue{
 	 * @static 
 	 */
 	 public static function addConnector($driver, $resolver){
-		$root = new \Illuminate\Queue\QueueManager(null);
-		$root->addConnector($driver, $resolver);
+		 Illuminate\Queue\QueueManager::addConnector($driver, $resolver);
 	 }
 
 	/**
@@ -6640,8 +7263,7 @@ class Queue extends Illuminate\Support\Facades\Queue{
 	 * @static 
 	 */
 	 public static function __call($method, $parameters){
-		$root = new \Illuminate\Queue\QueueManager(null);
-		return $root->__call($method, $parameters);
+		return Illuminate\Queue\QueueManager::__call($method, $parameters);
 	 }
 
 	/**
@@ -6650,27 +7272,25 @@ class Queue extends Illuminate\Support\Facades\Queue{
 	 * @param string  $job
 	 * @param mixed   $data
 	 * @param string  $queue
-	 * @return void
+	 * @return mixed
 	 * @static 
 	 */
 	 public static function push($job, $data = '', $queue = null){
-		$root = new \Illuminate\Queue\SyncQueue();
-		$root->push($job, $data, $queue);
+		return Illuminate\Queue\SyncQueue::push($job, $data, $queue);
 	 }
 
 	/**
 	 * Push a new job onto the queue after a delay.
 	 *
-	 * @param int     $delay
+	 * @param \DateTime|int  $delay
 	 * @param string  $job
-	 * @param mixed   $data
+	 * @param mixed  $data
 	 * @param string  $queue
-	 * @return void
+	 * @return mixed
 	 * @static 
 	 */
 	 public static function later($delay, $job, $data = '', $queue = null){
-		$root = new \Illuminate\Queue\SyncQueue();
-		$root->later($delay, $job, $data, $queue);
+		return Illuminate\Queue\SyncQueue::later($delay, $job, $data, $queue);
 	 }
 
 	/**
@@ -6681,8 +7301,7 @@ class Queue extends Illuminate\Support\Facades\Queue{
 	 * @static 
 	 */
 	 public static function pop($queue = null){
-		$root = new \Illuminate\Queue\SyncQueue();
-		return $root->pop($queue);
+		return Illuminate\Queue\SyncQueue::pop($queue);
 	 }
 
 	/**
@@ -6692,8 +7311,33 @@ class Queue extends Illuminate\Support\Facades\Queue{
 	 * @static 
 	 */
 	 public static function marshal(){
-		$root = new \Illuminate\Queue\SyncQueue();
-		return $root->marshal();
+		//Method inherited from Illuminate\Queue\Queue
+		return Illuminate\Queue\SyncQueue::marshal();
+	 }
+
+	/**
+	 * Push a new an array of jobs onto the queue.
+	 *
+	 * @param array  $jobs
+	 * @param mixed  $data
+	 * @param string  $queue
+	 * @return mixed
+	 * @static 
+	 */
+	 public static function bulk($jobs, $data = '', $queue = null){
+		//Method inherited from Illuminate\Queue\Queue
+		return Illuminate\Queue\SyncQueue::bulk($jobs, $data, $queue);
+	 }
+
+	/**
+	 * Get the current UNIX timestamp.
+	 *
+	 * @return int
+	 * @static 
+	 */
+	 public static function getTime(){
+		//Method inherited from Illuminate\Queue\Queue
+		return Illuminate\Queue\SyncQueue::getTime();
 	 }
 
 	/**
@@ -6704,8 +7348,8 @@ class Queue extends Illuminate\Support\Facades\Queue{
 	 * @static 
 	 */
 	 public static function setContainer($container){
-		$root = new \Illuminate\Queue\SyncQueue();
-		$root->setContainer($container);
+		//Method inherited from Illuminate\Queue\Queue
+		 Illuminate\Queue\SyncQueue::setContainer($container);
 	 }
 
 }
@@ -6715,12 +7359,11 @@ class Redirect extends Illuminate\Support\Facades\Redirect{
 	 * Create a new Redirector instance.
 	 *
 	 * @param \Illuminate\Routing\UrlGenerator  $generator
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($generator){
-		$root = new \Illuminate\Routing\Redirector(null);
-		$root->__construct($generator);
+		 Illuminate\Routing\Redirector::__construct($generator);
 	 }
 
 	/**
@@ -6731,8 +7374,7 @@ class Redirect extends Illuminate\Support\Facades\Redirect{
 	 * @static 
 	 */
 	 public static function home($status = 302){
-		$root = new \Illuminate\Routing\Redirector(null);
-		return $root->home($status);
+		return Illuminate\Routing\Redirector::home($status);
 	 }
 
 	/**
@@ -6744,8 +7386,7 @@ class Redirect extends Illuminate\Support\Facades\Redirect{
 	 * @static 
 	 */
 	 public static function back($status = 302, $headers = array()){
-		$root = new \Illuminate\Routing\Redirector(null);
-		return $root->back($status, $headers);
+		return Illuminate\Routing\Redirector::back($status, $headers);
 	 }
 
 	/**
@@ -6757,8 +7398,7 @@ class Redirect extends Illuminate\Support\Facades\Redirect{
 	 * @static 
 	 */
 	 public static function refresh($status = 302, $headers = array()){
-		$root = new \Illuminate\Routing\Redirector(null);
-		return $root->refresh($status, $headers);
+		return Illuminate\Routing\Redirector::refresh($status, $headers);
 	 }
 
 	/**
@@ -6772,8 +7412,7 @@ class Redirect extends Illuminate\Support\Facades\Redirect{
 	 * @static 
 	 */
 	 public static function guest($path, $status = 302, $headers = array(), $secure = null){
-		$root = new \Illuminate\Routing\Redirector(null);
-		return $root->guest($path, $status, $headers, $secure);
+		return Illuminate\Routing\Redirector::guest($path, $status, $headers, $secure);
 	 }
 
 	/**
@@ -6787,8 +7426,7 @@ class Redirect extends Illuminate\Support\Facades\Redirect{
 	 * @static 
 	 */
 	 public static function intended($default, $status = 302, $headers = array(), $secure = null){
-		$root = new \Illuminate\Routing\Redirector(null);
-		return $root->intended($default, $status, $headers, $secure);
+		return Illuminate\Routing\Redirector::intended($default, $status, $headers, $secure);
 	 }
 
 	/**
@@ -6802,8 +7440,20 @@ class Redirect extends Illuminate\Support\Facades\Redirect{
 	 * @static 
 	 */
 	 public static function to($path, $status = 302, $headers = array(), $secure = null){
-		$root = new \Illuminate\Routing\Redirector(null);
-		return $root->to($path, $status, $headers, $secure);
+		return Illuminate\Routing\Redirector::to($path, $status, $headers, $secure);
+	 }
+
+	/**
+	 * Create a new redirect response to an external URL (no validation).
+	 *
+	 * @param string  $path
+	 * @param int     $status
+	 * @param array   $headers
+	 * @return \Illuminate\Http\RedirectResponse
+	 * @static 
+	 */
+	 public static function away($path, $status = 302, $headers = array()){
+		return Illuminate\Routing\Redirector::away($path, $status, $headers);
 	 }
 
 	/**
@@ -6816,8 +7466,7 @@ class Redirect extends Illuminate\Support\Facades\Redirect{
 	 * @static 
 	 */
 	 public static function secure($path, $status = 302, $headers = array()){
-		$root = new \Illuminate\Routing\Redirector(null);
-		return $root->secure($path, $status, $headers);
+		return Illuminate\Routing\Redirector::secure($path, $status, $headers);
 	 }
 
 	/**
@@ -6831,8 +7480,7 @@ class Redirect extends Illuminate\Support\Facades\Redirect{
 	 * @static 
 	 */
 	 public static function route($route, $parameters = array(), $status = 302, $headers = array()){
-		$root = new \Illuminate\Routing\Redirector(null);
-		return $root->route($route, $parameters, $status, $headers);
+		return Illuminate\Routing\Redirector::route($route, $parameters, $status, $headers);
 	 }
 
 	/**
@@ -6846,8 +7494,7 @@ class Redirect extends Illuminate\Support\Facades\Redirect{
 	 * @static 
 	 */
 	 public static function action($action, $parameters = array(), $status = 302, $headers = array()){
-		$root = new \Illuminate\Routing\Redirector(null);
-		return $root->action($action, $parameters, $status, $headers);
+		return Illuminate\Routing\Redirector::action($action, $parameters, $status, $headers);
 	 }
 
 	/**
@@ -6857,8 +7504,7 @@ class Redirect extends Illuminate\Support\Facades\Redirect{
 	 * @static 
 	 */
 	 public static function getUrlGenerator(){
-		$root = new \Illuminate\Routing\Redirector(null);
-		return $root->getUrlGenerator();
+		return Illuminate\Routing\Redirector::getUrlGenerator();
 	 }
 
 	/**
@@ -6869,8 +7515,7 @@ class Redirect extends Illuminate\Support\Facades\Redirect{
 	 * @static 
 	 */
 	 public static function setSession($session){
-		$root = new \Illuminate\Routing\Redirector(null);
-		$root->setSession($session);
+		 Illuminate\Routing\Redirector::setSession($session);
 	 }
 
 }
@@ -6880,12 +7525,11 @@ class Redis extends Illuminate\Support\Facades\Redis{
 	 * Create a new Redis connection instance.
 	 *
 	 * @param array  $servers
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($servers = array()){
-		$root = new \Illuminate\Redis\Database();
-		$root->__construct($servers);
+		 Illuminate\Redis\Database::__construct($servers);
 	 }
 
 	/**
@@ -6896,8 +7540,7 @@ class Redis extends Illuminate\Support\Facades\Redis{
 	 * @static 
 	 */
 	 public static function connection($name = 'default'){
-		$root = new \Illuminate\Redis\Database();
-		return $root->connection($name);
+		return Illuminate\Redis\Database::connection($name);
 	 }
 
 	/**
@@ -6909,8 +7552,7 @@ class Redis extends Illuminate\Support\Facades\Redis{
 	 * @static 
 	 */
 	 public static function command($method, $parameters = array()){
-		$root = new \Illuminate\Redis\Database();
-		return $root->command($method, $parameters);
+		return Illuminate\Redis\Database::command($method, $parameters);
 	 }
 
 	/**
@@ -6922,8 +7564,7 @@ class Redis extends Illuminate\Support\Facades\Redis{
 	 * @static 
 	 */
 	 public static function __call($method, $parameters){
-		$root = new \Illuminate\Redis\Database();
-		return $root->__call($method, $parameters);
+		return Illuminate\Redis\Database::__call($method, $parameters);
 	 }
 
 }
@@ -6936,8 +7577,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function instance(){
-		$root = new \Illuminate\Http\Request();
-		return $root->instance();
+		return Illuminate\Http\Request::instance();
 	 }
 
 	/**
@@ -6947,8 +7587,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function root(){
-		$root = new \Illuminate\Http\Request();
-		return $root->root();
+		return Illuminate\Http\Request::root();
 	 }
 
 	/**
@@ -6958,8 +7597,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function url(){
-		$root = new \Illuminate\Http\Request();
-		return $root->url();
+		return Illuminate\Http\Request::url();
 	 }
 
 	/**
@@ -6969,8 +7607,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function fullUrl(){
-		$root = new \Illuminate\Http\Request();
-		return $root->fullUrl();
+		return Illuminate\Http\Request::fullUrl();
 	 }
 
 	/**
@@ -6980,8 +7617,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function path(){
-		$root = new \Illuminate\Http\Request();
-		return $root->path();
+		return Illuminate\Http\Request::path();
 	 }
 
 	/**
@@ -6993,8 +7629,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function segment($index, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->segment($index, $default);
+		return Illuminate\Http\Request::segment($index, $default);
 	 }
 
 	/**
@@ -7004,8 +7639,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function segments(){
-		$root = new \Illuminate\Http\Request();
-		return $root->segments();
+		return Illuminate\Http\Request::segments();
 	 }
 
 	/**
@@ -7016,8 +7650,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function is($pattern){
-		$root = new \Illuminate\Http\Request();
-		return $root->is($pattern);
+		return Illuminate\Http\Request::is($pattern);
 	 }
 
 	/**
@@ -7027,8 +7660,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function ajax(){
-		$root = new \Illuminate\Http\Request();
-		return $root->ajax();
+		return Illuminate\Http\Request::ajax();
 	 }
 
 	/**
@@ -7038,8 +7670,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function secure(){
-		$root = new \Illuminate\Http\Request();
-		return $root->secure();
+		return Illuminate\Http\Request::secure();
 	 }
 
 	/**
@@ -7050,8 +7681,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function has($key){
-		$root = new \Illuminate\Http\Request();
-		return $root->has($key);
+		return Illuminate\Http\Request::has($key);
 	 }
 
 	/**
@@ -7061,8 +7691,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function all(){
-		$root = new \Illuminate\Http\Request();
-		return $root->all();
+		return Illuminate\Http\Request::all();
 	 }
 
 	/**
@@ -7074,8 +7703,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function input($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->input($key, $default);
+		return Illuminate\Http\Request::input($key, $default);
 	 }
 
 	/**
@@ -7086,8 +7714,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function only($keys){
-		$root = new \Illuminate\Http\Request();
-		return $root->only($keys);
+		return Illuminate\Http\Request::only($keys);
 	 }
 
 	/**
@@ -7098,8 +7725,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function except($keys){
-		$root = new \Illuminate\Http\Request();
-		return $root->except($keys);
+		return Illuminate\Http\Request::except($keys);
 	 }
 
 	/**
@@ -7111,8 +7737,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function query($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->query($key, $default);
+		return Illuminate\Http\Request::query($key, $default);
 	 }
 
 	/**
@@ -7124,8 +7749,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function cookie($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->cookie($key, $default);
+		return Illuminate\Http\Request::cookie($key, $default);
 	 }
 
 	/**
@@ -7133,12 +7757,11 @@ class Request extends Illuminate\Support\Facades\Request{
 	 *
 	 * @param string  $key
 	 * @param mixed   $default
-	 * @return \Symfony\Component\HttpFoundation\File\UploadedFile
+	 * @return \Symfony\Component\HttpFoundation\File\UploadedFile|array
 	 * @static 
 	 */
 	 public static function file($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->file($key, $default);
+		return Illuminate\Http\Request::file($key, $default);
 	 }
 
 	/**
@@ -7149,8 +7772,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function hasFile($key){
-		$root = new \Illuminate\Http\Request();
-		return $root->hasFile($key);
+		return Illuminate\Http\Request::hasFile($key);
 	 }
 
 	/**
@@ -7162,8 +7784,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function header($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->header($key, $default);
+		return Illuminate\Http\Request::header($key, $default);
 	 }
 
 	/**
@@ -7175,8 +7796,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function server($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->server($key, $default);
+		return Illuminate\Http\Request::server($key, $default);
 	 }
 
 	/**
@@ -7188,8 +7808,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function old($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->old($key, $default);
+		return Illuminate\Http\Request::old($key, $default);
 	 }
 
 	/**
@@ -7201,8 +7820,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function flash($filter = null, $keys = array()){
-		$root = new \Illuminate\Http\Request();
-		$root->flash($filter, $keys);
+		 Illuminate\Http\Request::flash($filter, $keys);
 	 }
 
 	/**
@@ -7213,8 +7831,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function flashOnly($keys){
-		$root = new \Illuminate\Http\Request();
-		$root->flashOnly($keys);
+		 Illuminate\Http\Request::flashOnly($keys);
 	 }
 
 	/**
@@ -7225,8 +7842,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function flashExcept($keys){
-		$root = new \Illuminate\Http\Request();
-		$root->flashExcept($keys);
+		 Illuminate\Http\Request::flashExcept($keys);
 	 }
 
 	/**
@@ -7236,8 +7852,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function flush(){
-		$root = new \Illuminate\Http\Request();
-		$root->flush();
+		 Illuminate\Http\Request::flush();
 	 }
 
 	/**
@@ -7248,8 +7863,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function merge($input){
-		$root = new \Illuminate\Http\Request();
-		$root->merge($input);
+		 Illuminate\Http\Request::merge($input);
 	 }
 
 	/**
@@ -7260,8 +7874,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function replace($input){
-		$root = new \Illuminate\Http\Request();
-		$root->replace($input);
+		 Illuminate\Http\Request::replace($input);
 	 }
 
 	/**
@@ -7273,8 +7886,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function json($key = null, $default = null){
-		$root = new \Illuminate\Http\Request();
-		return $root->json($key, $default);
+		return Illuminate\Http\Request::json($key, $default);
 	 }
 
 	/**
@@ -7284,8 +7896,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function isJson(){
-		$root = new \Illuminate\Http\Request();
-		return $root->isJson();
+		return Illuminate\Http\Request::isJson();
 	 }
 
 	/**
@@ -7295,8 +7906,17 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function wantsJson(){
-		$root = new \Illuminate\Http\Request();
-		return $root->wantsJson();
+		return Illuminate\Http\Request::wantsJson();
+	 }
+
+	/**
+	 * Get the data format expected in the response.
+	 *
+	 * @return string
+	 * @static 
+	 */
+	 public static function format($default = 'html'){
+		return Illuminate\Http\Request::format($default);
 	 }
 
 	/**
@@ -7306,8 +7926,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getSessionStore(){
-		$root = new \Illuminate\Http\Request();
-		return $root->getSessionStore();
+		return Illuminate\Http\Request::getSessionStore();
 	 }
 
 	/**
@@ -7318,8 +7937,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function setSessionStore($session){
-		$root = new \Illuminate\Http\Request();
-		$root->setSessionStore($session);
+		 Illuminate\Http\Request::setSessionStore($session);
 	 }
 
 	/**
@@ -7329,8 +7947,7 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function hasSessionStore(){
-		$root = new \Illuminate\Http\Request();
-		return $root->hasSessionStore();
+		return Illuminate\Http\Request::hasSessionStore();
 	 }
 
 	/**
@@ -7347,8 +7964,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function __construct($query = array(), $request = array(), $attributes = array(), $cookies = array(), $files = array(), $server = array(), $content = null){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->__construct($query, $request, $attributes, $cookies, $files, $server, $content);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::__construct($query, $request, $attributes, $cookies, $files, $server, $content);
 	 }
 
 	/**
@@ -7367,8 +7984,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function initialize($query = array(), $request = array(), $attributes = array(), $cookies = array(), $files = array(), $server = array(), $content = null){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->initialize($query, $request, $attributes, $cookies, $files, $server, $content);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::initialize($query, $request, $attributes, $cookies, $files, $server, $content);
 	 }
 
 	/**
@@ -7379,8 +7996,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function createFromGlobals(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->createFromGlobals();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::createFromGlobals();
 	 }
 
 	/**
@@ -7401,8 +8018,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function create($uri, $method = 'GET', $parameters = array(), $cookies = array(), $files = array(), $server = array(), $content = null){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->create($uri, $method, $parameters, $cookies, $files, $server, $content);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::create($uri, $method, $parameters, $cookies, $files, $server, $content);
 	 }
 
 	/**
@@ -7419,8 +8036,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function duplicate($query = null, $request = null, $attributes = null, $cookies = null, $files = null, $server = null){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->duplicate($query, $request, $attributes, $cookies, $files, $server);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::duplicate($query, $request, $attributes, $cookies, $files, $server);
 	 }
 
 	/**
@@ -7430,8 +8047,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function __toString(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->__toString();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::__toString();
 	 }
 
 	/**
@@ -7444,8 +8061,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function overrideGlobals(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->overrideGlobals();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::overrideGlobals();
 	 }
 
 	/**
@@ -7458,8 +8075,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function setTrustedProxies($proxies){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setTrustedProxies($proxies);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setTrustedProxies($proxies);
 	 }
 
 	/**
@@ -7469,8 +8086,32 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getTrustedProxies(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getTrustedProxies();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getTrustedProxies();
+	 }
+
+	/**
+	 * Sets a list of trusted host patterns.
+	 * 
+	 * You should only list the hosts you manage using regexs.
+	 *
+	 * @param array $hostPatterns A list of trusted host patterns
+	 * @static 
+	 */
+	 public static function setTrustedHosts($hostPatterns){
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setTrustedHosts($hostPatterns);
+	 }
+
+	/**
+	 * Gets the list of trusted host patterns.
+	 *
+	 * @return array An array of trusted host patterns.
+	 * @static 
+	 */
+	 public static function getTrustedHosts(){
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getTrustedHosts();
 	 }
 
 	/**
@@ -7491,8 +8132,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function setTrustedHeaderName($key, $value){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setTrustedHeaderName($key, $value);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setTrustedHeaderName($key, $value);
 	 }
 
 	/**
@@ -7504,8 +8145,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getTrustedHeaderName($key){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getTrustedHeaderName($key);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getTrustedHeaderName($key);
 	 }
 
 	/**
@@ -7519,8 +8160,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function normalizeQueryString($qs){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->normalizeQueryString($qs);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::normalizeQueryString($qs);
 	 }
 
 	/**
@@ -7534,8 +8175,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function enableHttpMethodParameterOverride(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->enableHttpMethodParameterOverride();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::enableHttpMethodParameterOverride();
 	 }
 
 	/**
@@ -7545,8 +8186,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getHttpMethodParameterOverride(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getHttpMethodParameterOverride();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getHttpMethodParameterOverride();
 	 }
 
 	/**
@@ -7571,8 +8212,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function get($key, $default = null, $deep = false){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->get($key, $default, $deep);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::get($key, $default, $deep);
 	 }
 
 	/**
@@ -7583,8 +8224,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getSession(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getSession();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getSession();
 	 }
 
 	/**
@@ -7596,8 +8237,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function hasPreviousSession(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->hasPreviousSession();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::hasPreviousSession();
 	 }
 
 	/**
@@ -7612,8 +8253,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function hasSession(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->hasSession();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::hasSession();
 	 }
 
 	/**
@@ -7624,16 +8265,16 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function setSession($session){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setSession($session);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setSession($session);
 	 }
 
 	/**
 	 * Returns the client IP addresses.
 	 * 
-	 * The most trusted IP address is first, and the less trusted one last.
-	 * The "real" client IP address is the last one, but this is also the
-	 * less trusted one.
+	 * The least trusted IP address is first, and the most trusted one last.
+	 * The "real" client IP address is the first one, but this is also the
+	 * least trusted one.
 	 * 
 	 * Use this method carefully; you should use getClientIp() instead.
 	 *
@@ -7642,8 +8283,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getClientIps(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getClientIps();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getClientIps();
 	 }
 
 	/**
@@ -7666,8 +8307,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getClientIp(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getClientIp();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getClientIp();
 	 }
 
 	/**
@@ -7678,8 +8319,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getScriptName(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getScriptName();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getScriptName();
 	 }
 
 	/**
@@ -7699,8 +8340,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getPathInfo(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getPathInfo();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getPathInfo();
 	 }
 
 	/**
@@ -7718,8 +8359,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getBasePath(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getBasePath();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getBasePath();
 	 }
 
 	/**
@@ -7735,8 +8376,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getBaseUrl(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getBaseUrl();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getBaseUrl();
 	 }
 
 	/**
@@ -7747,8 +8388,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getScheme(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getScheme();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getScheme();
 	 }
 
 	/**
@@ -7767,8 +8408,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getPort(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getPort();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getPort();
 	 }
 
 	/**
@@ -7778,8 +8419,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getUser(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getUser();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getUser();
 	 }
 
 	/**
@@ -7789,8 +8430,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getPassword(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getPassword();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getPassword();
 	 }
 
 	/**
@@ -7800,8 +8441,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getUserInfo(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getUserInfo();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getUserInfo();
 	 }
 
 	/**
@@ -7814,8 +8455,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getHttpHost(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getHttpHost();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getHttpHost();
 	 }
 
 	/**
@@ -7826,8 +8467,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getRequestUri(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getRequestUri();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getRequestUri();
 	 }
 
 	/**
@@ -7840,8 +8481,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getSchemeAndHttpHost(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getSchemeAndHttpHost();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getSchemeAndHttpHost();
 	 }
 
 	/**
@@ -7853,8 +8494,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getUri(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getUri();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getUri();
 	 }
 
 	/**
@@ -7866,8 +8507,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getUriForPath($path){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getUriForPath($path);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getUriForPath($path);
 	 }
 
 	/**
@@ -7881,8 +8522,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getQueryString(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getQueryString();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getQueryString();
 	 }
 
 	/**
@@ -7902,8 +8543,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function isSecure(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->isSecure();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::isSecure();
 	 }
 
 	/**
@@ -7923,8 +8564,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getHost(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getHost();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getHost();
 	 }
 
 	/**
@@ -7935,8 +8576,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function setMethod($method){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setMethod($method);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setMethod($method);
 	 }
 
 	/**
@@ -7956,8 +8597,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getMethod(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getMethod();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getMethod();
 	 }
 
 	/**
@@ -7968,8 +8609,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getRealMethod(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getRealMethod();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getRealMethod();
 	 }
 
 	/**
@@ -7981,8 +8622,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getMimeType($format){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getMimeType($format);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getMimeType($format);
 	 }
 
 	/**
@@ -7994,8 +8635,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getFormat($mimeType){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getFormat($mimeType);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getFormat($mimeType);
 	 }
 
 	/**
@@ -8007,8 +8648,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function setFormat($format, $mimeTypes){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setFormat($format, $mimeTypes);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setFormat($format, $mimeTypes);
 	 }
 
 	/**
@@ -8026,8 +8667,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getRequestFormat($default = 'html'){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getRequestFormat($default);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getRequestFormat($default);
 	 }
 
 	/**
@@ -8038,8 +8679,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function setRequestFormat($format){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setRequestFormat($format);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setRequestFormat($format);
 	 }
 
 	/**
@@ -8050,8 +8691,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getContentType(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getContentType();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getContentType();
 	 }
 
 	/**
@@ -8062,8 +8703,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function setDefaultLocale($locale){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setDefaultLocale($locale);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setDefaultLocale($locale);
 	 }
 
 	/**
@@ -8074,8 +8715,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function setLocale($locale){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		$root->setLocale($locale);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		 Illuminate\Http\Request::setLocale($locale);
 	 }
 
 	/**
@@ -8085,8 +8726,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getLocale(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getLocale();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getLocale();
 	 }
 
 	/**
@@ -8097,8 +8738,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function isMethod($method){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->isMethod($method);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::isMethod($method);
 	 }
 
 	/**
@@ -8109,8 +8750,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function isMethodSafe(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->isMethodSafe();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::isMethodSafe();
 	 }
 
 	/**
@@ -8122,8 +8763,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getContent($asResource = false){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getContent($asResource);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getContent($asResource);
 	 }
 
 	/**
@@ -8133,8 +8774,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getETags(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getETags();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getETags();
 	 }
 
 	/**
@@ -8144,8 +8785,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function isNoCache(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->isNoCache();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::isNoCache();
 	 }
 
 	/**
@@ -8157,8 +8798,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getPreferredLanguage($locales = null){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getPreferredLanguage($locales);
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getPreferredLanguage($locales);
 	 }
 
 	/**
@@ -8169,8 +8810,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getLanguages(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getLanguages();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getLanguages();
 	 }
 
 	/**
@@ -8181,8 +8822,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getCharsets(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getCharsets();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getCharsets();
 	 }
 
 	/**
@@ -8193,8 +8834,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function getAcceptableContentTypes(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->getAcceptableContentTypes();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::getAcceptableContentTypes();
 	 }
 
 	/**
@@ -8209,8 +8850,8 @@ class Request extends Illuminate\Support\Facades\Request{
 	 * @static 
 	 */
 	 public static function isXmlHttpRequest(){
-		$root = new \Symfony\Component\HttpFoundation\Request();
-		return $root->isXmlHttpRequest();
+		//Method inherited from Symfony\Component\HttpFoundation\Request
+		return Illuminate\Http\Request::isXmlHttpRequest();
 	 }
 
 }
@@ -8223,12 +8864,11 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * Create a new router instance.
 	 *
 	 * @param \Illuminate\Container\Container  $container
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($container = null){
-		$root = new \Illuminate\Routing\Router();
-		$root->__construct($container);
+		 Illuminate\Routing\Router::__construct($container);
 	 }
 
 	/**
@@ -8240,8 +8880,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function get($pattern, $action){
-		$root = new \Illuminate\Routing\Router();
-		return $root->get($pattern, $action);
+		return Illuminate\Routing\Router::get($pattern, $action);
 	 }
 
 	/**
@@ -8253,8 +8892,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function post($pattern, $action){
-		$root = new \Illuminate\Routing\Router();
-		return $root->post($pattern, $action);
+		return Illuminate\Routing\Router::post($pattern, $action);
 	 }
 
 	/**
@@ -8266,8 +8904,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function put($pattern, $action){
-		$root = new \Illuminate\Routing\Router();
-		return $root->put($pattern, $action);
+		return Illuminate\Routing\Router::put($pattern, $action);
 	 }
 
 	/**
@@ -8279,8 +8916,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function patch($pattern, $action){
-		$root = new \Illuminate\Routing\Router();
-		return $root->patch($pattern, $action);
+		return Illuminate\Routing\Router::patch($pattern, $action);
 	 }
 
 	/**
@@ -8292,8 +8928,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function delete($pattern, $action){
-		$root = new \Illuminate\Routing\Router();
-		return $root->delete($pattern, $action);
+		return Illuminate\Routing\Router::delete($pattern, $action);
 	 }
 
 	/**
@@ -8305,8 +8940,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function options($pattern, $action){
-		$root = new \Illuminate\Routing\Router();
-		return $root->options($pattern, $action);
+		return Illuminate\Routing\Router::options($pattern, $action);
 	 }
 
 	/**
@@ -8319,8 +8953,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function match($method, $pattern, $action){
-		$root = new \Illuminate\Routing\Router();
-		return $root->match($method, $pattern, $action);
+		return Illuminate\Routing\Router::match($method, $pattern, $action);
 	 }
 
 	/**
@@ -8332,8 +8965,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function any($pattern, $action){
-		$root = new \Illuminate\Routing\Router();
-		return $root->any($pattern, $action);
+		return Illuminate\Routing\Router::any($pattern, $action);
 	 }
 
 	/**
@@ -8344,8 +8976,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function controllers($controllers){
-		$root = new \Illuminate\Routing\Router();
-		$root->controllers($controllers);
+		 Illuminate\Routing\Router::controllers($controllers);
 	 }
 
 	/**
@@ -8358,8 +8989,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function controller($uri, $controller, $names = array()){
-		$root = new \Illuminate\Routing\Router();
-		return $root->controller($uri, $controller, $names);
+		return Illuminate\Routing\Router::controller($uri, $controller, $names);
 	 }
 
 	/**
@@ -8372,8 +9002,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function resource($resource, $controller, $options = array()){
-		$root = new \Illuminate\Routing\Router();
-		$root->resource($resource, $controller, $options);
+		 Illuminate\Routing\Router::resource($resource, $controller, $options);
 	 }
 
 	/**
@@ -8384,8 +9013,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function getResourceUri($resource){
-		$root = new \Illuminate\Routing\Router();
-		return $root->getResourceUri($resource);
+		return Illuminate\Routing\Router::getResourceUri($resource);
 	 }
 
 	/**
@@ -8396,8 +9024,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function getResourceWildcard($value){
-		$root = new \Illuminate\Routing\Router();
-		return $root->getResourceWildcard($value);
+		return Illuminate\Routing\Router::getResourceWildcard($value);
 	 }
 
 	/**
@@ -8409,8 +9036,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function group($attributes, $callback){
-		$root = new \Illuminate\Routing\Router();
-		$root->group($attributes, $callback);
+		 Illuminate\Routing\Router::group($attributes, $callback);
 	 }
 
 	/**
@@ -8421,8 +9047,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function dispatch($request){
-		$root = new \Illuminate\Routing\Router();
-		return $root->dispatch($request);
+		return Illuminate\Routing\Router::dispatch($request);
 	 }
 
 	/**
@@ -8433,8 +9058,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function before($callback){
-		$root = new \Illuminate\Routing\Router();
-		$root->before($callback);
+		 Illuminate\Routing\Router::before($callback);
 	 }
 
 	/**
@@ -8445,8 +9069,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function after($callback){
-		$root = new \Illuminate\Routing\Router();
-		$root->after($callback);
+		 Illuminate\Routing\Router::after($callback);
 	 }
 
 	/**
@@ -8457,8 +9080,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function close($callback){
-		$root = new \Illuminate\Routing\Router();
-		$root->close($callback);
+		 Illuminate\Routing\Router::close($callback);
 	 }
 
 	/**
@@ -8469,8 +9091,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function finish($callback){
-		$root = new \Illuminate\Routing\Router();
-		$root->finish($callback);
+		 Illuminate\Routing\Router::finish($callback);
 	 }
 
 	/**
@@ -8482,8 +9103,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function filter($name, $callback){
-		$root = new \Illuminate\Routing\Router();
-		$root->filter($name, $callback);
+		 Illuminate\Routing\Router::filter($name, $callback);
 	 }
 
 	/**
@@ -8494,8 +9114,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function getFilter($name){
-		$root = new \Illuminate\Routing\Router();
-		return $root->getFilter($name);
+		return Illuminate\Routing\Router::getFilter($name);
 	 }
 
 	/**
@@ -8508,20 +9127,19 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function when($pattern, $names, $methods = null){
-		$root = new \Illuminate\Routing\Router();
-		$root->when($pattern, $names, $methods);
+		 Illuminate\Routing\Router::when($pattern, $names, $methods);
 	 }
 
 	/**
 	 * Find the patterned filters matching a request.
 	 *
-	 * @param \Illuminate\Http\Request  $request
+	 * @param string  $method
+	 * @param string  $path
 	 * @return array
 	 * @static 
 	 */
-	 public static function findPatternFilters($request){
-		$root = new \Illuminate\Routing\Router();
-		return $root->findPatternFilters($request);
+	 public static function findPatternFilters($method, $path){
+		return Illuminate\Routing\Router::findPatternFilters($method, $path);
 	 }
 
 	/**
@@ -8533,8 +9151,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function callFinishFilter($request, $response){
-		$root = new \Illuminate\Routing\Router();
-		return $root->callFinishFilter($request, $response);
+		return Illuminate\Routing\Router::callFinishFilter($request, $response);
 	 }
 
 	/**
@@ -8546,8 +9163,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function callCloseFilter($request, $response){
-		$root = new \Illuminate\Routing\Router();
-		return $root->callCloseFilter($request, $response);
+		return Illuminate\Routing\Router::callCloseFilter($request, $response);
 	 }
 
 	/**
@@ -8559,8 +9175,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function pattern($key, $pattern){
-		$root = new \Illuminate\Routing\Router();
-		$root->pattern($key, $pattern);
+		 Illuminate\Routing\Router::pattern($key, $pattern);
 	 }
 
 	/**
@@ -8572,8 +9187,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function model($key, $class, $callback = null){
-		$root = new \Illuminate\Routing\Router();
-		$root->model($key, $class, $callback);
+		 Illuminate\Routing\Router::model($key, $class, $callback);
 	 }
 
 	/**
@@ -8584,8 +9198,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function bind($key, $binder){
-		$root = new \Illuminate\Routing\Router();
-		$root->bind($key, $binder);
+		 Illuminate\Routing\Router::bind($key, $binder);
 	 }
 
 	/**
@@ -8596,8 +9209,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function hasBinder($key){
-		$root = new \Illuminate\Routing\Router();
-		return $root->hasBinder($key);
+		return Illuminate\Routing\Router::hasBinder($key);
 	 }
 
 	/**
@@ -8610,8 +9222,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function performBinding($key, $value, $route){
-		$root = new \Illuminate\Routing\Router();
-		return $root->performBinding($key, $value, $route);
+		return Illuminate\Routing\Router::performBinding($key, $value, $route);
 	 }
 
 	/**
@@ -8623,8 +9234,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function prepare($value, $request){
-		$root = new \Illuminate\Routing\Router();
-		return $root->prepare($value, $request);
+		return Illuminate\Routing\Router::prepare($value, $request);
 	 }
 
 	/**
@@ -8634,8 +9244,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function currentRouteName(){
-		$root = new \Illuminate\Routing\Router();
-		return $root->currentRouteName();
+		return Illuminate\Routing\Router::currentRouteName();
 	 }
 
 	/**
@@ -8646,8 +9255,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function currentRouteNamed($name){
-		$root = new \Illuminate\Routing\Router();
-		return $root->currentRouteNamed($name);
+		return Illuminate\Routing\Router::currentRouteNamed($name);
 	 }
 
 	/**
@@ -8657,8 +9265,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function currentRouteAction(){
-		$root = new \Illuminate\Routing\Router();
-		return $root->currentRouteAction();
+		return Illuminate\Routing\Router::currentRouteAction();
 	 }
 
 	/**
@@ -8669,8 +9276,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function currentRouteUses($action){
-		$root = new \Illuminate\Routing\Router();
-		return $root->currentRouteUses($action);
+		return Illuminate\Routing\Router::currentRouteUses($action);
 	 }
 
 	/**
@@ -8680,8 +9286,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function filtersEnabled(){
-		$root = new \Illuminate\Routing\Router();
-		return $root->filtersEnabled();
+		return Illuminate\Routing\Router::filtersEnabled();
 	 }
 
 	/**
@@ -8691,8 +9296,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function enableFilters(){
-		$root = new \Illuminate\Routing\Router();
-		$root->enableFilters();
+		 Illuminate\Routing\Router::enableFilters();
 	 }
 
 	/**
@@ -8702,8 +9306,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function disableFilters(){
-		$root = new \Illuminate\Routing\Router();
-		$root->disableFilters();
+		 Illuminate\Routing\Router::disableFilters();
 	 }
 
 	/**
@@ -8713,8 +9316,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function getRoutes(){
-		$root = new \Illuminate\Routing\Router();
-		return $root->getRoutes();
+		return Illuminate\Routing\Router::getRoutes();
 	 }
 
 	/**
@@ -8724,8 +9326,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function getRequest(){
-		$root = new \Illuminate\Routing\Router();
-		return $root->getRequest();
+		return Illuminate\Routing\Router::getRequest();
 	 }
 
 	/**
@@ -8735,8 +9336,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function getCurrentRoute(){
-		$root = new \Illuminate\Routing\Router();
-		return $root->getCurrentRoute();
+		return Illuminate\Routing\Router::getCurrentRoute();
 	 }
 
 	/**
@@ -8747,8 +9347,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function setCurrentRoute($route){
-		$root = new \Illuminate\Routing\Router();
-		$root->setCurrentRoute($route);
+		 Illuminate\Routing\Router::setCurrentRoute($route);
 	 }
 
 	/**
@@ -8758,8 +9357,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function getFilters(){
-		$root = new \Illuminate\Routing\Router();
-		return $root->getFilters();
+		return Illuminate\Routing\Router::getFilters();
 	 }
 
 	/**
@@ -8769,8 +9367,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function getGlobalFilters(){
-		$root = new \Illuminate\Routing\Router();
-		return $root->getGlobalFilters();
+		return Illuminate\Routing\Router::getGlobalFilters();
 	 }
 
 	/**
@@ -8780,8 +9377,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function getInspector(){
-		$root = new \Illuminate\Routing\Router();
-		return $root->getInspector();
+		return Illuminate\Routing\Router::getInspector();
 	 }
 
 	/**
@@ -8792,8 +9388,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function setInspector($inspector){
-		$root = new \Illuminate\Routing\Router();
-		$root->setInspector($inspector);
+		 Illuminate\Routing\Router::setInspector($inspector);
 	 }
 
 	/**
@@ -8803,8 +9398,7 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function getContainer(){
-		$root = new \Illuminate\Routing\Router();
-		return $root->getContainer();
+		return Illuminate\Routing\Router::getContainer();
 	 }
 
 	/**
@@ -8815,8 +9409,132 @@ class Route extends Illuminate\Support\Facades\Route{
 	 * @static 
 	 */
 	 public static function setContainer($container){
-		$root = new \Illuminate\Routing\Router();
-		$root->setContainer($container);
+		 Illuminate\Routing\Router::setContainer($container);
+	 }
+
+}
+
+class Schema extends Illuminate\Support\Facades\Schema{
+	/**
+	 * Determine if the given table exists.
+	 *
+	 * @param string  $table
+	 * @return bool
+	 * @static 
+	 */
+	 public static function hasTable($table){
+		return Illuminate\Database\Schema\MySqlBuilder::hasTable($table);
+	 }
+
+	/**
+	 * Create a new database Schema manager.
+	 *
+	 * @param \Illuminate\Database\Connection  $connection
+	 * @return void
+	 * @static 
+	 */
+	 public static function __construct($connection){
+		//Method inherited from Illuminate\Database\Schema\Builder
+		 Illuminate\Database\Schema\MySqlBuilder::__construct($connection);
+	 }
+
+	/**
+	 * Determine if the given table has a given column.
+	 *
+	 * @param string  $table
+	 * @param string  $column
+	 * @return bool
+	 * @static 
+	 */
+	 public static function hasColumn($table, $column){
+		//Method inherited from Illuminate\Database\Schema\Builder
+		return Illuminate\Database\Schema\MySqlBuilder::hasColumn($table, $column);
+	 }
+
+	/**
+	 * Modify a table on the schema.
+	 *
+	 * @param string   $table
+	 * @param Closure  $callback
+	 * @return \Illuminate\Database\Schema\Blueprint
+	 * @static 
+	 */
+	 public static function table($table, $callback){
+		//Method inherited from Illuminate\Database\Schema\Builder
+		return Illuminate\Database\Schema\MySqlBuilder::table($table, $callback);
+	 }
+
+	/**
+	 * Create a new table on the schema.
+	 *
+	 * @param string   $table
+	 * @param Closure  $callback
+	 * @return \Illuminate\Database\Schema\Blueprint
+	 * @static 
+	 */
+	 public static function create($table, $callback){
+		//Method inherited from Illuminate\Database\Schema\Builder
+		return Illuminate\Database\Schema\MySqlBuilder::create($table, $callback);
+	 }
+
+	/**
+	 * Drop a table from the schema.
+	 *
+	 * @param string  $table
+	 * @return \Illuminate\Database\Schema\Blueprint
+	 * @static 
+	 */
+	 public static function drop($table){
+		//Method inherited from Illuminate\Database\Schema\Builder
+		return Illuminate\Database\Schema\MySqlBuilder::drop($table);
+	 }
+
+	/**
+	 * Drop a table from the schema if it exists.
+	 *
+	 * @param string  $table
+	 * @return \Illuminate\Database\Schema\Blueprint
+	 * @static 
+	 */
+	 public static function dropIfExists($table){
+		//Method inherited from Illuminate\Database\Schema\Builder
+		return Illuminate\Database\Schema\MySqlBuilder::dropIfExists($table);
+	 }
+
+	/**
+	 * Rename a table on the schema.
+	 *
+	 * @param string  $from
+	 * @param string  $to
+	 * @return \Illuminate\Database\Schema\Blueprint
+	 * @static 
+	 */
+	 public static function rename($from, $to){
+		//Method inherited from Illuminate\Database\Schema\Builder
+		return Illuminate\Database\Schema\MySqlBuilder::rename($from, $to);
+	 }
+
+	/**
+	 * Get the database connection instance.
+	 *
+	 * @return \Illuminate\Database\Connection
+	 * @static 
+	 */
+	 public static function getConnection(){
+		//Method inherited from Illuminate\Database\Schema\Builder
+		return Illuminate\Database\Schema\MySqlBuilder::getConnection();
+	 }
+
+	/**
+	 * Set the database connection instance.
+	 *
+	 * @param \Illuminate\Database\Connection
+	 * @return \Illuminate\Database\Schema\Builder
+	 * @static 
+	 */
+	 public static function setConnection($connection){
+		//Method inherited from Illuminate\Database\Schema\Builder
+		return Illuminate\Database\Schema\MySqlBuilder::setConnection($connection);
 	 }
 
 }
@@ -8826,448 +9544,64 @@ class Seeder extends Illuminate\Database\Seeder{
 
 class Session extends Illuminate\Support\Facades\Session{
 	/**
-	 * Starts the session storage.
+	 * Create a new manager instance.
 	 *
-	 * @return Boolean True if session started.
-	 * @throws \RuntimeException If session fails to start.
-	 * @api 
+	 * @param \Illuminate\Foundation\Application  $app
+	 * @return void
 	 * @static 
 	 */
-	 public static function start(){
-		$root = new \Illuminate\Session\Store();
-		return $root->start();
+	 public static function __construct($app){
+		//Method inherited from Illuminate\Support\Manager
+		 Illuminate\Session\SessionManager::__construct($app);
 	 }
 
 	/**
-	 * Force the session to be saved and closed.
-	 * 
-	 * This method is generally not required for real sessions as
-	 * the session will be automatically saved at the end of
-	 * code execution.
+	 * Get a driver instance.
 	 *
-	 * @static 
-	 */
-	 public static function save(){
-		$root = new \Illuminate\Session\Store();
-		$root->save();
-	 }
-
-	/**
-	 * Checks if an attribute is defined.
-	 *
-	 * @param string $name The attribute name
-	 * @return Boolean true if the attribute is defined, false otherwise
-	 * @api 
-	 * @static 
-	 */
-	 public static function has($name){
-		$root = new \Illuminate\Session\Store();
-		return $root->has($name);
-	 }
-
-	/**
-	 * Returns an attribute.
-	 *
-	 * @param string $name    The attribute name
-	 * @param mixed  $default The default value if not found.
-	 * @return mixed
-	 * @api 
-	 * @static 
-	 */
-	 public static function get($name, $default = null){
-		$root = new \Illuminate\Session\Store();
-		return $root->get($name, $default);
-	 }
-
-	/**
-	 * Determine if the session contains old input.
-	 *
-	 * @param string  $key
-	 * @return bool
-	 * @static 
-	 */
-	 public static function hasOldInput($key = null){
-		$root = new \Illuminate\Session\Store();
-		return $root->hasOldInput($key);
-	 }
-
-	/**
-	 * Get the requested item from the flashed input array.
-	 *
-	 * @param string  $key
-	 * @param mixed   $default
+	 * @param string  $driver
 	 * @return mixed
 	 * @static 
 	 */
-	 public static function getOldInput($key = null, $default = null){
-		$root = new \Illuminate\Session\Store();
-		return $root->getOldInput($key, $default);
+	 public static function driver($driver = null){
+		//Method inherited from Illuminate\Support\Manager
+		return Illuminate\Session\SessionManager::driver($driver);
 	 }
 
 	/**
-	 * Get the CSRF token value.
+	 * Register a custom driver creator Closure.
 	 *
-	 * @return string
-	 * @static 
-	 */
-	 public static function getToken(){
-		$root = new \Illuminate\Session\Store();
-		return $root->getToken();
-	 }
-
-	/**
-	 * Get the CSRF token value.
-	 *
-	 * @return string
-	 * @static 
-	 */
-	 public static function token(){
-		$root = new \Illuminate\Session\Store();
-		return $root->token();
-	 }
-
-	/**
-	 * Put a key / value pair in the session.
-	 *
-	 * @param string  $key
-	 * @param mixed   $value
+	 * @param string   $driver
+	 * @param Closure  $callback
 	 * @return void
 	 * @static 
 	 */
-	 public static function put($key, $value){
-		$root = new \Illuminate\Session\Store();
-		$root->put($key, $value);
+	 public static function extend($driver, $callback){
+		//Method inherited from Illuminate\Support\Manager
+		 Illuminate\Session\SessionManager::extend($driver, $callback);
 	 }
 
 	/**
-	 * Push a value onto a session array.
+	 * Get all of the created "drivers".
 	 *
-	 * @param string  $key
-	 * @param mixed   $value
-	 * @return void
+	 * @return array
 	 * @static 
 	 */
-	 public static function push($key, $value){
-		$root = new \Illuminate\Session\Store();
-		$root->push($key, $value);
+	 public static function getDrivers(){
+		//Method inherited from Illuminate\Support\Manager
+		return Illuminate\Session\SessionManager::getDrivers();
 	 }
 
 	/**
-	 * Flash a key / value pair to the session.
+	 * Dynamically call the default driver instance.
 	 *
-	 * @param string  $key
-	 * @param mixed   $value
-	 * @return void
+	 * @param string  $method
+	 * @param array   $parameters
+	 * @return mixed
 	 * @static 
 	 */
-	 public static function flash($key, $value){
-		$root = new \Illuminate\Session\Store();
-		$root->flash($key, $value);
-	 }
-
-	/**
-	 * Flash an input array to the session.
-	 *
-	 * @param array  $value
-	 * @return void
-	 * @static 
-	 */
-	 public static function flashInput($value){
-		$root = new \Illuminate\Session\Store();
-		$root->flashInput($value);
-	 }
-
-	/**
-	 * Reflash all of the session flash data.
-	 *
-	 * @return void
-	 * @static 
-	 */
-	 public static function reflash(){
-		$root = new \Illuminate\Session\Store();
-		$root->reflash();
-	 }
-
-	/**
-	 * Reflash a subset of the current flash data.
-	 *
-	 * @param array|dynamic  $keys
-	 * @return void
-	 * @static 
-	 */
-	 public static function keep($keys = null){
-		$root = new \Illuminate\Session\Store();
-		$root->keep($keys);
-	 }
-
-	/**
-	 * Remove an item from the session.
-	 *
-	 * @param string  $key
-	 * @return void
-	 * @static 
-	 */
-	 public static function forget($key){
-		$root = new \Illuminate\Session\Store();
-		$root->forget($key);
-	 }
-
-	/**
-	 * Remove all of the items from the session.
-	 *
-	 * @return void
-	 * @static 
-	 */
-	 public static function flush(){
-		$root = new \Illuminate\Session\Store();
-		$root->flush();
-	 }
-
-	/**
-	 * Generate a new session identifier.
-	 *
-	 * @return string
-	 * @static 
-	 */
-	 public static function regenerate(){
-		$root = new \Illuminate\Session\Store();
-		return $root->regenerate();
-	 }
-
-	/**
-	 * Constructor.
-	 *
-	 * @param SessionStorageInterface $storage    A SessionStorageInterface instance.
-	 * @param AttributeBagInterface   $attributes An AttributeBagInterface instance, (defaults null for default AttributeBag)
-	 * @param FlashBagInterface       $flashes    A FlashBagInterface instance (defaults null for default FlashBag)
-	 * @static 
-	 */
-	 public static function __construct($storage = null, $attributes = null, $flashes = null){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		$root->__construct($storage, $attributes, $flashes);
-	 }
-
-	/**
-	 * Sets an attribute.
-	 *
-	 * @param string $name
-	 * @param mixed  $value
-	 * @api 
-	 * @static 
-	 */
-	 public static function set($name, $value){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		$root->set($name, $value);
-	 }
-
-	/**
-	 * Returns attributes.
-	 *
-	 * @return array Attributes
-	 * @api 
-	 * @static 
-	 */
-	 public static function all(){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		return $root->all();
-	 }
-
-	/**
-	 * Sets attributes.
-	 *
-	 * @param array $attributes Attributes
-	 * @static 
-	 */
-	 public static function replace($attributes){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		$root->replace($attributes);
-	 }
-
-	/**
-	 * Removes an attribute.
-	 *
-	 * @param string $name
-	 * @return mixed The removed value
-	 * @api 
-	 * @static 
-	 */
-	 public static function remove($name){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		return $root->remove($name);
-	 }
-
-	/**
-	 * Clears all attributes.
-	 *
-	 * @api 
-	 * @static 
-	 */
-	 public static function clear(){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		$root->clear();
-	 }
-
-	/**
-	 * Checks if the session was started.
-	 *
-	 * @return Boolean
-	 * @static 
-	 */
-	 public static function isStarted(){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		return $root->isStarted();
-	 }
-
-	/**
-	 * Returns an iterator for attributes.
-	 *
-	 * @return \ArrayIterator An \ArrayIterator instance
-	 * @static 
-	 */
-	 public static function getIterator(){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		return $root->getIterator();
-	 }
-
-	/**
-	 * Returns the number of attributes.
-	 *
-	 * @return int The number of attributes
-	 * @static 
-	 */
-	 public static function count(){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		return $root->count();
-	 }
-
-	/**
-	 * Invalidates the current session.
-	 * 
-	 * Clears all session attributes and flashes and regenerates the
-	 * session and deletes the old session from persistence.
-	 *
-	 * @param integer $lifetime Sets the cookie lifetime for the session cookie. A null value
-	 *                          will leave the system settings unchanged, 0 sets the cookie
-	 *                          to expire with browser session. Time is in seconds, and is
-	 *                          not a Unix timestamp.
-	 * @return Boolean True if session invalidated, false if error.
-	 * @api 
-	 * @static 
-	 */
-	 public static function invalidate($lifetime = null){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		return $root->invalidate($lifetime);
-	 }
-
-	/**
-	 * Migrates the current session to a new session id while maintaining all
-	 * session attributes.
-	 *
-	 * @param Boolean $destroy  Whether to delete the old session or leave it to garbage collection.
-	 * @param integer $lifetime Sets the cookie lifetime for the session cookie. A null value
-	 *                          will leave the system settings unchanged, 0 sets the cookie
-	 *                          to expire with browser session. Time is in seconds, and is
-	 *                          not a Unix timestamp.
-	 * @return Boolean True if session migrated, false if error.
-	 * @api 
-	 * @static 
-	 */
-	 public static function migrate($destroy = false, $lifetime = null){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		return $root->migrate($destroy, $lifetime);
-	 }
-
-	/**
-	 * Returns the session ID.
-	 *
-	 * @return string The session ID.
-	 * @api 
-	 * @static 
-	 */
-	 public static function getId(){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		return $root->getId();
-	 }
-
-	/**
-	 * Sets the session ID
-	 *
-	 * @param string $id
-	 * @api 
-	 * @static 
-	 */
-	 public static function setId($id){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		$root->setId($id);
-	 }
-
-	/**
-	 * Returns the session name.
-	 *
-	 * @return mixed The session name.
-	 * @api 
-	 * @static 
-	 */
-	 public static function getName(){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		return $root->getName();
-	 }
-
-	/**
-	 * Sets the session name.
-	 *
-	 * @param string $name
-	 * @api 
-	 * @static 
-	 */
-	 public static function setName($name){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		$root->setName($name);
-	 }
-
-	/**
-	 * Gets session meta.
-	 *
-	 * @return MetadataBag
-	 * @static 
-	 */
-	 public static function getMetadataBag(){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		return $root->getMetadataBag();
-	 }
-
-	/**
-	 * Registers a SessionBagInterface with the session.
-	 *
-	 * @param SessionBagInterface $bag
-	 * @static 
-	 */
-	 public static function registerBag($bag){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		$root->registerBag($bag);
-	 }
-
-	/**
-	 * Gets a bag instance by name.
-	 *
-	 * @param string $name
-	 * @return SessionBagInterface
-	 * @static 
-	 */
-	 public static function getBag($name){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		return $root->getBag($name);
-	 }
-
-	/**
-	 * Gets the flashbag interface.
-	 *
-	 * @return FlashBagInterface
-	 * @static 
-	 */
-	 public static function getFlashBag(){
-		$root = new \Symfony\Component\HttpFoundation\Session\Session();
-		return $root->getFlashBag();
+	 public static function __call($method, $parameters){
+		//Method inherited from Illuminate\Support\Manager
+		return Illuminate\Session\SessionManager::__call($method, $parameters);
 	 }
 
 }
@@ -9281,12 +9615,11 @@ class URL extends Illuminate\Support\Facades\URL{
 	 *
 	 * @param \Symfony\Component\Routing\RouteCollection  $routes
 	 * @param \Symfony\Component\HttpFoundation\Request   $request
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($routes, $request){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		$root->__construct($routes, $request);
+		 Illuminate\Routing\UrlGenerator::__construct($routes, $request);
 	 }
 
 	/**
@@ -9296,8 +9629,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function full(){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		return $root->full();
+		return Illuminate\Routing\UrlGenerator::full();
 	 }
 
 	/**
@@ -9307,8 +9639,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function current(){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		return $root->current();
+		return Illuminate\Routing\UrlGenerator::current();
 	 }
 
 	/**
@@ -9318,8 +9649,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function previous(){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		return $root->previous();
+		return Illuminate\Routing\UrlGenerator::previous();
 	 }
 
 	/**
@@ -9332,8 +9662,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function to($path, $parameters = array(), $secure = null){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		return $root->to($path, $parameters, $secure);
+		return Illuminate\Routing\UrlGenerator::to($path, $parameters, $secure);
 	 }
 
 	/**
@@ -9345,8 +9674,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function secure($path, $parameters = array()){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		return $root->secure($path, $parameters);
+		return Illuminate\Routing\UrlGenerator::secure($path, $parameters);
 	 }
 
 	/**
@@ -9358,8 +9686,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function asset($path, $secure = null){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		return $root->asset($path, $secure);
+		return Illuminate\Routing\UrlGenerator::asset($path, $secure);
 	 }
 
 	/**
@@ -9370,8 +9697,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function secureAsset($path){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		return $root->secureAsset($path);
+		return Illuminate\Routing\UrlGenerator::secureAsset($path);
 	 }
 
 	/**
@@ -9384,8 +9710,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function route($name, $parameters = array(), $absolute = true){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		return $root->route($name, $parameters, $absolute);
+		return Illuminate\Routing\UrlGenerator::route($name, $parameters, $absolute);
 	 }
 
 	/**
@@ -9398,8 +9723,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function action($action, $parameters = array(), $absolute = true){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		return $root->action($action, $parameters, $absolute);
+		return Illuminate\Routing\UrlGenerator::action($action, $parameters, $absolute);
 	 }
 
 	/**
@@ -9410,8 +9734,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function isValidUrl($path){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		return $root->isValidUrl($path);
+		return Illuminate\Routing\UrlGenerator::isValidUrl($path);
 	 }
 
 	/**
@@ -9421,8 +9744,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function getRequest(){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		return $root->getRequest();
+		return Illuminate\Routing\UrlGenerator::getRequest();
 	 }
 
 	/**
@@ -9433,8 +9755,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function setRequest($request){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		$root->setRequest($request);
+		 Illuminate\Routing\UrlGenerator::setRequest($request);
 	 }
 
 	/**
@@ -9444,8 +9765,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function getGenerator(){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		return $root->getGenerator();
+		return Illuminate\Routing\UrlGenerator::getGenerator();
 	 }
 
 	/**
@@ -9456,8 +9776,7 @@ class URL extends Illuminate\Support\Facades\URL{
 	 * @static 
 	 */
 	 public static function setGenerator($generator){
-		$root = new \Illuminate\Routing\UrlGenerator(null,null);
-		$root->setGenerator($generator);
+		 Illuminate\Routing\UrlGenerator::setGenerator($generator);
 	 }
 
 }
@@ -9468,12 +9787,11 @@ class Validator extends Illuminate\Support\Facades\Validator{
 	 *
 	 * @param \Symfony\Component\Translation\TranslatorInterface  $translator
 	 * @param \Illuminate\Container\Container  $container
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($translator, $container = null){
-		$root = new \Illuminate\Validation\Factory(null);
-		$root->__construct($translator, $container);
+		 Illuminate\Validation\Factory::__construct($translator, $container);
 	 }
 
 	/**
@@ -9486,8 +9804,7 @@ class Validator extends Illuminate\Support\Facades\Validator{
 	 * @static 
 	 */
 	 public static function make($data, $rules, $messages = array()){
-		$root = new \Illuminate\Validation\Factory(null);
-		return $root->make($data, $rules, $messages);
+		return Illuminate\Validation\Factory::make($data, $rules, $messages);
 	 }
 
 	/**
@@ -9499,8 +9816,7 @@ class Validator extends Illuminate\Support\Facades\Validator{
 	 * @static 
 	 */
 	 public static function extend($rule, $extension){
-		$root = new \Illuminate\Validation\Factory(null);
-		$root->extend($rule, $extension);
+		 Illuminate\Validation\Factory::extend($rule, $extension);
 	 }
 
 	/**
@@ -9512,8 +9828,7 @@ class Validator extends Illuminate\Support\Facades\Validator{
 	 * @static 
 	 */
 	 public static function extendImplicit($rule, $extension){
-		$root = new \Illuminate\Validation\Factory(null);
-		$root->extendImplicit($rule, $extension);
+		 Illuminate\Validation\Factory::extendImplicit($rule, $extension);
 	 }
 
 	/**
@@ -9524,8 +9839,7 @@ class Validator extends Illuminate\Support\Facades\Validator{
 	 * @static 
 	 */
 	 public static function resolver($resolver){
-		$root = new \Illuminate\Validation\Factory(null);
-		$root->resolver($resolver);
+		 Illuminate\Validation\Factory::resolver($resolver);
 	 }
 
 	/**
@@ -9535,8 +9849,7 @@ class Validator extends Illuminate\Support\Facades\Validator{
 	 * @static 
 	 */
 	 public static function getTranslator(){
-		$root = new \Illuminate\Validation\Factory(null);
-		return $root->getTranslator();
+		return Illuminate\Validation\Factory::getTranslator();
 	 }
 
 	/**
@@ -9546,8 +9859,7 @@ class Validator extends Illuminate\Support\Facades\Validator{
 	 * @static 
 	 */
 	 public static function getPresenceVerifier(){
-		$root = new \Illuminate\Validation\Factory(null);
-		return $root->getPresenceVerifier();
+		return Illuminate\Validation\Factory::getPresenceVerifier();
 	 }
 
 	/**
@@ -9558,8 +9870,7 @@ class Validator extends Illuminate\Support\Facades\Validator{
 	 * @static 
 	 */
 	 public static function setPresenceVerifier($presenceVerifier){
-		$root = new \Illuminate\Validation\Factory(null);
-		$root->setPresenceVerifier($presenceVerifier);
+		 Illuminate\Validation\Factory::setPresenceVerifier($presenceVerifier);
 	 }
 
 }
@@ -9571,12 +9882,11 @@ class View extends Illuminate\Support\Facades\View{
 	 * @param \Illuminate\View\Engines\EngineResolver  $engines
 	 * @param \Illuminate\View\ViewFinderInterface  $finder
 	 * @param \Illuminate\Events\Dispatcher  $events
-	 * @return self 
+	 * @return void
 	 * @static 
 	 */
 	 public static function __construct($engines, $finder, $events){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->__construct($engines, $finder, $events);
+		 Illuminate\View\Environment::__construct($engines, $finder, $events);
 	 }
 
 	/**
@@ -9589,8 +9899,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function make($view, $data = array(), $mergeData = array()){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->make($view, $data, $mergeData);
+		return Illuminate\View\Environment::make($view, $data, $mergeData);
 	 }
 
 	/**
@@ -9602,8 +9911,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function of($view, $data = array()){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->of($view, $data);
+		return Illuminate\View\Environment::of($view, $data);
 	 }
 
 	/**
@@ -9615,8 +9923,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function name($view, $name){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->name($view, $name);
+		 Illuminate\View\Environment::name($view, $name);
 	 }
 
 	/**
@@ -9627,8 +9934,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function exists($view){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->exists($view);
+		return Illuminate\View\Environment::exists($view);
 	 }
 
 	/**
@@ -9642,8 +9948,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function renderEach($view, $data, $iterator, $empty = 'raw|'){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->renderEach($view, $data, $iterator, $empty);
+		return Illuminate\View\Environment::renderEach($view, $data, $iterator, $empty);
 	 }
 
 	/**
@@ -9655,21 +9960,31 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function share($key, $value = null){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->share($key, $value);
+		 Illuminate\View\Environment::share($key, $value);
+	 }
+
+	/**
+	 * Register a view creator event.
+	 *
+	 * @param array|string  $views
+	 * @param \Closure|string  $callback
+	 * @return array
+	 * @static 
+	 */
+	 public static function creator($views, $callback){
+		return Illuminate\View\Environment::creator($views, $callback);
 	 }
 
 	/**
 	 * Register a view composer event.
 	 *
 	 * @param array|string  $views
-	 * @param Closure|string  $callback
-	 * @return Closure
+	 * @param \Closure|string  $callback
+	 * @return array
 	 * @static 
 	 */
 	 public static function composer($views, $callback){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->composer($views, $callback);
+		return Illuminate\View\Environment::composer($views, $callback);
 	 }
 
 	/**
@@ -9680,8 +9995,18 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function callComposer($view){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->callComposer($view);
+		 Illuminate\View\Environment::callComposer($view);
+	 }
+
+	/**
+	 * Call the creator for a given view.
+	 *
+	 * @param \Illuminate\View\View  $view
+	 * @return void
+	 * @static 
+	 */
+	 public static function callCreator($view){
+		 Illuminate\View\Environment::callCreator($view);
 	 }
 
 	/**
@@ -9693,8 +10018,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function startSection($section, $content = ''){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->startSection($section, $content);
+		 Illuminate\View\Environment::startSection($section, $content);
 	 }
 
 	/**
@@ -9706,8 +10030,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function inject($section, $content){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->inject($section, $content);
+		 Illuminate\View\Environment::inject($section, $content);
 	 }
 
 	/**
@@ -9717,8 +10040,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function yieldSection(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->yieldSection();
+		return Illuminate\View\Environment::yieldSection();
 	 }
 
 	/**
@@ -9729,8 +10051,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function stopSection($overwrite = false){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->stopSection($overwrite);
+		return Illuminate\View\Environment::stopSection($overwrite);
 	 }
 
 	/**
@@ -9742,8 +10063,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function yieldContent($section, $default = ''){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->yieldContent($section, $default);
+		return Illuminate\View\Environment::yieldContent($section, $default);
 	 }
 
 	/**
@@ -9753,8 +10073,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function flushSections(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->flushSections();
+		 Illuminate\View\Environment::flushSections();
 	 }
 
 	/**
@@ -9764,8 +10083,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function incrementRender(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->incrementRender();
+		 Illuminate\View\Environment::incrementRender();
 	 }
 
 	/**
@@ -9775,8 +10093,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function decrementRender(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->decrementRender();
+		 Illuminate\View\Environment::decrementRender();
 	 }
 
 	/**
@@ -9786,8 +10103,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function doneRendering(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->doneRendering();
+		return Illuminate\View\Environment::doneRendering();
 	 }
 
 	/**
@@ -9798,8 +10114,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function addLocation($location){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->addLocation($location);
+		 Illuminate\View\Environment::addLocation($location);
 	 }
 
 	/**
@@ -9811,8 +10126,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function addNamespace($namespace, $hints){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->addNamespace($namespace, $hints);
+		 Illuminate\View\Environment::addNamespace($namespace, $hints);
 	 }
 
 	/**
@@ -9825,8 +10139,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function addExtension($extension, $engine, $resolver = null){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->addExtension($extension, $engine, $resolver);
+		 Illuminate\View\Environment::addExtension($extension, $engine, $resolver);
 	 }
 
 	/**
@@ -9836,8 +10149,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function getExtensions(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->getExtensions();
+		return Illuminate\View\Environment::getExtensions();
 	 }
 
 	/**
@@ -9847,8 +10159,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function getEngineResolver(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->getEngineResolver();
+		return Illuminate\View\Environment::getEngineResolver();
 	 }
 
 	/**
@@ -9858,8 +10169,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function getFinder(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->getFinder();
+		return Illuminate\View\Environment::getFinder();
 	 }
 
 	/**
@@ -9869,8 +10179,18 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function getDispatcher(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->getDispatcher();
+		return Illuminate\View\Environment::getDispatcher();
+	 }
+
+	/**
+	 * Set the event dispatcher instance.
+	 *
+	 * @param \Illuminate\Events\Dispatcher
+	 * @return void
+	 * @static 
+	 */
+	 public static function setDispatcher($events){
+		 Illuminate\View\Environment::setDispatcher($events);
 	 }
 
 	/**
@@ -9880,8 +10200,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function getContainer(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->getContainer();
+		return Illuminate\View\Environment::getContainer();
 	 }
 
 	/**
@@ -9892,8 +10211,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function setContainer($container){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		$root->setContainer($container);
+		 Illuminate\View\Environment::setContainer($container);
 	 }
 
 	/**
@@ -9903,8 +10221,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function getShared(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->getShared();
+		return Illuminate\View\Environment::getShared();
 	 }
 
 	/**
@@ -9914,8 +10231,7 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function getSections(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->getSections();
+		return Illuminate\View\Environment::getSections();
 	 }
 
 	/**
@@ -9925,8 +10241,135 @@ class View extends Illuminate\Support\Facades\View{
 	 * @static 
 	 */
 	 public static function getNames(){
-		$root = new \Illuminate\View\Environment(null,null,null);
-		return $root->getNames();
+		return Illuminate\View\Environment::getNames();
+	 }
+
+}
+
+class Basset extends Basset\Facade{
+	/**
+	 * Create a new environment instance.
+	 *
+	 * @param \Basset\Factory\FactoryManager  $factory
+	 * @param \Basset\AssetFinder  $finder
+	 * @return void
+	 * @static 
+	 */
+	 public static function __construct($factory, $finder){
+		 Basset\Environment::__construct($factory, $finder);
+	 }
+
+	/**
+	 * Alias of \Basset\Environment::collection()
+	 *
+	 * @param string  $name
+	 * @param \Closure  $callback
+	 * @return \Basset\Collection
+	 * @static 
+	 */
+	 public static function make($name, $callback = null){
+		return Basset\Environment::make($name, $callback);
+	 }
+
+	/**
+	 * Create or return an existing collection.
+	 *
+	 * @param string  $identifier
+	 * @param \Closure  $callback
+	 * @return \Basset\Collection
+	 * @static 
+	 */
+	 public static function collection($identifier, $callback = null){
+		return Basset\Environment::collection($identifier, $callback);
+	 }
+
+	/**
+	 * Get all collections.
+	 *
+	 * @return array
+	 * @static 
+	 */
+	 public static function all(){
+		return Basset\Environment::all();
+	 }
+
+	/**
+	 * Determine if a collection exists.
+	 *
+	 * @param string  $name
+	 * @return bool
+	 * @static 
+	 */
+	 public static function has($name){
+		return Basset\Environment::has($name);
+	 }
+
+	/**
+	 * Register a package with the environment.
+	 *
+	 * @param string  $package
+	 * @param string  $namespace
+	 * @return void
+	 * @static 
+	 */
+	 public static function package($package, $namespace = null){
+		 Basset\Environment::package($package, $namespace);
+	 }
+
+	/**
+	 * Register an array of collections.
+	 *
+	 * @param array  $collections
+	 * @return void
+	 * @static 
+	 */
+	 public static function collections($collections){
+		 Basset\Environment::collections($collections);
+	 }
+
+	/**
+	 * Set a collection offset.
+	 *
+	 * @param string  $offset
+	 * @param mixed  $value
+	 * @return void
+	 * @static 
+	 */
+	 public static function offsetSet($offset, $value){
+		 Basset\Environment::offsetSet($offset, $value);
+	 }
+
+	/**
+	 * Get a collection offset.
+	 *
+	 * @param string  $offset
+	 * @return null|\Basset\Collection
+	 * @static 
+	 */
+	 public static function offsetGet($offset){
+		return Basset\Environment::offsetGet($offset);
+	 }
+
+	/**
+	 * Unset a collection offset.
+	 *
+	 * @param string  $offset
+	 * @return void
+	 * @static 
+	 */
+	 public static function offsetUnset($offset){
+		 Basset\Environment::offsetUnset($offset);
+	 }
+
+	/**
+	 * Determine if a collection offset exists.
+	 *
+	 * @param string  $offset
+	 * @return bool
+	 * @static 
+	 */
+	 public static function offsetExists($offset){
+		return Basset\Environment::offsetExists($offset);
 	 }
 
 }
