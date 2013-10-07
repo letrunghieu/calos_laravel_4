@@ -46,8 +46,7 @@
 		    </div>
 		    <div class="help-block">
 			<p>
-			    <a href="#">{{ trans('user.forget your password?') }}</a><br />
-			    <a href="#">{{ trans('user.do not have an account?') }}</a>
+			    <a href="#">{{ trans('user.forget your password?') }}</a>
 			</p>
 		    </div>
 		</fieldset>
