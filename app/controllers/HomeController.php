@@ -45,20 +45,46 @@ class HomeController extends BaseController
 	if (Auth::attempt(array('email' => trim(Input::get('email')), 'password' => Input::get('password')), Input::get('remember')))
 	{
 	    return Redirect::action('HomeController@showWelcome');
-	}
-	else
+	} else
 	{
 	    return Redirect::action('HomeController@showWelcome')->with('login-error', true);
 	}
     }
-    
+
     public function getLogout()
     {
 	if (Auth::check())
 	{
 	    Auth::logout();
 	}
-	return Redirect::intended('/');
+	return Redirect::home();
+    }
+
+    public function showNewPassword()
+    {
+	if (Auth::check())
+	{
+	    return Redirect::home();
+	} else
+	{
+	    $data = array();
+	    add_body_classes('no-log');
+	    $this->layout->title = trans('user.get new password');
+	    $rules = array(
+		'email' => 'required|email|exists:users,email',
+	    );
+
+	    $validator = Validator::make(Input::all(), $rules);
+	    if ($validator->fails())
+	    {
+		$data['errors'] = $validator->getMessageBag();
+	    }
+	    else
+	    {
+		$user = User::resetPassword(trim(Input::get('email')));
+	    }
+	    return $this->layout->nest('content', 'home.new_password', $data);
+	}
     }
 
 }

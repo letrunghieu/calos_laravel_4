@@ -14,5 +14,7 @@
 Route::get('/', 'HomeController@showWelcome');
 Route::post('/login', 'HomeController@postLogin');
 Route::get('/logout', 'HomeController@getLogout');
+Route::get('/new_password', 'HomeController@showNewPassword');
+Route::post('/new_password', array('before' => 'csrf', 'uses' => 'HomeController@showNewPassword'));
 
 //Route::controller($uri, $controller);

@@ -76,6 +76,7 @@ return array(
 	'email' => array(
 	    'required' => 'Chúng tôi cần biết email của bạn, hãy nhập lại email một lần nữa.',
 	    'email' => 'Địa chỉ email này không hợp lệ, hãy nhập một địa chỉ đúng dạng "example@email.com".',
+	    'exists' => 'Địa chỉ email này chưa được cấp tài khoản. Thử đổi một địa chỉ email khác hoặc liên lạc với quản trị viên.',
 	),
 	'password' => array(
 	    'required' => 'Mật khẩu không được để trống, hãy nhập lại mật khẩu một lần nữa.'

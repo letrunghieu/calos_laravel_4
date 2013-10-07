@@ -96,4 +96,21 @@ class User extends Eloquent implements UserInterface
 	return $this->password;
     }
 
+    public static function resetPassword($email)
+    {
+	$user = static::where('email', '=', $email)->first();
+	if ($user)
+	{
+	    $newToken = sha1($user->password . time());
+	    $user->verify_token = $newToken;
+	    $user->save();
+	    return Mail::send('emails.auth.reset', array('user' => $user, 'token' => $newToken), function($message)use ($user)
+			    {
+				$message->to($user->email, $user->first_name)
+					->subject(trans('user.mail.guide to reset your password'));
+			    });
+	}
+	return false;
+    }
+
 }

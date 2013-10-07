@@ -46,7 +46,9 @@
 		    </div>
 		    <div class="help-block">
 			<p>
-			    <a href="#">{{ trans('user.forget your password?') }}</a>
+			    <a href="{{ URL::action('HomeController@getNewPassword')}}">
+				{{ trans('user.forget your password?') }}
+			    </a>
 			</p>
 		    </div>
 		</fieldset>
