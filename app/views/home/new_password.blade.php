@@ -21,6 +21,8 @@
 			{{ implode('', $errors->all('<p>:message</p>')) }}
 		    </div>
 		    @endif
+		    
+		    @include('shared.messages', array('messages' => isset($messages) ? $messages : null))
 		</div>
 	    </div>
 	    <form  class='text-center' method='post' action="{{URL::current()}}">

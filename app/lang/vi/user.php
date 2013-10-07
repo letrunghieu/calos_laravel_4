@@ -12,7 +12,6 @@ return array(
     'get new password' => 'Tạo mật khẩu mới',
     'send link to me' => 'Gửi liên kết đó cho tôi',
     'dear :name' => "Xin chào :name",
-    
     'mail.guide to reset your password' => 'Hướng dẫn đặt lại mật khẩu tài khoản',
     
     'title.log in' => 'Đăng nhập',
@@ -24,5 +23,7 @@ return array(
     'help.new password guide' => 'Chương trình sẽ tạo ra một <b>liên kết</b> đến nơi cho phép bạn tạo lại mật khẩu của mình và gửi đến email của bạn. Hãy nhập địa chỉ email của bạn vào bên dưới và làm theo hướng dẫn trong email được nhận.',
     
     'message.your log in information is not correct, please review it and try again' => 'Thông tin đăng nhập không đúng, hãy xem lại email và password rồi thử đăng nhập lại.',
-)
+    'message.cannot send email, please try again after few minutes' => 'Có lỗi trong lúc gửi email, xin vui lòng thử lại sau ít phút.',
+    'message.the email has been sent to your mail box' => 'Email đã được gửi, hãy kiểm tra hòm thư của mình.',
+	);
 ?>

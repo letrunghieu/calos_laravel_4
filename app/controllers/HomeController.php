@@ -81,7 +81,13 @@ class HomeController extends BaseController
 	    }
 	    else
 	    {
-		$user = User::resetPassword(trim(Input::get('email')));
+		if(User::resetPassword(trim(Input::get('email')))){
+		    $data['messages']['danger'][] = trans('user.error.cannot send email, please try again after few minutes');
+		}
+		else
+		{
+		    $data['messages']['success'][] = trans('user.message.the email has been sent to your mail box');
+		}
 	    }
 	    return $this->layout->nest('content', 'home.new_password', $data);
 	}
