@@ -2,7 +2,9 @@
 
 class HomeController extends BaseController
 {
+
     protected $layout = 'layouts.front-end';
+
     /*
       |--------------------------------------------------------------------------
       | Default Home Controller
@@ -24,8 +26,39 @@ class HomeController extends BaseController
 	{
 	    // not logged in
 	    add_body_classes('no-log');
+	    $this->layout->title = trans('user.log in');
 	    return $this->layout->nest('content', 'home.welcome-guest', $data);
 	}
+    }
+
+    public function postLogin()
+    {
+	$rules = array(
+	    'email' => 'required|email',
+	    'password' => 'required',
+	);
+	$validator = Validator::make(Input::all(), $rules);
+	if ($validator->fails())
+	{
+	    return Redirect::action('HomeController@showWelcome')->withErrors($validator);
+	}
+	if (Auth::attempt(array('email' => trim(Input::get('email')), 'password' => Input::get('password')), Input::get('remember')))
+	{
+	    return Redirect::action('HomeController@showWelcome');
+	}
+	else
+	{
+	    return Redirect::action('HomeController@showWelcome')->with('login-error', true);
+	}
+    }
+    
+    public function getLogout()
+    {
+	if (Auth::check())
+	{
+	    Auth::logout();
+	}
+	return Redirect::intended('/');
     }
 
 }

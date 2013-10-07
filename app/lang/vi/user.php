@@ -16,5 +16,7 @@ return array(
     'help.your password here' => 'Nhập mật khẩu',
     'help.auto login next time' => 'Cho phép đăng nhập tự động lần sau',
     'help.allow this application sign in with inputed email and password in the next time you visit this page' => 'Cho phép tự động đăng nhập với email và mật khẩu được nhập ở trên khi bạn truy cập vào website này lần sau',
+    
+    'message.your log in information is not correct, please review it and try again' => 'Thông tin đăng nhập không đúng, hãy xem lại email và password rồi thử đăng nhập lại.',
 )
 ?>

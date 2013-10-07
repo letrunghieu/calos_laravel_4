@@ -12,5 +12,7 @@
 */
 
 Route::get('/', 'HomeController@showWelcome');
+Route::post('/login', 'HomeController@postLogin');
+Route::get('/logout', 'HomeController@getLogout');
 
 //Route::controller($uri, $controller);

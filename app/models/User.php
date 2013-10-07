@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Auth\UserInterface;
+
 /**
  * A user (or member) of a organization
  * 
@@ -21,7 +23,7 @@
  * @property array $announcements Description
  * @property array $activities Description
  */
-class User extends Eloquent
+class User extends Eloquent implements UserInterface
 {
 
     const GENDER_UNDEFINED = -1;
@@ -82,6 +84,16 @@ class User extends Eloquent
 	    }
 	}
 	return $user;
+    }
+
+    public function getAuthIdentifier()
+    {
+	return $this->getKey();
+    }
+
+    public function getAuthPassword()
+    {
+	return $this->password;
     }
 
 }
