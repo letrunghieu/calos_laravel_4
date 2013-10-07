@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
+        <file>file:/C:/wamp/www/calos_dev/app/controllers/HomeController.php</file>
+        <file>file:/C:/wamp/www/calos_dev/composer.json</file>
+        <file>file:/C:/wamp/www/calos_dev/app/config/app.php</file>
+        <file>file:/C:/wamp/www/calos_dev/app/start/global.php</file>
+        <file>file:/C:/wamp/www/calos_dev/app/config/packages/jasonlewis/basset/config.php</file>
+        <file>file:/C:/wamp/www/calos_dev/app/views/hello.blade.php</file>
+        <file>file:/C:/wamp/www/calos_dev/private/asset/bootstrap/bootstrap.min.css</file>
+    </open-files>
 </project-private>

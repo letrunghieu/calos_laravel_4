@@ -16,6 +16,7 @@ ClassLoader::addDirectories(array(
     app_path() . '/controllers',
     app_path() . '/models',
     app_path() . '/database/seeds',
+    app_path() . '/libraries',
 ));
 
 /*
@@ -87,17 +88,26 @@ require app_path() . '/filters.php';
   |-------------------------------------------------------------------------
  */
 
-Basset::collection('bootstrap', function($collection)
+Basset::collection('front-end-header', function($collection)
 	{
 	    // Collection definition.
-	    $collection->add('../private/asset/bootstrap/bootstrap.min.css');
-	    $collection->add('../private/asset/bootstrap/bootstrap-custom.less')->apply('Less');
-	    $collection->add('../private/asset/bootstrap/bootstrap.min.js');
+	    $collection->add('../private/vendor/bootstrap/bootstrap.min.css');
+	    $collection->add('../private/vendor/bootstrap/bootstrap-custom.less')->apply('Less');
+	    $collection->add('../private/less/front-end.less')->apply('Less');
+	    $collection->add('../private/vendor/angularjs/angular.min.js');
+	    $collection->add('../private/vendor/modernizr/modernizr-2.6.2-respond-1.1.0.min.js');
 	});
-	
-Basset::collection('jquery', function($collection)
+
+Basset::collection('front-end-footer', function($collection)
 	{
 	    // Collection definition.
-	    $collection->add('../private/asset/jquery/jquery-1.10.2.min.js');
-	    $collection->add('../private/asset/jquery/jquery-migrate-1.2.1.min.js');
+	    $collection->add('../private/vendor/jquery/jquery-1.10.2.min.js');
+	    $collection->add('../private/vendor/jquery/jquery-migrate-1.2.1.min.js');
+	    $collection->add('../private/vendor/bootstrap/bootstrap.min.js');
+	    $collection->add('../private/js/front-end.js');
 	});
+
+/**
+ * Includes helper functions
+ */
+require_once app_path() . '/libraries/helpers.php';
