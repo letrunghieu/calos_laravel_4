@@ -29,6 +29,12 @@ class HomeController extends BaseController
 	    $this->layout->title = trans('user.log in');
 	    return $this->layout->nest('content', 'home.welcome_guest', $data);
 	}
+	else
+	{
+	    add_body_classes('logged home');
+	    $this->layout = View::make('layouts.front-end-logged')->with('title', 'Welcome');
+	    return $this->layout->nest('content', 'home.index', $data);
+	}
     }
 
     public function postLogin()

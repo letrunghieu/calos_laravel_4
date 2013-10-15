@@ -14,6 +14,7 @@ return array(
     'dear :name' => "Xin chào :name",
     'change my password' => "Đổi mật khẩu của tôi",
     'set your password' => "Đặt mật khẩu cho tài khoản",
+    'menu title' => 'Cá nhân',
     
     
     'mail.guide to reset your password' => 'Hướng dẫn đặt lại mật khẩu tài khoản',
@@ -33,5 +34,9 @@ return array(
     'message.the email has been sent to your mail box' => 'Email đã được gửi, hãy kiểm tra hòm thư của mình.',
     'message.this link is expired, try to generate a new one' => 'Liên kết này đã hết hạn, hãy yêu cầu một lần nữa để có liên kết khác.',
     'message.your new password has been set, try to log in' => 'Mật khẩu mới đã được lưu, hãy thử đăng nhập lại',
+    
+    'menu.update profile' => 'Cập nhật hồ sơ',
+    'menu.my vacancy' => 'Các chức vụ của tôi',
+    'menu.messages' => 'Tin nhắn',
 	);
 ?>
