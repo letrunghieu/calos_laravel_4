@@ -27,7 +27,7 @@ class HomeController extends BaseController
 	    // not logged in
 	    add_body_classes('no-log');
 	    $this->layout->title = trans('user.log in');
-	    return $this->layout->nest('content', 'home.welcome-guest', $data);
+	    return $this->layout->nest('content', 'home.welcome_guest', $data);
 	}
     }
 
@@ -70,26 +70,68 @@ class HomeController extends BaseController
 	    $data = array();
 	    add_body_classes('no-log');
 	    $this->layout->title = trans('user.get new password');
-	    $rules = array(
-		'email' => 'required|email|exists:users,email',
-	    );
+	    if (Input::get('commit'))
+	    {
+		$rules = array(
+		    'email' => 'required|email|exists:users,email',
+		);
 
-	    $validator = Validator::make(Input::all(), $rules);
-	    if ($validator->fails())
-	    {
-		$data['errors'] = $validator->getMessageBag();
-	    }
-	    else
-	    {
-		if(User::resetPassword(trim(Input::get('email')))){
-		    $data['messages']['danger'][] = trans('user.error.cannot send email, please try again after few minutes');
-		}
-		else
+		$validator = Validator::make(Input::all(), $rules);
+		if ($validator->fails())
 		{
-		    $data['messages']['success'][] = trans('user.message.the email has been sent to your mail box');
+		    $data['errors'] = $validator->getMessageBag();
+		} else
+		{
+		    if (User::resetPassword(trim(Input::get('email'))))
+		    {
+			$data['messages']['danger'][] = trans('user.error.cannot send email, please try again after few minutes');
+		    } else
+		    {
+			$data['messages']['success'][] = trans('user.message.the email has been sent to your mail box');
+		    }
 		}
 	    }
 	    return $this->layout->nest('content', 'home.new_password', $data);
+	}
+    }
+
+    public function showSetPassword($id, $verify_token)
+    {
+	if (Auth::check())
+	{
+	    return Redirect::home();
+	} else
+	{
+	    // not logged in
+	    $data = array();
+	    $data['id'] = $id;
+	    $data['verify_token'] = $verify_token;
+	    add_body_classes('no-log');
+	    if (Input::get('commit'))
+	    {
+		$user = User::find($id);
+		if ($user && $user->verify_token == Input::get('_verifiy_token'))
+		{
+		    $rules = array(
+			'password' => 'required|min:6',
+			'repassword' => 'required|same:password'
+		    );
+		    $validator = Validator::make(Input::all(), $rules);
+		    if ($validator->fails())
+			return Redirect::action('HomeController@showSetPassword', array($id, $verify_token))->withErrors($validator);
+		    else
+		    {
+			$user->verify_token = null;
+			$user->password = Hash::make(Input::get('password'));
+			$user->save();
+			return Redirect::action('HomeController@showSetPassword', array($id, $verify_token))->with('success', trans('user.message.your new password has been set, try to log in'));
+		    }
+		}
+		else
+		    return Redirect::action('HomeController@showSetPassword', array($id, $verify_token))->with('error', trans('user.message.this link is expired, try to generate a new one'));
+	    }
+	    $this->layout->title = trans('user.set your password');
+	    return $this->layout->nest('content', 'home.set_password', $data);
 	}
     }
 

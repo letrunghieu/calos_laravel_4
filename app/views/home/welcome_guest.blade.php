@@ -46,7 +46,7 @@
 		    </div>
 		    <div class="help-block">
 			<p>
-			    <a href="{{ URL::action('HomeController@getNewPassword')}}">
+			    <a href="{{ URL::action('HomeController@showNewPassword')}}">
 				{{ trans('user.forget your password?') }}
 			    </a>
 			</p>

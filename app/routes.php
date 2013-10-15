@@ -16,5 +16,13 @@ Route::post('/login', 'HomeController@postLogin');
 Route::get('/logout', 'HomeController@getLogout');
 Route::get('/new_password', 'HomeController@showNewPassword');
 Route::post('/new_password', array('before' => 'csrf', 'uses' => 'HomeController@showNewPassword'));
+Route::get('/set_password/{id}/{token}', 'HomeController@showSetPassword')->where(array(
+    'id' => '[0-9]+',
+    'token' => '[a-z0-9]+',
+));
+Route::post('/set_password/{id}/{token}', array('before' => 'csrf', 'uses' => 'HomeController@showSetPassword'))->where(array(
+    'id' => '[0-9]+',
+    'token' => '[a-z0-9]+',
+));
 
 //Route::controller($uri, $controller);

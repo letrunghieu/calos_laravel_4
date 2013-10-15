@@ -39,7 +39,7 @@
 			<input type='email' name='email' class='form-control' placeholder="{{trans('user.help.your email here')}}" />
 		    </div>
 		    <div class='form-group'>
-			<button type='submit' class='btn btn-primary btn-block' name='login' id="login-button">{{ trans('user.send link to me')}}</button>
+			<button type='submit' class='btn btn-primary btn-block' name='commit' id="login-button" value='on'>{{ trans('user.send link to me')}}</button>
 		    </div>
 		    <div class="help-block">
 			<p>

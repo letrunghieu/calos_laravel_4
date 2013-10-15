@@ -79,7 +79,12 @@ return array(
 	    'exists' => 'Địa chỉ email này chưa được cấp tài khoản. Thử đổi một địa chỉ email khác hoặc liên lạc với quản trị viên.',
 	),
 	'password' => array(
-	    'required' => 'Mật khẩu không được để trống, hãy nhập lại mật khẩu một lần nữa.'
+	    'required' => 'Mật khẩu không được để trống, hãy nhập lại mật khẩu một lần nữa.',
+	    'min' => 'Mật khẩu phải dài ít nhất 6 kí tự.',
+	),
+	'repassword' => array(
+	    'required' => 'Mật khẩu phải được nhập hai lần.',
+	    'same' => 'Mật khẩu trong hai lần nhập phải giống nhau.',
 	),
     ),
     /*

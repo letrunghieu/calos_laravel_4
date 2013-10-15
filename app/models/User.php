@@ -101,7 +101,7 @@ class User extends Eloquent implements UserInterface
 	$user = static::where('email', '=', $email)->first();
 	if ($user)
 	{
-	    $newToken = sha1($user->password . time());
+	    $newToken = sha1($user->password . time()); 
 	    $user->verify_token = $newToken;
 	    $user->save();
 	    return Mail::send('emails.auth.reset', array('user' => $user, 'token' => $newToken), function($message)use ($user)
