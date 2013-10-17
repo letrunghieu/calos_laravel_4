@@ -45,4 +45,18 @@ class Unit extends Eloquent
 	return $obj;
     }
 
+    /**
+     * 
+     * @param integer $id
+     * @return Unit
+     */
+    public static function getOrganization($id = null)
+    {
+	$query = Unit::where('parent_id', '=', 0);
+	if (!$id)
+	    return $query->first();
+	else
+	    return $query->where('site_id', '=', $id)->first();
+    }
+
 }

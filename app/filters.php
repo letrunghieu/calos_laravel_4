@@ -14,6 +14,8 @@
 App::before(function($request)
 {
 	//
+    global $organization;
+    $organization = Unit::getOrganization();
 });
 
 

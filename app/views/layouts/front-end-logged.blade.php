@@ -1,3 +1,6 @@
+<?php
+global $organization;
+?>
 <!DOCTYPE html>
 <html lang="{{ Config::get('app.locale') }}">
     <head>
@@ -8,7 +11,7 @@
 	@javascripts('front-end-header')
     </head>
     <body class='<?php body_classes() ?>'>
-	<header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+	<header class="navbar navbar-default navbar-fixed-top" role="banner">
 	    <div class="container">
 		<div class="navbar-header">
 		    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -18,7 +21,7 @@
 			<span class="icon-bar"></span>
 		    </button>
 		    <a href="<?php echo URL::to('/') ?>" class="navbar-brand" title="{{ trans('global.home page')}}" data-toggle='tooltip' data-placement='auto top'>
-			<img class="logo-image" src='{{asset("images/calos-logo.png")}}' alt="{{ trans('global.home page')}}"/>
+			<img class="logo-image" src='{{asset("images/calos-logo-white-small.png")}}' alt="{{ trans('global.home page')}}"/>
 		    </a>
 		</div>
 		<nav class="collapse navbar-collapse navbar-inverse-collapse bs-navbar-collapse" role="navigation">
@@ -87,9 +90,47 @@
 		</nav>
 	    </div>
 	</header>
-	<div id="body-wrapper">
-	    @yield('content')
+	<div id='page-header' class='calos-header'>
+	    <div class='container'>
+		<h1>{{ isset($pageHeader) ? $pageHeader : "Welcome" }}</h1>
+	    </div>
 	</div>
+	<div id="body-wrapper">
+	    <div class="container">
+		<div class="row">
+		    <div class="col-md-3">
+			@yield('second-navbar')
+		    </div>
+		    <div class="col-md-9">
+			@yield('content')
+		    </div>
+		</div>
+	    </div>
+	</div>
+	<footer class='calos-footer'>
+	    <div class="container" role="contentinfo">
+		<div class="row">
+		    <div class="visible-md visible-lg">
+			<div class="col-md-9">
+			    {{ $organization->name }}
+			</div>
+			<div class="col-md-3 text-right">
+			    {{trans('global.powered by CALOS')}}
+			</div>
+		    </div>
+		</div>
+		<div class="row">
+		    <div class="visible-xs visible-sm">
+			<div class="text-center">
+			    {{ $organization->name }}
+			</div>
+			<div class="text-center">
+			    {{trans('global.powered by CALOS')}}
+			</div>
+		    </div>
+		</div>
+	    </div>
+	</footer>
 	<div class="hidden" id="helper-blocks">
 	</div>
 	@javascripts('front-end-footer')

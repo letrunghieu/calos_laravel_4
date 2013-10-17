@@ -20,6 +20,7 @@ class HomeController extends BaseController
 
     public function showWelcome()
     {
+	global $organization;
 	$data = array();
 	$user = Auth::user();
 	if (!$user)
@@ -32,7 +33,8 @@ class HomeController extends BaseController
 	else
 	{
 	    add_body_classes('logged home');
-	    $this->layout = View::make('layouts.front-end-logged')->with('title', 'Welcome');
+	    $this->layout = View::make('layouts.front-end-logged')->with('title', $organization->name)
+		    ->with('pageHeader', $organization->name);
 	    return $this->layout->nest('content', 'home.index', $data);
 	}
     }
