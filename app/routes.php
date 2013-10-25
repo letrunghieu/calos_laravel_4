@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/', array('as' => 'home', 'uses' => 'HomeController@showWelcome'));
 Route::post('/login', 'HomeController@postLogin');
 Route::get('/logout', 'HomeController@getLogout');
 Route::get('/new_password', 'HomeController@showNewPassword');

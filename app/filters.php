@@ -14,8 +14,9 @@
 App::before(function($request)
 {
 	//
-    global $organization;
+    global $organization, $currentUser;
     $organization = Unit::getOrganization();
+    $currentUser = Auth::user();
 });
 
 

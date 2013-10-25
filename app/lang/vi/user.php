@@ -15,6 +15,9 @@ return array(
     'change my password' => "Đổi mật khẩu của tôi",
     'set your password' => "Đặt mật khẩu cho tài khoản",
     'menu title' => 'Cá nhân',
+    'welcome, :name' => 'Xin chào, :name!',
+    'log out' => 'Đăng xuất',
+    'search user' => 'Tìm thành viên',
     
     
     'mail.guide to reset your password' => 'Hướng dẫn đặt lại mật khẩu tài khoản',

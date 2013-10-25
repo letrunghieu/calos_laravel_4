@@ -1,5 +1,5 @@
 <?php
-global $organization;
+global $organization, $currentUser;
 ?>
 <!DOCTYPE html>
 <html lang="{{ Config::get('app.locale') }}">
@@ -87,21 +87,61 @@ global $organization;
 			    </ul>
 			</li>
 		    </ul>
+		    <ul class='nav navbar-nav navbar-right'>
+			<li>
+			    <a href='{{ URL::action("HomeController@getLogout") }}'>
+				{{trans('user.log out')}} <i class='fa fa-log-out'></i>
+			    </a>
+			</li>
+		    </ul>
 		</nav>
 	    </div>
 	</header>
 	<div id='page-header' class='calos-header'>
 	    <div class='container'>
-		<h1>{{ isset($pageHeader) ? $pageHeader : "Welcome" }}</h1>
+		<div class="row">
+		    <div class="col-md-9">
+			<h1>{{ isset($pageHeader) ? $pageHeader : "Welcome" }}</h1>
+		    </div>
+		    <div class="col-md-3 welcome-user">
+			{{trans('user.welcome, :name', array('name' => link_to('#', $currentUser->first_name)))}}
+		    </div>
+		</div>
 	    </div>
 	</div>
 	<div id="body-wrapper">
 	    <div class="container">
 		<div class="row">
-		    <div class="col-md-3">
-			@yield('second-navbar')
+		    <div class="col-md-3 col-md-push-9">
+			<div>
+			    @yield('second-navbar')
+			</div>
+			<div id='search-form'>
+			    <form method='post'>
+				{{ Form::hidden('_token', csrf_token()) }}
+				<div class='form-group'>
+				    <label class="radio-inline">
+					<input type="radio" name="options"  checked="checked"/> <i class='fa fa-group' title="{{trans('user.search user')}}" data-toggle='tooltip' data-position='auto top'></i>
+				    </label>
+				    <label class="radio-inline">
+					<input type="radio" name="options"/> <i class='fa fa-tasks' title="{{trans('task.search task')}}" data-toggle='tooltip' data-position='auto top'></i>
+				    </label>
+				    <label class="radio-inline">
+					<input type="radio" name="options"/> <i class='fa fa-bullhorn' title="{{trans('organization.search announcement')}}" data-toggle='tooltip' data-position='auto top'></i>
+				    </label>
+				    <label class="radio-inline">
+					<input type="radio" name="options"/> <i class='fa fa-suitcase' title="{{trans('organization.search unit')}}" data-toggle='tooltip' data-position='auto top'></i>
+				    </label>
+				</div>
+				<div class='form-group'>
+				    <input type='text' name='s' class='form-control' placeholder="{{trans('global.type and enter to search')}}" />
+				</div>
+				
+
+			    </form>
+			</div>
 		    </div>
-		    <div class="col-md-9">
+		    <div class="col-md-9 col-md-pull-3">
 			@yield('content')
 		    </div>
 		</div>

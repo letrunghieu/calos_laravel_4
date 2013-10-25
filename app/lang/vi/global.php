@@ -9,5 +9,6 @@ return array(
     'home page' => 'Trang chủ',
     'admin functions' => 'Chức năng quản trị',
     'powered by CALOS' => 'Powered by CALOS',
+    'type and enter to search' => 'Gõ và <ENTER> để tìm kiếm ...',
 );
 ?>
