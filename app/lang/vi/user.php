@@ -18,11 +18,13 @@ return array(
     'welcome, :name' => 'Xin chào, :name!',
     'log out' => 'Thoát',
     'search user' => 'Tìm thành viên',
+    'export user list as vcard' => 'Lưu danh sách này',
     
     
     'mail.guide to reset your password' => 'Hướng dẫn đặt lại mật khẩu tài khoản',
     
     'title.log in' => 'Đăng nhập',
+    'title.user list' => 'Danh bạ thành viên',
     
     'help.your email here' => 'Nhập email ở đây',
     'help.your password here' => 'Nhập mật khẩu',
@@ -31,6 +33,8 @@ return array(
     'help.new password guide' => 'Chương trình sẽ tạo ra một <b>liên kết</b> đến nơi cho phép bạn tạo lại mật khẩu của mình và gửi đến email của bạn. Hãy nhập địa chỉ email của bạn vào bên dưới và làm theo hướng dẫn trong email được nhận.',
     'help.type your new password here again' => 'Nhập lại mật khẩu mới một lần nữa',
     'help.your new password here' => 'Nhập mật khẩu mới',
+    'help.view all :number user with firstname begin by the letter :char' => '[0,1] Xem thành viên có tên bắt đầu bằng chữ :char|[2,Inf] Xem danh sách :number thành viên có tên bắt đầu bằng chữ :char',
+    'help.view all member' => 'Xem danh sách toàn bộ thành viên',
     
     'message.your log in information is not correct, please review it and try again' => 'Thông tin đăng nhập không đúng, hãy xem lại email và password rồi thử đăng nhập lại.',
     'message.cannot send email, please try again after few minutes' => 'Có lỗi trong lúc gửi email, xin vui lòng thử lại sau ít phút.',

@@ -101,7 +101,7 @@ class User extends Eloquent implements UserInterface
 	$user = static::where('email', '=', $email)->first();
 	if ($user)
 	{
-	    $newToken = sha1($user->password . time()); 
+	    $newToken = sha1($user->password . time());
 	    $user->verify_token = $newToken;
 	    $user->save();
 	    return Mail::send('emails.auth.reset', array('user' => $user, 'token' => $newToken), function($message)use ($user)
@@ -111,6 +111,15 @@ class User extends Eloquent implements UserInterface
 			    });
 	}
 	return false;
+    }
+
+    public static function getAllFirstnamePrefixes()
+    {
+	return static::groupBy('fname')->orderBy('fname')
+			->get(array(
+			    DB::raw('LEFT(first_name, 1) as fname'),
+			    DB::raw('COUNT(id) as c')
+	));
     }
 
 }

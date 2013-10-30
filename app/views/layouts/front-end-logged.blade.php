@@ -35,7 +35,7 @@ global $organization, $currentUser;
 			    </a>
 			    <ul class="dropdown-menu">
 				<li><a href="#">{{trans('organization.menu.organization structure')}}</a></li>
-				<li><a href="#">{{trans('organization.menu.member contacts')}}</a></li>
+				<li><a href="{{ URL::action('UserController@getUserList') }}">{{trans('organization.menu.member contacts')}}</a></li>
 				<li><a href="#">{{trans('organization.menu.announcements')}}</a></li>
 				<li role="presentation" class="divider"></li>
 				<li role="presentation" class="dropdown-header">{{trans('global.admin functions')}}</li>
@@ -123,7 +123,7 @@ global $organization, $currentUser;
 		<div class="row">
 		    <div class="col-md-3 col-md-push-9">
 			
-			<div id='search-form' class="widget-box">
+			<div id='search-form' class="widget box">
 			    <form method='post'>
 				{{ Form::hidden('_token', csrf_token()) }}
 				

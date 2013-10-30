@@ -100,14 +100,39 @@ body.logged {
 }
 
 /* sidebar */
-.widget-box {
-    background-color: @gray-lighter;
-    border: 1px solid #D7E0E2;
-    .border-radius(4px);
-    .box-shadow( 0 1px 1px rgba(0, 0, 0, 0.05) inset);
+.widget {
     margin-bottom: 20px;
-    min-height: 20px;
-    padding: 8px;
+    &.box {
+        background-color: @gray-lighter;
+        border: 1px solid #D7E0E2;
+        .border-radius(4px);
+        .box-shadow( 0 1px 1px rgba(0, 0, 0, 0.05) inset);
+        min-height: 20px;
+        padding: 8px;
+    }
+}
+
+#firtname-prefixes {
+    .item {
+        background: @gray;
+        .border-radius(4px);
+        display: inline-block;
+        line-height: 50px;
+        margin-bottom: 5px;
+        margin-right: 5px;
+        text-align: center;
+        width: 50px;
+        color: white ;
+        
+        &.active {
+            background: @btn-info-bg;
+        }
+        
+        &:hover {
+            background: @btn-primary-bg;
+            text-decoration:none;
+        }
+    }
 }
 
 /* footer */

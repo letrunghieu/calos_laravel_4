@@ -11,5 +11,6 @@ return array(
     'powered by CALOS' => 'Powered by CALOS',
     'type and enter to search' => 'Gõ và <ENTER> để tìm kiếm ...',
     'current server time is' => 'Thời gian của hệ thống',
+    'all' => 'Tất cả',
 );
 ?>

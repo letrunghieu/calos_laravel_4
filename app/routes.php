@@ -25,4 +25,8 @@ Route::post('/set_password/{id}/{token}', array('before' => 'csrf', 'uses' => 'H
     'token' => '[a-z0-9]+',
 ));
 
+Route::group(array('before' => 'auth'), function(){
+    Route::get('/members/{prefix?}', 'UserController@getUserList');
+});
+
 //Route::controller($uri, $controller);
