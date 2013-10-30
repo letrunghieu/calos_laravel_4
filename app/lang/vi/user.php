@@ -16,7 +16,7 @@ return array(
     'set your password' => "Đặt mật khẩu cho tài khoản",
     'menu title' => 'Cá nhân',
     'welcome, :name' => 'Xin chào, :name!',
-    'log out' => 'Đăng xuất',
+    'log out' => 'Thoát',
     'search user' => 'Tìm thành viên',
     
     

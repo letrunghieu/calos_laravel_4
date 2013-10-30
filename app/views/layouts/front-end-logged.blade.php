@@ -89,6 +89,11 @@ global $organization, $currentUser;
 		    </ul>
 		    <ul class='nav navbar-nav navbar-right'>
 			<li>
+			    <a href='#'>
+				<i class='fa fa-desktop'></i> {{$currentUser->first_name}}
+			    </a>
+			</li>
+			<li>
 			    <a href='{{ URL::action("HomeController@getLogout") }}'>
 				{{trans('user.log out')}} <i class='fa fa-log-out'></i>
 			    </a>
@@ -103,8 +108,12 @@ global $organization, $currentUser;
 		    <div class="col-md-9">
 			<h1>{{ isset($pageHeader) ? $pageHeader : "Welcome" }}</h1>
 		    </div>
-		    <div class="col-md-3 welcome-user">
-			{{trans('user.welcome, :name', array('name' => link_to('#', $currentUser->first_name)))}}
+		    <div class="col-md-3">
+			<div id="server-clock">
+			    <span>{{trans('global.current server time is')}}</span>
+			    <time datetime="2013-10-27 16:00"><span class='date'>2013-10-27</span> <span class='time'>16:00</span></time>
+			    <a href='#' title='Xem lich cua to chuc' data-toggle='tooltip' data-placement='auto top'><i class='fa fa-calendar'></i></a>
+			</div>
 		    </div>
 		</div>
 	    </div>
@@ -113,12 +122,14 @@ global $organization, $currentUser;
 	    <div class="container">
 		<div class="row">
 		    <div class="col-md-3 col-md-push-9">
-			<div>
-			    @yield('second-navbar')
-			</div>
-			<div id='search-form'>
+			
+			<div id='search-form' class="widget-box">
 			    <form method='post'>
 				{{ Form::hidden('_token', csrf_token()) }}
+				
+				<div class='form-group'>
+				    <input type='text' name='s' class='form-control' placeholder="{{trans('global.type and enter to search')}}" />
+				</div>
 				<div class='form-group'>
 				    <label class="radio-inline">
 					<input type="radio" name="options"  checked="checked"/> <i class='fa fa-group' title="{{trans('user.search user')}}" data-toggle='tooltip' data-position='auto top'></i>
@@ -133,13 +144,13 @@ global $organization, $currentUser;
 					<input type="radio" name="options"/> <i class='fa fa-suitcase' title="{{trans('organization.search unit')}}" data-toggle='tooltip' data-position='auto top'></i>
 				    </label>
 				</div>
-				<div class='form-group'>
-				    <input type='text' name='s' class='form-control' placeholder="{{trans('global.type and enter to search')}}" />
-				</div>
-				
 
 			    </form>
 			</div>
+			<div>
+			    @yield('second-navbar')
+			</div>
+			
 		    </div>
 		    <div class="col-md-9 col-md-pull-3">
 			@yield('content')
