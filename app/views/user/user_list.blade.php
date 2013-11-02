@@ -12,7 +12,7 @@
     <div id='firtname-prefixes' class="widget"> 
 	<a href="{{URL::action('UserController@getUserList')}}" class='item all active' title="{{trans('user.help.view all member')}}" data-toggle="tooltip" data-placement="auto top">{{ trans('global.all')}}</a>
 	@foreach($firstnamePrefixes as $prefix)
-	<a href="{{URL::action('UserController@getUserList', array($prefix->fname))}}" class='item' title="{{ trans_choice('user.help.view all :number user with firstname begin by the letter :char', $prefix->c, array('number' => $prefix->c, 'char' => $prefix->fname)) }}" data-toggle="tooltip" data-placement="auto top">
+	<a href="{{URL::action('UserController@getUserList', array($prefix->fname))}}" data-fname-prefix="{{$prefix->fname}}" class='item' title="{{ trans_choice('user.help.view all :number user with firstname begin by the letter :char', $prefix->c, array('number' => $prefix->c, 'char' => $prefix->fname)) }}" data-toggle="tooltip" data-placement="auto top">
 	    <span>{{$prefix->fname}}</span>
 	</a>
 	@endforeach
@@ -22,49 +22,29 @@
 
 @section('content')
 <div id='wrapper'>
-    <div class="row">
-	<section class="col-xs-12" id='new-update'>
-	    <div class="panel panel-primary">
-		<div class="panel-heading">
-		    <h3 class="panel-title">{{trans('tool.update.panel title')}} <span class="badge">0</span></h3>
-		</div>
-		<div class="panel-body">
-		    <p>
-			{{trans('tool.update.no new update')}}
-		    </p>
-		    <div class='panel-footer-ultilities'>
-			<a href=''>{{trans('tool.update.read all')}}</a>
-		    </div>
-		</div>
+    <section id="wide-table">
+	<div class="row">
+	    <div class="table-responsive">
+		<table class="table" id='user-list-table'>
+		    <thead>
+			<tr>
+			    <th scope="col">#</th>
+			    <th scope="col"><i class="fa fa-user"></i> {{trans('user.member name')}}</th>
+			    <th></th>
+			    <th scope="col"><i class="fa fa-envelope"></i> {{trans('user.email')}}</th>
+			    <th scope="col"><i class="fa fa-phone"></i> {{trans('user.phone number')}}</th>
+			    <th scope="col"><i class="fa fa-calendar-empty"></i> {{trans('user.added date')}}</th>
+			</tr>
+		    </thead>
+		    <tbody>
+
+		    </tbody>
+		</table>
+		<script>
+		    var _show_user_list_ = true;
+		</script>
 	    </div>
-	</section>
-	<section class="col-xs-12" id='announcements'>
-	    <div class="panel panel-primary">
-		<div class="panel-heading">
-		    <h3 class="panel-title">{{trans('organization.announcement.panel title')}} <span class="badge">0</span></h3>
-		</div>
-		<div class="panel-body">
-		    <p>
-			{{trans('organization.announcement.no unread announcement')}}
-		    </p>
-		    <div class='panel-footer-ultilities'>
-			<a href=''>{{trans('organization.announcement.read all')}}</a>
-		    </div>
-		</div>
-	    </div>
-	</section>
-	<section class="col-xs-12" id='today-task'>
-	    <div class="panel panel-primary">
-		<div class="panel-heading">
-		    <h3 class="panel-title">{{trans('task.today task.panel title')}} <span class="badge">0</span></h3>
-		</div>
-		<div class="panel-body">
-		    <p>
-			{{trans('task.today task.no today task')}}
-		    </p>
-		</div>
-	    </div>
-	</section>
-    </div>
+	</div>
+    </section>
 </div>
 @stop

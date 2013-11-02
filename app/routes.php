@@ -29,4 +29,8 @@ Route::group(array('before' => 'auth'), function(){
     Route::get('/members/{prefix?}', 'UserController@getUserList');
 });
 
+Route::group(array('before' => 'auth', 'prefix' => 'api'), function(){
+    Route::get('v1/{request}', 'APIController@postRequest');
+});
+
 //Route::controller($uri, $controller);

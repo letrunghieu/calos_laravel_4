@@ -19,6 +19,10 @@ return array(
     'log out' => 'Thoát',
     'search user' => 'Tìm thành viên',
     'export user list as vcard' => 'Lưu danh sách này',
+    'member name' => 'Tên thành viên',
+    'email' => 'Email',
+    'phone number' => 'Số điện thoại',
+    'added date' => 'Ngày tham gia',
     
     
     'mail.guide to reset your password' => 'Hướng dẫn đặt lại mật khẩu tài khoản',

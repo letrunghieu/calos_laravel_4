@@ -14,9 +14,9 @@ use Illuminate\Auth\UserInterface;
  * @property string $address Description
  * @property string $mobile_phone Description
  * @property string $verify_token Description
- * @property DateTime $created_at Description
- * @property DateTime $updated_at Description
- * @property DateTime $deleted_at Description
+ * @property Carbon\Carbon $created_at Description
+ * @property Carbon\Carbon $updated_at Description
+ * @property Carbon\Carbon $deleted_at Description
  * 
  * @property array $metas Description
  * @property array $vacancies Description
@@ -121,5 +121,6 @@ class User extends Eloquent implements UserInterface
 			    DB::raw('COUNT(id) as c')
 	));
     }
+    
 
 }

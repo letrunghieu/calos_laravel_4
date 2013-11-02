@@ -9,6 +9,9 @@ global $organization, $currentUser;
 	<meta charset="utf-8">
 	@stylesheets('front-end-header')
 	@javascripts('front-end-header')
+	<script>
+	    var homeURL = '<?php echo URL::to('/') ?>'
+	</script>
     </head>
     <body class='<?php body_classes() ?>'>
 	<header class="navbar navbar-default navbar-fixed-top" role="banner">
