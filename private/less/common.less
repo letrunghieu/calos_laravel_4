@@ -1,7 +1,9 @@
 /**
  * Common styles
  */
- 
+ .nowrap {
+     white-space: nowrap;
+ }
  /* Loading bars */
  .loading {
     .bar {
@@ -113,6 +115,7 @@ body.logged {
 }
 
 #firtname-prefixes {
+    text-align: center;
     .item {
         background: @gray;
         .border-radius(4px);
@@ -142,4 +145,24 @@ body.logged {
     margin-top: 100px;
     padding-bottom: 15px;
     padding-top: 20px;
+}
+
+/* datatable plugin */
+#user-list-table {
+    .sorting_desc {
+      background: url("../../../images/sort_desc.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+    }
+    .sorting_asc {
+      background: url("../../../images/sort_asc.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+    }
+    
+    thead th {
+      cursor: pointer;
+      &:first-child {
+          cursor: auto;
+          background: none;
+          padding-left:10px;
+      }
+    }
+    
 }

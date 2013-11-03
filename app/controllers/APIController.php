@@ -26,6 +26,18 @@ class APIController extends BaseController
 		break;
 	}
     }
+    
+    public function getLanguageFile($langId)
+    {
+	$data = array();
+	switch($langId)
+	{
+	    case 'user_list':
+		$data = $this->getJsLangFile(Lang::getLocale(), 'user_list');
+		break;
+	}
+	return Response::json($data);
+    }
 
     private function getUserList($options)
     {
@@ -53,6 +65,17 @@ class APIController extends BaseController
 	}
 	
 	return Response::json(new APIResponse(APIResponse::CODE_SUCCESS, $data));
+    }
+    
+    private function getJsLangFile($locale, $id)
+    {
+	$dir = app_path() . '/lang_js/' . $locale;
+	if (!is_dir($dir))
+	    return array();
+	$fileName = $dir . '/' . $id . '.php';
+	if (!is_file($fileName))
+	    return array();
+	return include $fileName;
     }
 
 }

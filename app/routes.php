@@ -30,7 +30,8 @@ Route::group(array('before' => 'auth'), function(){
 });
 
 Route::group(array('before' => 'auth', 'prefix' => 'api'), function(){
-    Route::get('v1/{request}', 'APIController@postRequest');
+    Route::post('v1/{request}', 'APIController@postRequest');
+    Route::get('lang/{id}', 'APIController@getLanguageFile');
 });
 
 //Route::controller($uri, $controller);

@@ -103,11 +103,11 @@ Basset::collection('front-end-footer', function($collection)
 	    // Collection definition.
 	    $collection->add('../private/vendor/jquery/jquery-1.10.2.min.js');
 	    $collection->add('../private/vendor/jquery/jquery-migrate-1.2.1.min.js');
+	    $collection->add('../private/js/helpers.js');
 	    $collection->add('../private/vendor/dateformat/jquery.dateFormat-1.0.js');
 	    $collection->add('../private/vendor/bootstrap/bootstrap.min.js');
 	    $collection->add('../private/vendor/datatable/jquery.dataTables.min.js');
 	    $collection->add('../private/vendor/datatable/datatable.plugins.js');
-	    $collection->add('../private/js/helpers.js');
 	    $collection->add('../private/js/front-end.js');
 	});
 

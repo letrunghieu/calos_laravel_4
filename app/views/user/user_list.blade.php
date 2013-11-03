@@ -7,7 +7,7 @@
 @section('second-navbar')
 <div id='second-navbar'>
     <div id="export-user-list" class="widget">
-	<a class="btn btn-success btn-block"><i class="fa fa-download"></i> {{trans('user.export user list as vcard')}}</a>
+	<a class="btn btn-primary btn-block"><i class="fa fa-download"></i> {{trans('user.export user list as vcard')}}</a>
     </div>
     <div id='firtname-prefixes' class="widget"> 
 	<a href="{{URL::action('UserController@getUserList')}}" class='item all active' title="{{trans('user.help.view all member')}}" data-toggle="tooltip" data-placement="auto top">{{ trans('global.all')}}</a>
@@ -23,27 +23,25 @@
 @section('content')
 <div id='wrapper'>
     <section id="wide-table">
-	<div class="row">
-	    <div class="table-responsive">
-		<table class="table" id='user-list-table'>
-		    <thead>
-			<tr>
-			    <th scope="col">#</th>
-			    <th scope="col"><i class="fa fa-user"></i> {{trans('user.member name')}}</th>
-			    <th></th>
-			    <th scope="col"><i class="fa fa-envelope"></i> {{trans('user.email')}}</th>
-			    <th scope="col"><i class="fa fa-phone"></i> {{trans('user.phone number')}}</th>
-			    <th scope="col"><i class="fa fa-calendar-empty"></i> {{trans('user.added date')}}</th>
-			</tr>
-		    </thead>
-		    <tbody>
+	<div>
+	    <table class="table table-bordered" id='user-list-table'>
+		<thead>
+		    <tr>
+			<th scope="col">#</th>
+			<th scope="col" class="nowrap"><i class="fa fa-user"></i> {{trans('user.member name')}}</th>
+			<th></th>
+			<th scope="col" class="nowrap"><i class="fa fa-envelope"></i> {{trans('user.email')}}</th>
+			<th scope="col" class="nowrap"><i class="fa fa-phone"></i> {{trans('user.phone number')}}</th>
+			<th scope="col" class="nowrap"><i class="fa fa-calendar-empty"></i> {{trans('user.added date')}}</th>
+		    </tr>
+		</thead>
+		<tbody>
 
-		    </tbody>
-		</table>
-		<script>
-		    var _show_user_list_ = true;
-		</script>
-	    </div>
+		</tbody>
+	    </table>
+	    <script>
+		var _show_user_list_ = true;
+	    </script>
 	</div>
     </section>
 </div>

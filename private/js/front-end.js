@@ -9,7 +9,6 @@ jQuery(document).ready(function($) {
 	var fnamePrefixFilter = null;
 	$.fn.dataTableExt.afnFiltering.push(
 		function(oSettings, aData, iDataIndex) {
-		    console.log(aData);
 		    return !fnamePrefixFilter || aData[2][0] === fnamePrefixFilter;
 		}
 	);
@@ -19,14 +18,19 @@ jQuery(document).ready(function($) {
 	    sAjaxSource: homeURL + "/api/v1/user_list",
 	    sAjaxDataProp: "data",
 	    sPaginationType: "bootstrap",
-	    sDom: '<"top"i>rt<"bottom"p><"clear">',
+	    sDom: '<"top"i>r<"table-responsive"t><"bottom"p><"clear">',
+	    sServerMethod: "POST",
+	    oLanguage: {
+		sUrl: homeURL + "/api/lang/user_list"
+	    },
+	    aaSorting: [[1, "asc"]],
 	    aoColumns: [
 		{mData: "gravatar"},
-		{mData: "first_name"},
+		{mData: "first_name", sType: "string-fullname"},
 		{mData: "first_name"},
 		{mData: "email"},
 		{mData: "mobile_phone"},
-		{mData: "created_at"}
+		{mData: "created_at", sType: "date-eu"}
 	    ],
 	    aoColumnDefs: [
 		{
