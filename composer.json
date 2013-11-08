@@ -10,7 +10,10 @@
 	"j20/php-uuid": "dev-master",
 	"nesbot/Carbon": "*",
 	"leafo/lessphp": "v0.4.0",
-	"fortawesome/font-awesome": "dev-4.0.0-wip"
+	"fortawesome/font-awesome": "dev-4.0.0-wip",
+	"endroid/qrcode": "1.*@dev",
+	"sabre/vobject": "~3.1",
+	"goodby/csv": "dev-master"
     },
     "require-dev": {
 	"barryvdh/laravel-ide-helper": "1.*",

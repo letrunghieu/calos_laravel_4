@@ -28,6 +28,7 @@ jQuery(document).ready(function($) {
 		{mData: "gravatar"},
 		{mData: "first_name", sType: "string-fullname"},
 		{mData: "first_name"},
+		{mData: "id"},
 		{mData: "email"},
 		{mData: "mobile_phone"},
 		{mData: "created_at", sType: "date-eu"}
@@ -51,9 +52,15 @@ jQuery(document).ready(function($) {
 		},
 		{
 		    mRender: function(data, type, row) {
-			return "<a href='mailto:" + data + "'>" + data + "</a>";
+			return "<a href='" + homeURL + '/members/' + data + '/qr' +"' class='qrcode'><i class='fa fa-qrcode'></i></a>";
 		    },
 		    aTargets: [3]
+		},
+		{
+		    mRender: function(data, type, row) {
+			return "<a href='mailto:" + data + "'>" + data + "</a>";
+		    },
+		    aTargets: [4]
 		},
 		{
 		    mRender: function(data, type, row) {
@@ -62,16 +69,23 @@ jQuery(document).ready(function($) {
 			else
 			    return "<small class='text-muted'>empty</small>";
 		    },
-		    aTargets: [4]
+		    aTargets: [5]
 		},
 		{
 		    mRender: function(data, type, row) {
 			return $.format.date(data, "dd/MM/yyyy");
 		    },
-		    aTargets: [5],
+		    aTargets: [6],
 		    sClass: "text-center"
 		}
-	    ]
+	    ],
+	    fnCreatedRow: function( nRow, aData, iDataIndex ) {
+		$('.qrcode', nRow).click(function(e){
+		    e.preventDefault();
+		    $('#current-qrcode').attr('src', '').attr('src', $(e.currentTarget).attr('href'));
+		    $('#modal-qrcode').modal('show');
+		});
+	    }
 	});
 
 	$('#firtname-prefixes a.item').click(function(e) {

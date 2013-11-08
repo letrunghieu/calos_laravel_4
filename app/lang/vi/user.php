@@ -19,10 +19,12 @@ return array(
     'log out' => 'Thoát',
     'search user' => 'Tìm thành viên',
     'export user list as vcard' => 'Lưu danh sách này',
+    'export user list' => 'Lưu danh sách này',
     'member name' => 'Tên thành viên',
     'email' => 'Email',
     'phone number' => 'Số điện thoại',
     'added date' => 'Ngày tham gia',
+    'show qr code' => 'Mã QR cho di dộng',
     
     
     'mail.guide to reset your password' => 'Hướng dẫn đặt lại mật khẩu tài khoản',

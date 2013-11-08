@@ -7,7 +7,13 @@
 @section('second-navbar')
 <div id='second-navbar'>
     <div id="export-user-list" class="widget">
-	<a class="btn btn-primary btn-block"><i class="fa fa-download"></i> {{trans('user.export user list as vcard')}}</a>
+	<div class='text-center'>
+	    <h4><i class="fa fa-download"></i> {{trans('user.export user list')}}</h4>
+	</div>
+	<div class="btn-group btn-group-justified">
+	    <a class="btn btn-primary btn-block"><i class="fa fa-download"></i> VCard</a>
+	    <a class="btn btn-default btn-block"><i class="fa fa-download"></i> CSV</a>
+	</div>
     </div>
     <div id='firtname-prefixes' class="widget"> 
 	<a href="{{URL::action('UserController@getUserList')}}" class='item all active' title="{{trans('user.help.view all member')}}" data-toggle="tooltip" data-placement="auto top">{{ trans('global.all')}}</a>
@@ -30,6 +36,7 @@
 			<th scope="col">#</th>
 			<th scope="col" class="nowrap"><i class="fa fa-user"></i> {{trans('user.member name')}}</th>
 			<th></th>
+			<th scope="col"><i class="fa fa-qrcode" data-toggle="tooltip" data-placement="auto top" title="{{trans('user.show qr code')}}"></i></th>
 			<th scope="col" class="nowrap"><i class="fa fa-envelope"></i> {{trans('user.email')}}</th>
 			<th scope="col" class="nowrap"><i class="fa fa-phone"></i> {{trans('user.phone number')}}</th>
 			<th scope="col" class="nowrap"><i class="fa fa-calendar-empty"></i> {{trans('user.added date')}}</th>
@@ -42,6 +49,20 @@
 	    <script>
 		var _show_user_list_ = true;
 	    </script>
+
+
+	    <div class="modal fade" id="modal-qrcode" role="dialog">
+		<div class="modal-dialog">
+		    <div class="modal-content">
+			<div class="modal-body">
+			    <div class="text-center">
+				<img id="current-qrcode" />
+			    </div>
+			</div>
+		    </div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	    </div><!-- /.modal -->
+
 	</div>
     </section>
 </div>

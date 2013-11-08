@@ -27,6 +27,7 @@ Route::post('/set_password/{id}/{token}', array('before' => 'csrf', 'uses' => 'H
 
 Route::group(array('before' => 'auth'), function(){
     Route::get('/members/{prefix?}', 'UserController@getUserList');
+    Route::get('/members/{id}/qr', 'UserController@getUserQR');
 });
 
 Route::group(array('before' => 'auth', 'prefix' => 'api'), function(){
