@@ -49,7 +49,9 @@ return array(
     'message.your new password has been set, try to log in' => 'Mật khẩu mới đã được lưu, hãy thử đăng nhập lại',
     
     'menu.update profile' => 'Cập nhật hồ sơ',
+    'menu.your profile' => 'Hồ sơ bản thân',
     'menu.my vacancy' => 'Các chức vụ của tôi',
     'menu.messages' => 'Tin nhắn',
+    'menu.personal settings' => 'Tùy chỉnh cá nhân',
 	);
 ?>

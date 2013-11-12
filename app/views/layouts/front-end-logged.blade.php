@@ -1,4 +1,4 @@
-<?php
+    <?php
 global $organization, $currentUser;
 ?>
 <!DOCTYPE html>
@@ -67,19 +67,6 @@ global $organization, $currentUser;
 			<li class='dropdown'>
 			    <a href="#" data-toggle="dropdown">
 				<span>
-				    {{trans('user.menu title')}}
-				</span>
-				<b class="caret"></b>
-			    </a>
-			    <ul class="dropdown-menu">
-				<li><a href="#">{{trans('user.menu.messages')}}</a></li>
-				<li><a href="#">{{trans('user.menu.update profile')}}</a></li>
-				<li><a href="#">{{trans('user.menu.my vacancy')}}</a></li>
-			    </ul>
-			</li>
-			<li class='dropdown'>
-			    <a href="#" data-toggle="dropdown">
-				<span>
 				    {{trans('tool.menu title')}}
 				</span>
 				<b class="caret"></b>
@@ -87,14 +74,26 @@ global $organization, $currentUser;
 			    <ul class="dropdown-menu">
 				<li><a href="#">{{trans('tool.menu.polls')}}</a></li>
 				<li><a href="#">{{trans('tool.menu.meeting helpers')}}</a></li>
+				<li role="presentation" class="divider"></li>
+				<li role="presentation" class="dropdown-header">{{trans('global.admin functions')}}</li>
+				<li><a href="#">{{trans('tool.menu.site settings')}}</a></li>
 			    </ul>
 			</li>
 		    </ul>
 		    <ul class='nav navbar-nav navbar-right'>
-			<li>
-			    <a href='#'>
-				<i class='fa fa-desktop'></i> {{$currentUser->first_name}}
+			<li class='dropdown'>
+			    <a href="#" data-toggle="dropdown">
+				<span>
+				    <i class='fa fa-desktop'></i> {{$currentUser->first_name}}
+				</span>
+				<b class="caret"></b>
 			    </a>
+			    <ul class="dropdown-menu">
+				<li><a href="#">{{trans('user.menu.your profile')}}</a></li>
+				<li><a href="#">{{trans('user.menu.messages')}}</a></li>
+				<li><a href="#">{{trans('user.menu.my vacancy')}}</a></li>
+				<li><a href="#">{{trans('user.menu.personal settings')}}</a></li>
+			    </ul>
 			</li>
 			<li>
 			    <a href='{{ URL::action("HomeController@getLogout") }}'>
