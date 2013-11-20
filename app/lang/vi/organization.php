@@ -19,4 +19,6 @@ return array(
     'announcement.panel title' => 'Thông báo',
     'announcement.no unread announcement' => 'Rất tốt, không có thông báo chưa đọc nào!',
     'announcement.read all' => 'Xem tất cả thông báo đã nhận',
+    
+    'unit.leader' => 'Chủ nhiệm',
 );

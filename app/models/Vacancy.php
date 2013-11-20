@@ -33,6 +33,11 @@ class Vacancy extends Eloquent
     {
 	return $this->belongsToMany('Role');
     }
+    
+    public function users()
+    {
+	return $this->belongsToMany('User');
+    }
 
     public static function getMemberVacancy($unitId)
     {

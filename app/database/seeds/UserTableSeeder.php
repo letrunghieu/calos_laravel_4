@@ -23,6 +23,10 @@ class UserTableSeeder extends Seeder
 			), 1);
 	$adminVacancy = Vacancy::getByOrder(1, Vacancy::ORDER_SITE_ADMIN);
 	$admin->vacancies()->attach($adminVacancy->id);
+	$adminVacancy = Vacancy::getLeaderVacancy(1);
+	$admin->vacancies()->attach($adminVacancy->id);
+	
+	
 
 	// seed users
 	$users[] = array();

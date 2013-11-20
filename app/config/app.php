@@ -104,6 +104,7 @@ return array(
 	'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 	'Basset\BassetServiceProvider',
 	'Raahul\LarryFour\LarryFourServiceProvider',
+	'Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider',
     ),
     /*
       |--------------------------------------------------------------------------
@@ -164,5 +165,6 @@ return array(
 	'Validator' => 'Illuminate\Support\Facades\Validator',
 	'View' => 'Illuminate\Support\Facades\View',
 	'Basset' => 'Basset\Facade',
+	'Gravatar' => 'Thomaswelton\LaravelGravatar\Facades\Gravatar',
     ),
 );

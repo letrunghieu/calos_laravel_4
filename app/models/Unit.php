@@ -1,5 +1,21 @@
 <?php
-
+/**
+ * Hold the information about each unit
+ * 
+ * @property integer $id The unit id
+ * @property string $name The name of this unit
+ * @property string $description The description of this unit
+ * @property integer $depth The depth of this unit
+ * @property integer $site_id The id of the site of this unit
+ * @property string $icon_path The path to the icon of this unit
+ * @property Carbon\Carbon $created_at The time when this unit is created
+ * @property Carbon\Carbon $updated_at The time of the last update
+ * @property Carbon\Carbon $deleted_at The time of the last deletion
+ * @property array|Vacancy $vacancies The list of its vacancies
+ * @property array|Unit $children The list of its children units
+ * @property Unit $parentUnit The parent unit of this unit
+ * @property array|Activity $activities The list of activities of this unit
+ */
 class Unit extends Eloquent
 {
 
@@ -24,6 +40,19 @@ class Unit extends Eloquent
     public function activities()
     {
 	return $this->hasMany('Activity');
+    }
+    
+    public function getLeader()
+    {
+	$leaderVacancy = $this->vacancies()->getQuery()
+		->where('vacancies.order', '=', Vacancy::ORDER_LEADER)
+		->first();
+	if (!$leaderVacancy)
+	    return null;
+	$leader  = $leaderVacancy->users;
+	if ($leader->isEmpty())
+	    return null;
+	return $leader->first();;
     }
 
     public static function create(array $attributes)

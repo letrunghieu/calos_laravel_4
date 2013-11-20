@@ -30,6 +30,8 @@ Route::group(array('before' => 'auth'), function(){
     Route::get('/members/get_csv', 'UserController@getUserListCSV');
     Route::get('/members/get_vcard', 'UserController@getUserListVCard');
     Route::get('/members/{id}/qr', 'UserController@getUserQR');
+    
+    Route::get('/units/{id}', 'UnitController@getUnitOverview');
 });
 
 Route::group(array('before' => 'auth', 'prefix' => 'api'), function(){
