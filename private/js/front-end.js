@@ -4,6 +4,9 @@
  */
 jQuery(document).ready(function($) {
     $('[data-toggle=tooltip]').tooltip();
+    $('.mobile-phone, .phone').each(function(_, e){
+	$(e).html(phoneFormat($(e).html()));
+    });
     if (typeof _show_user_list_ !== "undefined" && _show_user_list_)
     {
 	var fnamePrefixFilter = null;

@@ -25,6 +25,9 @@ return array(
     'phone number' => 'Số điện thoại',
     'added date' => 'Ngày tham gia',
     'show qr code' => 'Mã QR cho di dộng',
+    'no leader here' => 'Chưa có chủ nhiệm được đề cử',
+    'view all other members in this unit' => 'Xem tất cả thành viên trong đơn vị này',
+    'view :number members in this unit' => 'Xem :number thành viên',
     
     
     'mail.guide to reset your password' => 'Hướng dẫn đặt lại mật khẩu tài khoản',

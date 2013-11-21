@@ -21,4 +21,5 @@ return array(
     'announcement.read all' => 'Xem tất cả thông báo đã nhận',
     
     'unit.leader' => 'Chủ nhiệm',
+    'unit.child units' => 'Đơn vị trực thuộc',
 );

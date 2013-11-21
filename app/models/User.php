@@ -85,6 +85,11 @@ class User extends Eloquent implements UserInterface
 	}
 	return $user;
     }
+    
+    public function fullName()
+    {
+	return $this->last_name . ' ' . $this->first_name;
+    }
 
     public function getAuthIdentifier()
     {

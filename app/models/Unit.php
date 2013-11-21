@@ -42,6 +42,16 @@ class Unit extends Eloquent
 	return $this->hasMany('Activity');
     }
     
+    public function countMember()
+    {
+	$memberVancancy =  $this->vacancies()->getQuery()
+		->where('vacancies.order', '=', Vacancy::ORDER_MEMBER)
+		->first();
+	if (!$memberVancancy)
+	    return 0;
+	return $memberVancancy->users()->getQuery()->count();
+    }
+    
     public function getLeader()
     {
 	$leaderVacancy = $this->vacancies()->getQuery()
