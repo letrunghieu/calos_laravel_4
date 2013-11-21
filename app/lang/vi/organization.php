@@ -8,6 +8,7 @@ return array(
     'menu title' => 'Tổ chức',
     'search announcement' => 'Tìm thông báo',
     'search unit' => 'Tìm phòng ban, đơn vị',	
+    ':number members' => ':number thành viên',
     
     'menu.organization structure' => 'Cơ cấu tổ chức',
     'menu.member contacts' => 'Danh bạ thành viên',
