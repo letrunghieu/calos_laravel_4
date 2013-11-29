@@ -29,7 +29,6 @@ class UnitController extends BaseController
 	add_body_classes('logged unit unit-members');
 	$this->layout->title = $unit->name;
 	$this->layout->pageHeader = $unit->name;
-	Announcement::createNewAnnouncement("foo", "bar", Auth::user(), array(1,2,3)); die();
 	return $this->layout->nest('content', 'unit.unit_userlist', $data);
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Hold the information about each unit
  * 
@@ -41,17 +42,17 @@ class Unit extends Eloquent
     {
 	return $this->hasMany('Activity');
     }
-    
+
     public function countMember()
     {
-	$memberVancancy =  $this->vacancies()->getQuery()
+	$memberVancancy = $this->vacancies()->getQuery()
 		->where('vacancies.order', '=', Vacancy::ORDER_MEMBER)
 		->first();
 	if (!$memberVancancy)
 	    return 0;
 	return $memberVancancy->users()->getQuery()->count();
     }
-    
+
     public function getLeader()
     {
 	$leaderVacancy = $this->vacancies()->getQuery()
@@ -59,12 +60,12 @@ class Unit extends Eloquent
 		->first();
 	if (!$leaderVacancy)
 	    return null;
-	$leader  = $leaderVacancy->users;
+	$leader = $leaderVacancy->users;
 	if ($leader->isEmpty())
 	    return null;
 	return $leader->first();
     }
-    
+
     public function members()
     {
 	$memberVacancy = $this->vacancies()->getQuery()
@@ -73,6 +74,33 @@ class Unit extends Eloquent
 	if (!$memberVacancy)
 	    return array();
 	return $memberVacancy->users;
+    }
+
+    public function addMember($members)
+    {
+	if (is_a($members, 'Illuminate\Database\Eloquent\Model'))
+	    $members = array($members);
+	$memberVacancy = $this->vacancies()->getQuery()
+		->where('vacancies.order', '=', Vacancy::ORDER_MEMBER)
+		->first();
+	if (!$memberVacancy)
+	    return false;
+	foreach ($members as $m)
+	{
+	    $memberVacancy->users()->save($m);
+	}
+	return true;
+    }
+
+    public function setLeader($user)
+    {
+	$leaderVacancy = $this->vacancies()->getQuery()
+		->where('vacancies.order', '=', Vacancy::ORDER_LEADER)
+		->first();
+	if (!$leaderVacancy)
+	    return null;
+	$leaderVacancy->users()->detach();
+	$leaderVacancy->users()->save($user);
     }
 
     public static function create(array $attributes)

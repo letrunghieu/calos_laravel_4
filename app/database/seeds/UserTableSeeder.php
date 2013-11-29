@@ -26,6 +26,10 @@ class UserTableSeeder extends Seeder
 	$adminVacancy = Vacancy::getLeaderVacancy(1);
 	$admin->vacancies()->attach($adminVacancy->id);
 	
+	$units = Unit::where('depth', '=', 1)
+		->whereNull('deleted_at')
+		->get();
+	$countUnits = $units->count();
 	
 
 	// seed users
@@ -71,6 +75,21 @@ class UserTableSeeder extends Seeder
 	$users[] = User::addMember(array('first_name' => 'An', 'last_name' => 'Đặng Mạnh', 'email' => 'andangmanh@gmail.com', 'password' => Hash::make('demouser')), 1);
 	shuffle($users);
 	// seed users
+	
+	foreach($users as $u)
+	{
+	    $units[rand(1, $countUnits) - 1 ]->addMember($u);
+	}
+	
+	foreach($units as $u)
+	{
+	    $members = $u->members();
+	    if (!$members->isEmpty())
+	    {
+		$leader = $members[rand(1, $members->count()) - 1];
+		$u->setLeader($leader);
+	    }		
+	}
     }
 
 }
