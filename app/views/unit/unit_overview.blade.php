@@ -52,7 +52,7 @@ $childUnits = $unit->children;
 	    <div class='clearfix'></div>
 	</div>
 	<div class='view-all-members'>
-	    <a href='#'>({{ trans('user.view :number members in this unit', array('number' => $unit->countMember())) }})</a>
+	    <a href='{{ URL::action("UnitController@getUnitMembers", array($unit->id)) }}'>({{ trans('user.view :number members in this unit', array('number' => $unit->countMember())) }})</a>
 	</div>
     </section>
     <section id='organization-child-units'>
