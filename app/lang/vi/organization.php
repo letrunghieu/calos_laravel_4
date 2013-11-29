@@ -23,4 +23,8 @@ return array(
     
     'unit.leader' => 'Chủ nhiệm',
     'unit.child units' => 'Đơn vị trực thuộc',
+    'unit.overview' => 'Tổng quan',
+    'unit.members' => 'Danh sách thành viên',
+    'unit.activities' => 'Danh sách các hoạt động',
+    'unit.announcements' => 'Danh sách các thông báo',
 );

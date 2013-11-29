@@ -4,7 +4,7 @@
  */
 jQuery(document).ready(function($) {
     $('[data-toggle=tooltip]').tooltip();
-    $('.mobile-phone, .phone').each(function(_, e){
+    $('.mobile-phone, .phone').each(function(_, e) {
 	$(e).html(phoneFormat($(e).html()));
     });
     if (typeof _show_user_list_ !== "undefined" && _show_user_list_)
@@ -16,9 +16,17 @@ jQuery(document).ready(function($) {
 		}
 	);
 
+	var requestURL = homeURL + "/api/v1/user_list";
+	var requestURLParams = {};
+	if (typeof _unit_id_ !== "undefined" && _unit_id_)
+	{
+	    requestURLParams.unit = _unit_id_;
+	}
+	
+
 	userListTable = $('#user-list-table').dataTable({
 	    bProcessing: true,
-	    sAjaxSource: homeURL + "/api/v1/user_list",
+	    sAjaxSource: requestURL + (!requestURLParams ? "" : ("?" + $.param(requestURLParams))),
 	    sAjaxDataProp: "data",
 	    sPaginationType: "bootstrap",
 	    sDom: '<"top"i>r<"table-responsive"t><"bottom"p><"clear">',
@@ -55,7 +63,7 @@ jQuery(document).ready(function($) {
 		},
 		{
 		    mRender: function(data, type, row) {
-			return "<a href='" + homeURL + '/members/' + data + '/qr' +"' class='qrcode'><i class='fa fa-qrcode'></i></a>";
+			return "<a href='" + homeURL + '/members/' + data + '/qr' + "' class='qrcode'><i class='fa fa-qrcode'></i></a>";
 		    },
 		    aTargets: [3]
 		},
@@ -82,8 +90,8 @@ jQuery(document).ready(function($) {
 		    sClass: "text-center"
 		}
 	    ],
-	    fnCreatedRow: function( nRow, aData, iDataIndex ) {
-		$('.qrcode', nRow).click(function(e){
+	    fnCreatedRow: function(nRow, aData, iDataIndex) {
+		$('.qrcode', nRow).click(function(e) {
 		    e.preventDefault();
 		    $('#current-qrcode').attr('src', '').attr('src', $(e.currentTarget).attr('href'));
 		    $('#modal-qrcode').modal('show');

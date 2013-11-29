@@ -62,7 +62,17 @@ class Unit extends Eloquent
 	$leader  = $leaderVacancy->users;
 	if ($leader->isEmpty())
 	    return null;
-	return $leader->first();;
+	return $leader->first();
+    }
+    
+    public function members()
+    {
+	$memberVacancy = $this->vacancies()->getQuery()
+		->where('vacancies.order', '=', Vacancy::ORDER_MEMBER)
+		->first();
+	if (!$memberVacancy)
+	    return array();
+	return $memberVacancy->users;
     }
 
     public static function create(array $attributes)

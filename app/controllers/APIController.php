@@ -19,18 +19,18 @@ class APIController extends BaseController
 	{
 	    case 'user_list':
 
-		return $this->getUserList((array)Input::get('data'));
+		return $this->getUserList((array) Input::get('data'));
 		break;
 
 	    default:
 		break;
 	}
     }
-    
+
     public function getLanguageFile($langId)
     {
 	$data = array();
-	switch($langId)
+	switch ($langId)
 	{
 	    case 'user_list':
 		$data = $this->getJsLangFile(Lang::getLocale(), 'user_list');
@@ -45,11 +45,23 @@ class APIController extends BaseController
 	    ''
 	);
 	$options = array_merge($default, $options);
-	$users = User::whereNull('deleted_at')->orderBy('first_name')->get();
+	if (Input::get('unit'))
+	{
+	    $unit = Unit::find(Input::get('unit'));
+	    if (!$unit || $unit->deleted_at)
+		$users = array();
+	    else
+	    {
+		$users = $unit->members();
+	    }
+	} else
+	{
+	    $users = User::whereNull('deleted_at')->orderBy('first_name')->get();
+	}
 	$data = array();
-	
+
 	$count = 0;
-	foreach($users as $user)
+	foreach ($users as $user)
 	{
 	    /* @var $user User */
 	    $data[] = array(
@@ -63,10 +75,10 @@ class APIController extends BaseController
 		'created_at' => $user->created_at->toW3CString(),
 	    );
 	}
-	
+
 	return Response::json(new APIResponse(APIResponse::CODE_SUCCESS, $data));
     }
-    
+
     private function getJsLangFile($locale, $id)
     {
 	$dir = app_path() . '/lang_js/' . $locale;

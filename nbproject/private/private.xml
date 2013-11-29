@@ -2,12 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/C:/wamp/www/calos_dev/app/controllers/UnitController.php</file>
-        <file>file:/C:/wamp/www/calos_dev/app/controllers/UserController.php</file>
         <file>file:/C:/wamp/www/calos_dev/app/routes.php</file>
         <file>file:/C:/wamp/www/calos_dev/app/models/Unit.php</file>
         <file>file:/C:/wamp/www/calos_dev/app/views/unit/unit_overview.blade.php</file>
-        <file>file:/C:/wamp/www/calos_dev/app/database/seeds/UserTableSeeder.php</file>
-        <file>file:/C:/wamp/www/calos_dev/app/config/mail.php</file>
+        <file>file:/C:/wamp/www/calos_dev/app/models/User.php</file>
+        <file>file:/C:/wamp/www/calos_dev/private/js/front-end.js</file>
+        <file>file:/C:/wamp/www/calos_dev/app/lang/vi/user.php</file>
+        <file>file:/C:/wamp/www/calos_dev/app/lang/vi/organization.php</file>
+        <file>file:/C:/wamp/www/calos_dev/app/controllers/UnitController.php</file>
     </open-files>
 </project-private>

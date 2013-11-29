@@ -32,6 +32,9 @@ Route::group(array('before' => 'auth'), function(){
     Route::get('/members/{id}/qr', 'UserController@getUserQR');
     
     Route::get('/units/{id}', 'UnitController@getUnitOverview');
+    Route::get('/units/{id}/members', 'UnitController@getUnitMembers');
+    Route::get('/units/{id}/activities', 'UnitController@getUnitActivities');
+    Route::get('/units/{id}/announcements', 'UnitController@getUnitAnnouncements');
 });
 
 Route::group(array('before' => 'auth', 'prefix' => 'api'), function(){
