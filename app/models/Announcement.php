@@ -37,6 +37,11 @@ class Announcement extends Eloquent
         return $this->hasMany('Comment', 'subject_id');
     }
     
+    public function units()
+    {
+	return $this->belongsToMany('Unit', 'announcement_unit')->withTimestamps();
+    }
+    
     public static function createNewAnnouncement($title, $body, $author, $unitIds) {
 	$announcement = Announcement::create(array(
 	    'title' => $title,
@@ -47,26 +52,9 @@ class Announcement extends Eloquent
 	if (!$announcement)
 	    return false;
 	
-	$vacancies = Vacancy::where('order', '=', Vacancy::ORDER_MEMBER)
-		->leftJoin('units', 'units.id', '=', 'vacancies.unit_id')
-		->whereIn('units.id', $unitIds)
-		->whereNull('units.deleted_at')
-		->get();
-	
-	$vacancyIds = array();
-	foreach($vacancies as $v)
+	foreach($unitIds as $id)
 	{
-	    $vacancyIds[] = $v->id;
-	}
-	
-	$readers = User::leftJoin('user_vacancy', 'users.id', '=', 'user_vacancy.id')
-		->whereIn('user_vacancy.vacancy_id', $vacancyIds)
-		->distinct()
-		->get();
-	
-	foreach($readers as $reader)
-	{
-	    $announcement->viewers()->save($reader);
+	    $announcement->units()->attach($id);
 	}
 	
 	return $announcement;

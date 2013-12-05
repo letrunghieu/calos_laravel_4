@@ -27,4 +27,7 @@ return array(
     'unit.members' => 'Danh sách thành viên',
     'unit.activities' => 'Danh sách các hoạt động',
     'unit.announcements' => 'Danh sách các thông báo',
+    
+    'title.members in :unit' => 'Các thành viên của :unit',
+    'title.announcments in :unit' => 'Các thông báo trong :unit',
 );

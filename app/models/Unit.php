@@ -42,6 +42,11 @@ class Unit extends Eloquent
     {
 	return $this->hasMany('Activity');
     }
+    
+    public function announcements()
+    {
+	return $this->hasMany('Announcement', $foreignKey);
+    }
 
     public function countMember()
     {
