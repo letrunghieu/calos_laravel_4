@@ -14,7 +14,8 @@
 	"endroid/qrcode": "1.*@dev",
 	"sabre/vobject": "~3.1",
 	"goodby/csv": "dev-master",
-	"thomaswelton/laravel-gravatar": "dev-master"
+	"thomaswelton/laravel-gravatar": "dev-master",
+	"michelf/php-markdown": "1.4.*@dev"
     },
     "require-dev": {
 	"barryvdh/laravel-ide-helper": "1.*",

@@ -14,8 +14,7 @@ class CreateOptionsTable extends Migration {
         Schema::create('options', function($table) {
             $table->increments('id');
             $table->string('key');
-            $table->text('value');
-            $table->integer('site_id');
+            $table->text('value')->nullable();
             $table->timestamps();
         });
     }

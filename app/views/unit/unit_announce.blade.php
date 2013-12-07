@@ -19,8 +19,16 @@
 
 @section('content')
 <div id='wrapper'>
-    <section>
-	
+    <section id="announcements">
+	<p class="summary">
+	    {{ trans('organization.announcement.show announcements from :from to :to out of :total', array('from' => $announcements->getFrom(), 'to' => $announcements->getTo(), 'total' => $announcements->getTotal())); }}
+	</p>
+	<div class="items">
+	    @include('shared/announcement_list', array('announcements' => $announcements))
+	</div>
+	<div>
+	    {{ $announcements->links(); }}
+	</div>
     </section>
 </div>
 @stop

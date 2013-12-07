@@ -26,13 +26,13 @@ class HomeController extends BaseController
 	if (!$user)
 	{
 	    // not logged in
-	    add_body_classes('no-log');
+	    addBodyClasses('no-log');
 	    $this->layout->title = trans('user.log in');
 	    return $this->layout->nest('content', 'home.welcome_guest', $data);
 	}
 	else
 	{
-	    add_body_classes('logged home');
+	    addBodyClasses('logged home');
 	    $this->layout = View::make('layouts.front-end-logged')->with('title', $organization->name)
 		    ->with('pageHeader', $organization->name);
 	    return $this->layout->nest('content', 'home.index', $data);
@@ -76,7 +76,7 @@ class HomeController extends BaseController
 	} else
 	{
 	    $data = array();
-	    add_body_classes('no-log');
+	    addBodyClasses('no-log');
 	    $this->layout->title = trans('user.get new password');
 	    if (Input::get('commit'))
 	    {
@@ -114,7 +114,7 @@ class HomeController extends BaseController
 	    $data = array();
 	    $data['id'] = $id;
 	    $data['verify_token'] = $verify_token;
-	    add_body_classes('no-log');
+	    addBodyClasses('no-log');
 	    if (Input::get('commit'))
 	    {
 		$user = User::find($id);

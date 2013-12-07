@@ -19,7 +19,7 @@ class UserController extends BaseController
     {
 	$data = array();
 	$data['firstnamePrefixes'] = User::getAllFirstnamePrefixes();
-	add_body_classes('logged user user-list');
+	addBodyClasses('logged user user-list');
 	$this->layout->title = trans('user.title.user list');
 	$this->layout->pageHeader = trans('user.title.user list');
 	$this->layout->nest('content', 'user.user_list', $data);

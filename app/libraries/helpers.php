@@ -5,13 +5,13 @@
  * @author Hieu Le <letrunghieu.cse09@gmail.com>
  */
 /* body classes */
-function add_body_classes($classes)
+function addBodyClasses($classes)
 {
     $instance = BodyClass::instance();
     $instance->addClasses($classes);
 }
 
-function body_classes($echo = true)
+function bodyClasses($echo = true)
 {
     $instance = BodyClass::instance();
     if ($echo)
@@ -23,9 +23,19 @@ function body_classes($echo = true)
 /* end body classes */
 
 /* UI functions */
-function ui_help_tip($key, $replacements = array()){
+function uiHelpTip($key, $replacements = array()){
     $content = trans($key, $replacements);
     return "<a href='#' data-toggle='tooltip' data-placement='auto top' title='{$content}'><i class='fa fa-question-sign'></i></a>";
 }
 /* end UI functions */
+
+function getPage($pageSegment)
+{
+    $matches = null;
+    if (preg_match('/page-([0-9]+)/', $pageSegment, $matches))
+    {
+	return $matches[1];
+    }
+    return 1;
+}
 ?>

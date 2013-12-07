@@ -7,7 +7,7 @@
 	@stylesheets('front-end-header')
 	@javascripts('front-end-header')
     </head>
-    <body class='<?php body_classes() ?>'>
+    <body class='<?php bodyClasses() ?>'>
 	<div id="body-wrapper">
 	    @yield('content')
 	</div>

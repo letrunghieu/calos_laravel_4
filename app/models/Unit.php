@@ -45,7 +45,7 @@ class Unit extends Eloquent
     
     public function announcements()
     {
-	return $this->hasMany('Announcement', $foreignKey);
+	return $this->belongsToMany('Announcement', 'announcement_unit')->withTimestamps();
     }
 
     public function countMember()

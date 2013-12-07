@@ -13,7 +13,7 @@ global $organization, $currentUser;
 	    var homeURL = '<?php echo URL::to('/') ?>'
 	</script>
     </head>
-    <body class='<?php body_classes() ?>'>
+    <body class='<?php bodyClasses() ?>'>
 	<header class="navbar navbar-default navbar-fixed-top" role="banner">
 	    <div class="container">
 		<div class="navbar-header">
