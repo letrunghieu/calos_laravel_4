@@ -1,9 +1,17 @@
 /**
  * Common styles
  */
- .nowrap {
+body {
+    background: #fcfcfc;   
+}
+#wrapper {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    padding: 10px;
+}
+.nowrap {
      white-space: nowrap;
- }
+}
  /* Loading bars */
  .loading {
     .bar {
@@ -235,4 +243,24 @@ body.logged {
 .view-all-members {
     border-top: 1px solid @gray-lighter;
     margin-top: 1em;
+}
+
+.list.announcements {
+    list-style: none;
+    padding: 0;
+    .item {
+        border-top: 1px solid #f0f0f0;
+        padding: 0.5em 0;
+        &:last-child {
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .datetime {
+            font-size: 0.8em;
+            font-style: italic;
+            margin-left: 1em;
+        }
+        p {
+            margin: 0;
+        }
+    }
 }

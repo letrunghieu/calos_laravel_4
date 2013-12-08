@@ -4,7 +4,7 @@
  */
 ?>
 @if (!$announcements->isEmpty())
-<ul>
+<ul class="list announcements">
     @foreach ($announcements as $ann)
     <li class='item announcement'>
 	
