@@ -9,7 +9,7 @@
     <li class='item announcement'>
 	
 	<p class='title'>
-	    <i class='fa fa-bell'></i> <a href='#'>{{$ann->title}}</a>
+	    <i class='fa fa-bell'></i> <a href='{{URL::action("AnnouncementController@getAnnouncement", array($ann->id))}}'>{{$ann->title}}</a>
 	</p>
 	<p class='datetime'>
 	   <time datetime="{{$ann->pivot->created_at->toRFC3339String()}}">{{$ann->pivot->created_at->diffForHumans()}}</time>

@@ -27,6 +27,13 @@ function uiHelpTip($key, $replacements = array()){
     $content = trans($key, $replacements);
     return "<a href='#' data-toggle='tooltip' data-placement='auto top' title='{$content}'><i class='fa fa-question-sign'></i></a>";
 }
+function uiTimeTag(Carbon\Carbon $datetime)
+{
+    $datetimeProp = $datetime->toRFC3339String();
+    $titleProp = $datetime->toW3CString();
+    $contentProp = $datetime->diffForHumans();
+    return "<time datetime='{$datetimeProp}' title='{$titleProp}'>{$contentProp}</time>";
+}
 /* end UI functions */
 
 function getPage($pageSegment)

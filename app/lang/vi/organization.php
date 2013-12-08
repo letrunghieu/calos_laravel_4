@@ -21,6 +21,9 @@ return array(
     'announcement.no unread announcement' => 'Rất tốt, không có thông báo chưa đọc nào!',
     'announcement.read all' => 'Xem tất cả thông báo đã nhận',
     'announcement.show announcements from :from to :to out of :total' => 'Hiển thị các thông báo từ :from đến :to trong tổng số :total thông báo',
+    'announcement.announcement :title' => 'Thông báo: :title',
+    'announcement.created by :name :datetime' => 'Được đăng bởi :name vào :datetime',
+    'announcement.related units' => 'Các phòng ban được thông báo',
     
     'unit.leader' => 'Chủ nhiệm',
     'unit.child units' => 'Đơn vị trực thuộc',

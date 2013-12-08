@@ -2,11 +2,11 @@
  * Common styles
  */
 body {
-    background: #fcfcfc;   
+    background: @body-background;   
 }
 #wrapper {
     background: #ffffff;
-    border: 1px solid #f0f0f0;
+    border: 1px solid @border-color;
     padding: 10px;
 }
 .nowrap {
@@ -262,5 +262,14 @@ body.logged {
         p {
             margin: 0;
         }
+    }
+}
+
+#announcement {
+    .creator {
+        background: @body-background;
+        border-top: 1px solid @border-color;
+        border-bottom: 1px solid @border-color;
+        padding: 0.5em 0;
     }
 }
