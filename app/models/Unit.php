@@ -16,10 +16,10 @@
  * @property array|Unit $children The list of its children units
  * @property Unit $parentUnit The parent unit of this unit
  * @property array|Activity $activities The list of activities of this unit
+ * 
  */
 class Unit extends Eloquent
 {
-
     public $timestamps = true;
     protected $softDelete = true;
 
@@ -106,6 +106,44 @@ class Unit extends Eloquent
 	    return null;
 	$leaderVacancy->users()->detach();
 	$leaderVacancy->users()->save($user);
+    }
+    
+    /**
+     * 
+     * @param type $title
+     * @param type $content
+     * @param \User $creator
+     * @param Carbon\Carbon $deadline
+     * @param Activity $parent
+     * @param integer $type
+     * @param Carbon\Carbon $startDate
+     * @return Activity
+     */
+    public function createActivity($title, $content, \User $creator, Carbon\Carbon $deadline, Activity $parent = null, $type = Activity::ACTIVITY_TYPE_ACTIVITY, Carbon\Carbon $startDate = null)
+    {
+	if (!$startDate)
+	{
+	    $startDate = Carbon\Carbon::now();
+	}
+	$activity = Activity::create(array(
+	    'title' => $title,
+	    'content' => $content,
+	    'type' => $type,
+	    'deadline' => $deadline,
+	    'creator_id' => $creator->id,
+	    'unit_id' => $this->id,
+	    'percentage' => 0,
+	    'parent_id' => $parent ? $parent->id : null,
+	    'start_time' => $startDate,
+	));
+	
+	if ($parent)
+	    $activity->top_most_id = $parent->top_most_id;
+	else
+	    $activity->top_most_id = $activity->id;
+	$activity->save();
+	
+	return $activity;
     }
 
     public static function create(array $attributes)

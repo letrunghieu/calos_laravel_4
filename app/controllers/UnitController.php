@@ -49,6 +49,22 @@ class UnitController extends BaseController
 	$this->layout->pageHeader = trans("organization.title.announcments in :unit", array('unit' => $unit->name));
 	return $this->layout->nest('content', 'unit.unit_announce', $data);
     }
+    
+    public function getUnitActivities($unitId)
+    {
+	$data =array();
+	$perPage = Option::get('item-per-page', 3);
+	$unit = Unit::find($unitId);
+	if ($unit && !$unit->deleted_at)
+	{
+	    $data['unit'] = $unit;
+	    $data['activities'] = $unit->activities()->with('holder', 'assignee')->paginate($perPage->value);
+	}
+	addBodyClasses('logged unit unit-activities');
+	$this->layout->title = trans("organization.title.activities in :unit", array('unit' => $unit->name));
+	$this->layout->pageHeader = trans("organization.title.activities in :unit", array('unit' => $unit->name));
+	return $this->layout->nest('content', 'unit.unit_activities', $data);
+    }
 
 }
 

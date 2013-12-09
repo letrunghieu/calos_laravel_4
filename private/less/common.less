@@ -273,3 +273,23 @@ body.logged {
         padding: 0.5em 0;
     }
 }
+
+.list.activities {
+    .item {
+        border-top: 1px solid @border-color;
+        padding: 0.5em 0;
+        .transition(background 0.2s);
+        &:last-child {
+            border-bottom: 1px solid @border-color;
+        }
+        &:hover {
+            background: @body-background;
+        }
+        & > div {
+            font-size: 0.9em;
+        }
+        .personel > div {
+            margin-bottom: 5px;
+        }
+    }
+}

@@ -34,4 +34,5 @@ return array(
     
     'title.members in :unit' => 'Các thành viên của :unit',
     'title.announcments in :unit' => 'Các thông báo trong :unit',
+    'title.activities in :unit' => 'Các hoạt động trong :unit',
 );
