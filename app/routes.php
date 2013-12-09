@@ -38,6 +38,9 @@ Route::group(array('before' => 'auth'), function(){
     
     Route::get('/announcement/{id}', 'AnnouncementController@getAnnouncement')
 	    ->where('id', '[0-9]+');
+    
+    Route::get('/activity/{id}', 'ActivityController@getActivity')
+	    ->where('id', '[0-9]+');
 });
 
 Route::group(array('before' => 'auth', 'prefix' => 'api'), function(){

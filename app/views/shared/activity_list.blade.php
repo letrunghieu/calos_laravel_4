@@ -12,7 +12,7 @@
 		<div class="col-xs-12">
 		    <h3>
 			<i class="fa fa-circle-o"></i>  
-		    {{ HTML::link('#', $act->title) }}
+		    {{ HTML::link(URL::action('ActivityController@getActivity', array($act->id)), $act->title) }}
 		    </h3>
 		</div>
 	    </div>
