@@ -32,7 +32,8 @@ class ActivitySeeder extends Seeder
 	/* @var $act2 Activity */
 	$act2->hold()->save();
 	$rUser = $this->randomUser();
-	$act2->assignTo($rUser->id)->updateProgress(rand(30, 70))->save();
+	$act2->assignTo($rUser->id)->updateProgress(rand(30, 50))->save();
+	$act2->assignTo($rUser->id, 5, rand(30, 50))->updateProgress(rand(50, 70))->save();
 	$act2->createTask('Chuẩn bị nội dung', '', $rUser, Carbon\Carbon::now(), Carbon\Carbon::now()->addDay(7), $contentUnit);
 	$act2->createTask('Lên kịch bản MC', '', $rUser, Carbon\Carbon::now(), Carbon\Carbon::now()->addDay(7), $MCUnit);
 	$act2->createTask('Làm poster', '', $rUser, Carbon\Carbon::now(), Carbon\Carbon::now()->addDay(3), $techUnit);

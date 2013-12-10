@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
 	{
 	    requestURLParams.unit = _unit_id_;
 	}
-	
+
 
 	userListTable = $('#user-list-table').dataTable({
 	    bProcessing: true,
@@ -107,6 +107,15 @@ jQuery(document).ready(function($) {
 	    userListTable.fnDraw();
 	});
 
+    }
+
+    if (typeof _epic_editor_ !== "undefined" && _epic_editor_)
+    {
+	var editor = new EpicEditor({
+	    container: _epic_editor_,
+	    textarea: 'txt-' + _epic_editor_,
+	    basePath: homeURL + '/epiceditor'
+	}).load();
     }
 });
 

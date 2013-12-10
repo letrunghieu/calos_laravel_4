@@ -13,7 +13,7 @@
  * @property Carbon\Carbon $holding_time The time when this task is holded by some one
  * @property integer $assignee_id The id of the assigned
  * @property Carbon\Carbon $assigning_time The time when this task is assigned
- * @property Carbon\Carbon $compelete_time The time when this task is marked as completed by the creator
+ * @property Carbon\Carbon $compeleted_time The time when this task is marked as completed by the creator
  * @property integer $percentage The percentage of completement
  * @property integer $parent_id The id of parent activity
  * @property integer $creator_id The id of the creator
@@ -43,9 +43,9 @@ class Activity extends Eloquent
     public $timestamps = true;
     protected $softDelete = true;
 
-    public function assignee()
+    public function assignees()
     {
-	return $this->belongsTo('User', 'assignee_id');
+	return $this->belongsToMany('User', 'activity_user')->withPivot(array('completed_time', 'task_percentage', 'creator_comment'))->withTimestamps()->orderBy('activity_user.created_at', 'desc');
     }
 
     public function creator()
@@ -107,10 +107,10 @@ class Activity extends Eloquent
      * @param integer $userId
      * @return \Activity
      */
-    public function assignTo($userId)
+    public function assignTo($userId, $rating = 0, $percentage = 0, $author_comment = '')
     {
-	$this->assignee_id = $userId;
-	$this->assigning_time = Carbon\Carbon::now();
+	$this->_completeCurrentAssignee($percentage, $rating, $author_comment);
+	$this->assignees()->attach($userId);
 	return $this;
     }
 
@@ -130,11 +130,11 @@ class Activity extends Eloquent
      * @param string $comment
      * @return \Activity
      */
-    public function complete($comment = '')
+    public function complete($rating = 0, $percentage = 0, $author_comment = '')
     {
-	$this->percentage = 100;
-	$this->compelete_time = Carbon\Carbon::now();
-	$this->creator_comment = $comment;
+	$this->_completeCurrentAssignee($percentage, $rating, $author_comment);
+	$this->completed_time = Carbon\Carbon::now();
+	$this->save();
 	return $this;
     }
 
@@ -192,6 +192,20 @@ class Activity extends Eloquent
 	else
 	    $activity->hold($creator->id)->save();
 	return $activity;
+    }
+    
+    private function _completeCurrentAssignee($percentage, $rating, $author_comment)
+    {
+	$currentAssignee = $this->assignees()->getResults()->first();
+	if ($currentAssignee)
+	{
+	    $currentAssignee->pivot->task_percentage = $percentage;
+	    $currentAssignee->pivot->creator_comment = $author_comment;
+	    $currentAssignee->pivot->rating = $rating;
+	    $currentAssignee->pivot->completed_time = Carbon\Carbon::now();
+	    $currentAssignee->pivot->save();
+	}
+	return $this;
     }
 
 }

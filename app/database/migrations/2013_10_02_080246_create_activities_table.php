@@ -16,15 +16,12 @@ class CreateActivitiesTable extends Migration {
             $table->string('title', 1000);
             $table->text('content');
 	    $table->integer('type');
-            $table->string('creator_comment', 2000)->nullable();
             $table->timestamp('deadline');
             $table->timestamp('start_time');
 	    $table->integer('holder_id')->unsigned()->nullable();
 	    $table->timestamp('holding_time')->nullable();
-            $table->integer('assignee_id')->unsigned()->nullable();
-            $table->timestamp('assigning_time')->nullable();
-            $table->integer('percentage');
-            $table->timestamp('complete_time')->nullable();
+	    $table->integer('percentage');
+            $table->timestamp('completed_time')->nullable();
             $table->integer('parent_id')->unsigned()->nullable();
             $table->integer('creator_id')->unsigned();
             $table->integer('unit_id')->unsigned();
@@ -35,6 +32,16 @@ class CreateActivitiesTable extends Migration {
             $table->timestamps();
             $table->softDeletes();
         });
+	
+	Schema::create('activity_user', function($table){
+	    $table->integer('activity_id')->unsigned();
+	    $table->integer('user_id')->unsigned();
+	    $table->timestamp('completed_time')->nullable();
+            $table->integer('rating')->default(0);
+	    $table->integer('task_percentage')->default(0);
+	    $table->string('creator_comment', 2000)->nullable();
+	    $table->timestamps();
+	});
     }
 
     /**
@@ -45,6 +52,7 @@ class CreateActivitiesTable extends Migration {
     public function down()
     {
         Schema::drop('activities');
+        Schema::drop('activity_user');
     }
 
 }
