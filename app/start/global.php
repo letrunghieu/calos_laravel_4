@@ -92,7 +92,7 @@ Basset::collection('front-end-header', function($collection)
 	{
 	    // Collection definition.
 	    $collection->add('../private/vendor/bootstrap/bootstrap.min.css');
-	    $collection->add('../private/vendor/bootstrap/bootstrap-custom.less')->apply('Less');
+	    $collection->add('../private/vendor/fort-awesome/font-awesome.less')->apply('Less');
 	    $collection->add('../private/less/front-end.less')->apply('Less');
 	    $collection->add('../private/vendor/angularjs/angular.min.js');
 	    $collection->add('../private/vendor/modernizr/modernizr-2.6.2-respond-1.1.0.min.js');

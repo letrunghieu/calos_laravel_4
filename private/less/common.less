@@ -12,7 +12,45 @@ body {
 .nowrap {
      white-space: nowrap;
 }
- /* Loading bars */
+/* Rating */
+.rating {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    span.star {
+        display: inline-block;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        &:hover {
+            cursor: pointer;
+        }
+        &:before {
+            color: #999999;
+            content: "";
+            padding-right: 5px;
+        }
+        &:hover:before, &:hover ~ span.star:before {
+            color: #E3CF7A;
+            content: "";
+        }
+    }
+    span.static-star {
+        display: inline-block;
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        &:before {
+            color: #999999;
+            content: "";
+            padding-right: 5px;
+        }
+        &.on:before {
+            color: #E3CF7A;
+            content: "";
+        }
+    }
+}
+/* Loading bars */
  .loading {
     .bar {
         /* Size and position */

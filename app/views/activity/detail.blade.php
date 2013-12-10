@@ -50,7 +50,7 @@ $descr = \Michelf\MarkdownExtra::defaultTransform($activity->content);
 		    <div class='current-progress'>
 			<p>{{trans('activity.progress :percent', array('percent' => $act->percentage))}}</p>
 			<div class="progress">
-			    <div class="progress-bar" role="progressbar" aria-valuenow="{{$act->percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$act->percentage}}%;"></div>
+			    <!--<div class="progress-bar" role="progressbar" aria-valuenow="{{$act->percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$act->percentage}}%;"></div>-->
 
 			</div>
 		    </div>
@@ -61,18 +61,35 @@ $descr = \Michelf\MarkdownExtra::defaultTransform($activity->content);
 	<div class='description'>
 	    {{$descr}}
 	</div>
+	@if ($assignees->isEmpty())
+
+	@else
 	<div class='mark-complete'>
 	    <h3>{{trans('activity.mark this task complete')}}</h3>
 	    <p class='description'>
 		{{trans('activity.help.if you think this task is no longer need review')}}
 	    </p>
-	    <div id="complete-comment">
 
-	    </div>
 	    <div>
-		<form action='{{URL::current()}}' method='post'>
+		<form action='{{URL::current()}}' method='post' class="form">
 		    <div class="hidden">
 			<textarea name="complete-comment" id="txt-complete-comment"></textarea>
+		    </div>
+
+		    <div class="form-group">
+			<label>{{trans('activity.label.rating for :name', array('name' => $assignees->first()->first_name))}}</label>
+		    </div>
+		    <div class='form-group'>
+			<label>{{trans('activity.label.comment for :name', array('name' => $assignees->first()->first_name))}}</label>    
+			<div id="complete-comment"></div>
+		    </div>
+		    <div class='checkbox'>
+			<input type='hidden' name='next-assignee' />
+			<label>
+			    <input type='checkbox' name='task-is-continue' /> 
+			    {{trans('activity.label.choose next assignee')}}
+			    <span id='next-assignee'></span>
+			</label>
 		    </div>
 		    <input type='submit' class='btn btn-primary' name='mark-complete' value='{{trans("activity.mark complete")}}'/>
 		</form>
@@ -80,6 +97,21 @@ $descr = \Michelf\MarkdownExtra::defaultTransform($activity->content);
 		    var _epic_editor_ = 'complete-comment';
 		</script>
 	    </div>
+	</div>
+	@endif
+	<div class='assigning-history'>
+	    <h3>{{trans('activity.this task assigning history')}}</h3>
+	    @foreach($assignees as $asg)
+	    <div class='item assignee'>
+		<div class='rating'>
+		    <span class='static-star'></span>
+		    <span class='static-star'></span>
+		    <span class='static-star'></span>
+		    <span class='static-star on'></span>
+		    <span class='static-star on'></span>
+		</div>
+	    </div>
+	    @endforeach
 	</div>
     </section>
 </div>
