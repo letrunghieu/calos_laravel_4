@@ -115,6 +115,19 @@ for ($i = 1; $i < $assignees->count(); $i++)
 	@endif
 	<div class='assigning-history'>
 	    <h3>{{trans('activity.this task assigning history')}}</h3>
+	    @if ($assignees->isEmpty())
+	    <div class='no-assignee'>
+		<form action='{{URL::current()}}' method='post' class="form">
+		    <p>{{trans('activity.there is no assignee now, plese select a new assignee')}}</p>
+		    <p>
+			<input type='hidden' name='next-assignee' id='next-assignee-id'/>
+			<a class='btn btn-mini btn-default choose-assignee'>{{trans('activity.label.choose new assignee')}}</a>
+			<em>({{trans('user.selected')}}: <span id='next-assignee'></span>)</em>
+		    </p>
+		    <input type='submit' class='btn btn-primary' name='choose-assignee' value='{{trans("activity.mark complete")}}'/>
+		</form>
+	    </div>
+	    @endif
 	    @foreach($assignees as $asg)
 	    <div class='item assignee'>
 		<div class='row'>

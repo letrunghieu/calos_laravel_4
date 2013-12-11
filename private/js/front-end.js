@@ -178,6 +178,9 @@ jQuery(document).ready(function($) {
 	    $('#next-assignee-id').val('');
 	}
     });
+    $('.choose-assignee').click(function(){
+	$('#select-user-modal').modal('show');
+    });
 
     function progressSliderUpdate(ev) {
 	$('#task-progress').css('width', ev.value + "%");

@@ -61,6 +61,14 @@ class ActivityController extends BaseController
 		$activity->complete($rating, $progress, $completedComment);
 	    return Redirect::action('ActivityController@getActivity', array($id));
 	}
+	if (Input::get('choose-assignee'))
+	{
+	    $nextAssigneeId = Input::get('next-assignee');
+
+	    $assignees = $activity->assignees;
+	    $activity->assignTo($nextAssigneeId);
+	    return Redirect::action('ActivityController@getActivity', array($id));
+	}
     }
     
     public function getUpdateActivity($id)
