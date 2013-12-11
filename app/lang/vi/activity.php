@@ -21,4 +21,10 @@ return array(
     'label.rating for :name' => 'Đáng giá cho công tác của <i class="user name first-name">:name</i>',
     'label.comment for :name' => 'Nhận xét về công tác của <i class="user name first-name">:name</i>',
     'label.choose next assignee' => 'Công việc vẫn được tiếp tục',
+    'label.task name' => "Tên hoạt động",
+    'label.task description' => "Miêu tả nội dung hoạt động",
+    'label.date end' => 'Ngày kết thúc',
+    'label.date start' => 'Ngày bắt đầu',
+    
+    'title.update :name' => 'Chỉnh sửa ":name"',
 );

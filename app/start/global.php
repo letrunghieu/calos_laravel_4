@@ -93,6 +93,7 @@ Basset::collection('front-end-header', function($collection)
 	    // Collection definition.
 	    $collection->add('../private/vendor/bootstrap/bootstrap.min.css');
 	    $collection->add('../private/vendor/bootstrap/bootstrap-slider.css');
+	    $collection->add('../private/vendor/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.css');
 	    $collection->add('../private/vendor/fort-awesome/font-awesome.less')->apply('Less');
 	    $collection->add('../private/less/front-end.less')->apply('Less');
 	    $collection->add('../private/vendor/angularjs/angular.min.js');
@@ -109,6 +110,8 @@ Basset::collection('front-end-footer', function($collection)
 	    $collection->add('../private/vendor/bootstrap/bootstrap.min.js');
 	    $collection->add('../private/vendor/bootstrap/bootstrap.rating.jquery.js');
 	    $collection->add('../private/vendor/bootstrap/bootstrap-slider.js');
+	    $collection->add('../private/vendor/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js');
+	    $collection->add('../private/vendor/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.vi.js');
 	    $collection->add('../private/vendor/datatable/jquery.dataTables.min.js');
 	    $collection->add('../private/vendor/datatable/datatable.plugins.js');
 	    $collection->add('../private/vendor/epiceditor/js/epiceditor.min.js');

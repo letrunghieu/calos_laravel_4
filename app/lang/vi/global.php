@@ -15,5 +15,6 @@ return array(
     'now' => 'hiện tại',
     'clear all' => 'làm lại',
     'select' => 'Chọn',
+    'update' => 'Cập nhật',
 );
 ?>

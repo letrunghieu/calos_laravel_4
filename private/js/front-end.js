@@ -187,16 +187,23 @@ jQuery(document).ready(function($) {
     $('#current-prog').slider()
 	    .on('slide', progressSliderUpdate)
 	    .on('slideStop', function(ev) {
-	    var actId = $(this).data('activity-id');
-		$.post(
-			homeURL + "/api/v1/update_activity",
-			{
-			    data: {
-				id: actId,
-				percentage: ev.value
-			    }
-			}
-		);
-	    });
+	var actId = $(this).data('activity-id');
+	$.post(
+		homeURL + "/api/v1/update_activity",
+		{
+		    data: {
+			id: actId,
+			percentage: ev.value
+		    }
+		}
+	);
+    });
+//
+    $('.input-group.date').datetimepicker({
+	language: 'vi',
+	todayBtn: 1,
+	autoclose: 1,
+	todayHighlight: 1
+    });
 });
 

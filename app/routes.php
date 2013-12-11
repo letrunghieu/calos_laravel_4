@@ -43,6 +43,10 @@ Route::group(array('before' => 'auth'), function(){
 	    ->where('id', '[0-9]+');
     Route::post('/activity/{id}', 'ActivityController@postActivity')
 	    ->where('id', '[0-9]+');
+    Route::get('/activity/{id}/edit', 'ActivityController@getUpdateActivity')
+	    ->where('id', '[0-9]+');
+    Route::post('/activity/{id}/edit', 'ActivityController@postUpdateActivity')
+	    ->where('id', '[0-9]+');
 });
 
 Route::group(array('before' => 'auth', 'prefix' => 'api'), function(){
