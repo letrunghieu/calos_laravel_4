@@ -57,7 +57,7 @@ for ($i = 1; $i < $assignees->count(); $i++)
 		    </div>
 		    <div class='current-progress'>
 			<p>{{trans('activity.progress :percent', array('percent' => $act->percentage))}}</p>
-			<input type="text" value="" id='current-prog' class='col-xs-12' data-slider-min="{{$minPercentage}}" data-slider-max="100" data-slider-step="1" data-slider-value="{{$activity->percentage}}">
+			<input type="text" value="" id='current-prog' class='col-xs-12' data-slider-min="{{$minPercentage}}" data-slider-max="100" data-slider-step="1" data-slider-value="{{$activity->percentage}}" data-activity-id="{{$activity->id}}">
 		    </div>
 
 		</div>
@@ -133,7 +133,7 @@ for ($i = 1; $i < $assignees->count(); $i++)
 			@if($asg->pivot->completed_time)
 			<div class='rating pull-left'>
 			    @for($i = 0; $i < 5; $i++)
-			    <span class='static-star {{(5-$i < $asg->pivot->rating) ? "on" : ""}}'></span>
+			    <span class='static-star {{(5-$i <= $asg->pivot->rating) ? "on" : ""}}'></span>
 			    @endfor
 			</div>
 			<div class='clearfix'></div>

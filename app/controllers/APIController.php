@@ -21,6 +21,10 @@ class APIController extends BaseController
 
 		return $this->getUserList((array) Input::get('data'));
 		break;
+	    case 'update_activity':
+
+		return $this->updateActivity((array) Input::get('data'));
+		break;
 
 	    default:
 		break;
@@ -37,6 +41,43 @@ class APIController extends BaseController
 		break;
 	}
 	return Response::json($data);
+    }
+
+    private function updateActivity($data)
+    {
+	if (!isset($data['id']))
+	    return Response::json(new APIResponse(APIResponse::CODE_FAILED, 'An ID must be specified'));
+	$activity = Activity::find($data['id']);
+	if (!$activity)
+	    return Response::json(new APIResponse(APIResponse::CODE_FAILED, 'This activity does not exist'));
+	$allowedProps = array(
+	    'title',
+	    'content',
+	    'deadline',
+	    'start_time',
+	    'percentage',
+	);
+	foreach ($data as $key => $value)
+	{
+	    if ($key == 'id')
+		continue;
+	    if (!in_array($key, $allowedProps))
+		return Response::json(new APIResponse(APIResponse::CODE_FAILED, "The '{$key}' field is not an valid field"));
+	    switch ($key)
+	    {
+		case 'deadline':
+		    $activity->deadline = new Carbon\Carbon($value);
+
+		    break;
+
+		default:
+		    $activity->$key = $value;
+		    break;
+	    }
+	    $activity->save();
+	}
+	
+	return Response::json(new APIResponse(APIResponse::CODE_SUCCESS, "Activity id '{$data['id']}' is updated"));
     }
 
     private function getUserList($options)

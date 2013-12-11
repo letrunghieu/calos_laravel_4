@@ -178,12 +178,25 @@ jQuery(document).ready(function($) {
 	    $('#next-assignee-id').val('');
 	}
     });
-    
-    function progressSliderUpdate(ev){
+
+    function progressSliderUpdate(ev) {
 	$('#task-progress').css('width', ev.value + "%");
 	$('.current-progress .percent').html(ev.value);
     }
     $('#confirmed-progress').slider().on('slide', progressSliderUpdate);
-    $('#current-prog').slider().on('slide', progressSliderUpdate);
+    $('#current-prog').slider()
+	    .on('slide', progressSliderUpdate)
+	    .on('slideStop', function(ev) {
+	    var actId = $(this).data('activity-id');
+		$.post(
+			homeURL + "/api/v1/update_activity",
+			{
+			    data: {
+				id: actId,
+				percentage: ev.value
+			    }
+			}
+		);
+	    });
 });
 

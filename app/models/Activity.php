@@ -45,7 +45,7 @@ class Activity extends Eloquent
 
     public function assignees()
     {
-	return $this->belongsToMany('User', 'activity_user')->withPivot(array('completed_time', 'task_percentage', 'creator_comment', 'rating'))->withTimestamps()->orderBy('activity_user.id', 'desc');
+	return $this->belongsToMany('User', 'activity_user')->withPivot(array('id', 'completed_time', 'task_percentage', 'creator_comment', 'rating'))->withTimestamps()->orderBy('activity_user.id', 'desc');
     }
 
     public function creator()
@@ -199,11 +199,12 @@ class Activity extends Eloquent
 	$currentAssignee = $this->assignees()->getResults()->first();
 	if ($currentAssignee)
 	{
-	    $currentAssignee->pivot->task_percentage = $percentage;
-	    $currentAssignee->pivot->creator_comment = $author_comment;
-	    $currentAssignee->pivot->rating = $rating;
-	    $currentAssignee->pivot->completed_time = Carbon\Carbon::now();
-	    $currentAssignee->pivot->save();
+	    $assignee = Assignee::find($currentAssignee->pivot->id);
+	    $assignee->task_percentage = $percentage;
+	    $assignee->creator_comment = $author_comment;
+	    $assignee->rating = $rating;
+	    $assignee->completed_time = Carbon\Carbon::now();
+	    $assignee->save();
 	}
 	return $this;
     }

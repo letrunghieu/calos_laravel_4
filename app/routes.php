@@ -41,7 +41,7 @@ Route::group(array('before' => 'auth'), function(){
     
     Route::get('/activity/{id}', 'ActivityController@getActivity')
 	    ->where('id', '[0-9]+');
-    Route::post('/activity/{id}', 'ActivityController@getActivity')
+    Route::post('/activity/{id}', 'ActivityController@postActivity')
 	    ->where('id', '[0-9]+');
 });
 
