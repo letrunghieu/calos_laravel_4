@@ -9,11 +9,12 @@ return array(
     'start holding from :time' => 'bắt đầu phụ trách từ :time',
     'assigned at :time' => 'được giao vào :time',
     'deadline :time' => 'Thời hạn: :time',
-    'progress :percent' => 'Tiến độ: :percent%',
+    'progress :percent' => 'Tiến độ: <span class="percent">:percent</span>%',
     'activities' => 'Hoạt động',
     'mark this task complete' => 'Xác nhận công việc này đã hoàn thành',
     'mark complete' => 'Xác nhận',
     'this task assigning history' => 'Lịch sử thực hiện công việc',
+    'assignee percentage' => 'Phần trăm đóng góp trong tổng công việc',
     
     'help.if you think this task is no longer need review' => 'Nếu bạn nghĩ công việc này đã hoàn thành, điều chỉnh lại thanh tiến độ cho phù hợp với mức độ công việc đã được thực hiện. Bạn có thể để lại một nhận xét của mình vào lúc này. Sau khi xác nhận công việc đã hoàn thành, các thông tin về công việc sẽ không được thay đổi nữa.',
     

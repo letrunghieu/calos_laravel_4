@@ -45,7 +45,7 @@ class Activity extends Eloquent
 
     public function assignees()
     {
-	return $this->belongsToMany('User', 'activity_user')->withPivot(array('completed_time', 'task_percentage', 'creator_comment'))->withTimestamps()->orderBy('activity_user.created_at', 'desc');
+	return $this->belongsToMany('User', 'activity_user')->withPivot(array('completed_time', 'task_percentage', 'creator_comment', 'rating'))->withTimestamps()->orderBy('activity_user.id', 'desc');
     }
 
     public function creator()

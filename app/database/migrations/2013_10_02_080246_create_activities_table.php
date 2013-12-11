@@ -34,6 +34,7 @@ class CreateActivitiesTable extends Migration {
         });
 	
 	Schema::create('activity_user', function($table){
+	    $table->increments('id');
 	    $table->integer('activity_id')->unsigned();
 	    $table->integer('user_id')->unsigned();
 	    $table->timestamp('completed_time')->nullable();

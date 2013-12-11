@@ -58,7 +58,7 @@ class UnitController extends BaseController
 	if ($unit && !$unit->deleted_at)
 	{
 	    $data['unit'] = $unit;
-	    $data['activities'] = $unit->activities()->with('holder', 'assignee')->paginate($perPage->value);
+	    $data['activities'] = $unit->activities()->with('holder', 'assignees')->paginate($perPage->value);
 	}
 	addBodyClasses('logged unit unit-activities');
 	$this->layout->title = trans("organization.title.activities in :unit", array('unit' => $unit->name));

@@ -23,11 +23,11 @@
 			{{HTML::link('#', $act->holder->fullName())}}
 			{{trans('activity.start holding from :time', array('time' => uiTimeTag(new Carbon\Carbon($act->holding_time))))}}
 		    </div>
-		    @if ($act->assignee)
+		    @if (!$act->assignees->isEmpty())
 		    <div class='assignee'>
-			{{HTML::image(Gravatar::src($act->assignee->email, 24), $act->assignee->fullName(), array('class' => 'img-circle'))}}
-			{{HTML::link('#', $act->assignee->fullName())}}
-			{{trans('activity.assigned at :time', array('time' => uiTimeTag(new Carbon\Carbon($act->assigning_time))))}}
+			{{HTML::image(Gravatar::src($act->assignees->first()->email, 24), $act->assignees->first()->fullName(), array('class' => 'img-circle'))}}
+			{{HTML::link('#', $act->assignees->first()->fullName())}}
+			{{trans('activity.assigned at :time', array('time' => uiTimeTag(new Carbon\Carbon($act->assignees->first()->pivot->assigning_time))))}}
 		    </div>
 		    @endif
 		</div>

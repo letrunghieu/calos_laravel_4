@@ -23,6 +23,103 @@ jQuery(document).ready(function($) {
 	    requestURLParams.unit = _unit_id_;
 	}
 
+	var aoColumns = [];
+	var aoColumnDefs = [];
+
+	if (typeof _list_format_ === "undefined")
+	    _list_format_ = "full";
+	switch (_list_format_)
+	{
+	    case "select-list":
+		aoColumns = [
+		    {mData: "gravatar"},
+		    {mData: "first_name", sType: "string-fullname"},
+		    {mData: "first_name"},
+		    {mData: "id"}
+		];
+		aoColumnDefs = [
+		    {
+			mRender: function(data, type, row) {
+			    return "<img src='" + data + "' />";
+			},
+			aTargets: [0]
+		    },
+		    {
+			mRender: function(data, type, row) {
+			    return "" + row.last_name + ' ' + data;
+			},
+			aTargets: [1]
+		    },
+		    {
+			bVisible: false,
+			aTargets: [2]
+		    },
+		    {
+			mRender: function(data, type, row) {
+			    return ["<a class='select-this-user' data-id='", data, "'><i class='fa fa-chevron-circle-right'></i></a>"].join('');
+			},
+			aTargets: [3]
+		    }
+		];
+		break;
+	    default:
+		aoColumns = [
+		    {mData: "gravatar"},
+		    {mData: "first_name", sType: "string-fullname"},
+		    {mData: "first_name"},
+		    {mData: "id"},
+		    {mData: "email"},
+		    {mData: "mobile_phone"},
+		    {mData: "created_at", sType: "date-eu"}
+		];
+		aoColumnDefs = [
+		    {
+			mRender: function(data, type, row) {
+			    return "<img src='" + data + "' />";
+			},
+			aTargets: [0]
+		    },
+		    {
+			mRender: function(data, type, row) {
+			    return "" + row.last_name + ' ' + data;
+			},
+			aTargets: [1]
+		    },
+		    {
+			bVisible: false,
+			aTargets: [2]
+		    },
+		    {
+			mRender: function(data, type, row) {
+			    return "<a href='" + homeURL + '/members/' + data + '/qr' + "' class='qrcode'><i class='fa fa-qrcode'></i></a>";
+			},
+			aTargets: [3]
+		    },
+		    {
+			mRender: function(data, type, row) {
+			    return "<a href='mailto:" + data + "'>" + data + "</a>";
+			},
+			aTargets: [4]
+		    },
+		    {
+			mRender: function(data, type, row) {
+			    if (data)
+				return phoneFormat(data);
+			    else
+				return "<small class='text-muted'>empty</small>";
+			},
+			aTargets: [5]
+		    },
+		    {
+			mRender: function(data, type, row) {
+			    return $.format.date(data, "dd/MM/yyyy");
+			},
+			aTargets: [6],
+			sClass: "text-center"
+		    }
+		];
+		break;
+	}
 
 	userListTable = $('#user-list-table').dataTable({
 	    bProcessing: true,
@@ -35,67 +132,20 @@ jQuery(document).ready(function($) {
 		sUrl: homeURL + "/api/lang/user_list"
 	    },
 	    aaSorting: [[1, "asc"]],
-	    aoColumns: [
-		{mData: "gravatar"},
-		{mData: "first_name", sType: "string-fullname"},
-		{mData: "first_name"},
-		{mData: "id"},
-		{mData: "email"},
-		{mData: "mobile_phone"},
-		{mData: "created_at", sType: "date-eu"}
-	    ],
-	    aoColumnDefs: [
-		{
-		    mRender: function(data, type, row) {
-			return "<img src='" + data + "' />";
-		    },
-		    aTargets: [0]
-		},
-		{
-		    mRender: function(data, type, row) {
-			return "" + row.last_name + ' ' + data;
-		    },
-		    aTargets: [1]
-		},
-		{
-		    bVisible: false,
-		    aTargets: [2]
-		},
-		{
-		    mRender: function(data, type, row) {
-			return "<a href='" + homeURL + '/members/' + data + '/qr' + "' class='qrcode'><i class='fa fa-qrcode'></i></a>";
-		    },
-		    aTargets: [3]
-		},
-		{
-		    mRender: function(data, type, row) {
-			return "<a href='mailto:" + data + "'>" + data + "</a>";
-		    },
-		    aTargets: [4]
-		},
-		{
-		    mRender: function(data, type, row) {
-			if (data)
-			    return phoneFormat(data);
-			else
-			    return "<small class='text-muted'>empty</small>";
-		    },
-		    aTargets: [5]
-		},
-		{
-		    mRender: function(data, type, row) {
-			return $.format.date(data, "dd/MM/yyyy");
-		    },
-		    aTargets: [6],
-		    sClass: "text-center"
-		}
-	    ],
+	    aoColumns: aoColumns,
+	    aoColumnDefs: aoColumnDefs,
 	    fnCreatedRow: function(nRow, aData, iDataIndex) {
 		$('.qrcode', nRow).click(function(e) {
 		    e.preventDefault();
 		    $('#current-qrcode').attr('src', '').attr('src', $(e.currentTarget).attr('href'));
 		    $('#modal-qrcode').modal('show');
 		});
+		if (typeof _selected_func_ !== "undefined")
+		    $('.select-this-user', nRow).click(function() {
+			var tr = $(this).parents('tr');
+			_selected_func_(aData.id, $('td:eq(0)', tr).html(), $('td:eq(1)', tr).html());
+		    });
+
 	    }
 	});
 
@@ -117,5 +167,23 @@ jQuery(document).ready(function($) {
 	    basePath: homeURL + '/epiceditor'
 	}).load();
     }
+
+    $('#task-is-continue').change(function() {
+	var val = $(this).prop('checked');
+	if (val)
+	    $('#select-user-modal').modal('show');
+	else
+	{
+	    $('#next-assignee').html('');
+	    $('#next-assignee-id').val('');
+	}
+    });
+    
+    function progressSliderUpdate(ev){
+	$('#task-progress').css('width', ev.value + "%");
+	$('.current-progress .percent').html(ev.value);
+    }
+    $('#confirmed-progress').slider().on('slide', progressSliderUpdate);
+    $('#current-prog').slider().on('slide', progressSliderUpdate);
 });
 

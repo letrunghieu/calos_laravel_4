@@ -12,5 +12,8 @@ return array(
     'type and enter to search' => 'Gõ và <ENTER> để tìm kiếm ...',
     'current server time is' => 'Thời gian của hệ thống',
     'all' => 'Tất cả',
+    'now' => 'hiện tại',
+    'clear all' => 'làm lại',
+    'select' => 'Chọn',
 );
 ?>
