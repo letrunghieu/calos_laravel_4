@@ -87,7 +87,6 @@ class ActivityController extends BaseController
     
     public function postUpdateActivity($id)
     {
-	$data = array();
 	$activity = Activity::find($id);
 	if (!$activity)
 	    return Redirect::action ('ActivityController@getUpdateActivity', array($id));
@@ -108,6 +107,22 @@ class ActivityController extends BaseController
 	    $activity->save();
 	    return Redirect::action ('ActivityController@getUpdateActivity', array($id));
 	}
+    }
+    
+    public function getChildActivities($id)
+    {
+	$data = array();
+	$activity = Activity::find($id);
+	$perPage = Option::get('item-per-page', 3);
+	if ($activity && !$activity->deleted_at && !$activity->parent_deleted)
+	{
+	    $data['activity'] = $activity;
+	    $data['children'] = $activity->children()->paginate($perPage->value);
+	}
+	addBodyClasses('logged activity activity-children');
+	$this->layout->title = trans('activity.title.children tasks of :name', array('name' => $activity->title));
+	$this->layout->pageHeader = trans('activity.title.children tasks of :name', array('name' => $activity->title));;
+	return $this->layout->nest('content', 'activity.children', $data);
     }
 
 }

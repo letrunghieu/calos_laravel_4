@@ -29,4 +29,5 @@ return array(
     'label.date start' => 'Ngày bắt đầu',
     
     'title.update :name' => 'Chỉnh sửa ":name"',
+    'title.children tasks of :name' => 'Các hoạt động con của ":name"',
 );

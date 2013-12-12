@@ -47,6 +47,8 @@ Route::group(array('before' => 'auth'), function(){
 	    ->where('id', '[0-9]+');
     Route::post('/activity/{id}/edit', 'ActivityController@postUpdateActivity')
 	    ->where('id', '[0-9]+');
+    Route::get('/activity/{id}/children', 'ActivityController@getChildActivities')
+	    ->where('id', '[0-9]+');
 });
 
 Route::group(array('before' => 'auth', 'prefix' => 'api'), function(){
