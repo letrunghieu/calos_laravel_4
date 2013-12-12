@@ -30,6 +30,7 @@
  * @property-read User $holder The person hold this activity
  * @property-read array|Activity $children The child tasks
  * @property-read Activity $parent_activity The parent task
+ * @property-read Activity $root_activity Description
  * 
  */
 class Activity extends Eloquent
@@ -71,6 +72,11 @@ class Activity extends Eloquent
     public function parent_activity()
     {
 	return $this->belongsTo('Activity', 'parent_id');
+    }
+    
+    public function root_activity()
+    {
+	return $this->belongsTo('Activity', 'top_most_id');
     }
 
     /**

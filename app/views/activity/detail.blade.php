@@ -64,7 +64,42 @@ for ($i = 1; $i < $assignees->count(); $i++)
 	    </div>
 	</div>
 	<div class='description'>
-	    {{$descr}}
+	    <div class="content">
+		{{$descr}}
+	    </div>
+	    <div class="meta">
+		<div class="parent-activity">
+		    
+		    <?php
+		    $parent = $activity->parent_activity()->getResults();
+		    if ($parent)
+		    {
+			echo '<i class=" fa fa-square"></i>  ';
+			$parenttAct = HTML::linkAction('ActivityController@getActivity', $parent->title, array($parent->id));
+			echo trans('activity.the father task :name', array('name' => $parenttAct));
+		    }
+		    ?>
+		</div>
+		<div class="root-activity">
+		    <?php
+		    $root = $activity->root_activity()->getResults();
+		    if ($root && $root->id != $activity->id && (!$parent || ($root->id != $parent->id)))
+		    {
+			echo '<i class=" fa fa-square"></i> ';
+			$rootAct = HTML::linkAction('ActivityController@getActivity', $root->title, array($root->id));
+			echo trans('activity.belong the root activity :name', array('name' => $rootAct));
+		    }
+		    ?>
+		</div>
+		<div class="created_at">
+		    <i class=" fa fa-square"></i>
+		    <?php
+		    $creator = HTML::linkAction('UserController@getUserQR', $activity->creator->fullName(), array($activity->creator->id));
+		    $created_at = uiTimeTag($activity->created_at, 'd-m-Y H:i:s');
+		    echo trans('activity.created by :name at :time', array('name' => $creator, 'time' => $created_at));
+		    ?>
+		</div>
+	    </div>
 	</div>
 	@if ($assignees->isEmpty())
 

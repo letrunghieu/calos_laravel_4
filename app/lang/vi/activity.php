@@ -16,6 +16,9 @@ return array(
     'this task assigning history' => 'Lịch sử thực hiện công việc',
     'assignee percentage' => 'Phần trăm đóng góp trong tổng công việc',
     'there is no assignee now, plese select a new assignee' => 'Chưa giao công việc này cho thành viên nào cả, hãy chọn một thành viên trong đơn vị để giao việc',
+    'created by :name at :time' => 'Được tạo bởi <span class="user name full-name">:name</span> vào lúc :time',
+    'belong the root activity :name' => 'Hoạt động chính: :name',
+    'the father task :name' => 'Là công việc con của: :name',
     
     'help.if you think this task is no longer need review' => 'Nếu bạn nghĩ công việc này đã hoàn thành, điều chỉnh lại thanh tiến độ cho phù hợp với mức độ công việc đã được thực hiện. Bạn có thể để lại một nhận xét của mình vào lúc này. Sau khi xác nhận công việc đã hoàn thành, các thông tin về công việc sẽ không được thay đổi nữa.',
     

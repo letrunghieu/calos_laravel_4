@@ -354,15 +354,24 @@ body.logged {
     }
 }
 
-.select-this-user {
-    cursor: pointer;
-}
-.mark-complete {
-    border-top: 1px solid @border-color;
-}
-.description, .comment {
-    h1, h2, h3 {
-        color: @gray-dark;
-        font-size: 20px;
+#activity {
+    .description, .comment {
+        h1, h2, h3 {
+            color: @gray-dark;
+            font-size: 20px;
+        }
+    }
+    .select-this-user {
+        cursor: pointer;
+    }
+    .mark-complete {
+        border-top: 1px solid @border-color;
+    }
+    .description {
+        .meta {
+            background: @body-background;
+            padding: 5px 0;
+            font-size: 0.9em;
+        }
     }
 }
