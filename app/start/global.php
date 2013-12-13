@@ -117,6 +117,7 @@ Basset::collection('front-end-footer', function($collection)
 	    $collection->add('../private/vendor/datatable/datatable.plugins.js');
 	    $collection->add('../private/vendor/epiceditor/js/epiceditor.min.js');
 	    $collection->add('../private/vendor/gantt/dhtmlxgantt.js');
+	    $collection->add('../private/vendor/gantt/locale/locale_vi.js');
 	    $collection->add('../private/js/gantt.js');
 	    $collection->add('../private/js/front-end.js');
 	});

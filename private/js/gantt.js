@@ -27,7 +27,6 @@ $(document).ready(function() {
 	    if (date.getDay() === 0 || date.getDay() === 6) {
 		classes.push("weekend");
 	    }
-	    console.log(date, today, date.getTime(), today.getTime());
 	    if (date.getTime() === today.getTime())
 	    {
 		classes.push('today');
