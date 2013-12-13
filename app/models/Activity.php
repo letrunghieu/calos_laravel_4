@@ -185,7 +185,8 @@ class Activity extends Eloquent
 	    'duration' => $deadline->startOfDay()->diffInDays($startDate) + 1,
 	    'id' => $this->id,
 	    'progress' => $this->percentage / 100,
-	    'open' => true
+	    'open' => true,
+	    'type' => $this->type
 	);
 	if ($this->parent_id)
 	    $data['parent'] = $this->parent_id;
