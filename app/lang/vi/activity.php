@@ -33,4 +33,5 @@ return array(
     
     'title.update :name' => 'Chỉnh sửa ":name"',
     'title.children tasks of :name' => 'Các hoạt động con của ":name"',
+    'title.gantt view of :name' => 'Sơ đồ Gantt của ":name"',
 );

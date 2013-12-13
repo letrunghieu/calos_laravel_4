@@ -18,12 +18,16 @@ class APIController extends BaseController
 	switch ($request)
 	{
 	    case 'user_list':
-
-		return $this->getUserList((array) Input::get('data'));
+		return $this->_getUserList((array) Input::get('data'));
 		break;
 	    case 'update_activity':
-
-		return $this->updateActivity((array) Input::get('data'));
+		return $this->_updateActivity(Input::get('id'), (array) Input::get('data'));
+		break;
+	    case 'gantt_activity_get':
+		return $this->_getGanttActivity(Input::get('id'));
+		break;
+	    case 'gantt_links':
+		return $this->_ganttLinks(Input::all());
 		break;
 
 	    default:
@@ -43,11 +47,69 @@ class APIController extends BaseController
 	return Response::json($data);
     }
 
-    private function updateActivity($data)
+    private function _ganttLinks($options)
     {
-	if (!isset($data['id']))
-	    return Response::json(new APIResponse(APIResponse::CODE_FAILED, 'An ID must be specified'));
-	$activity = Activity::find($data['id']);
+	if (!isset($options['action']))
+	    $action = null;
+	else
+	    $action = $options['action'];
+	$options = $options['data'];
+	if (!isset($options['source']) || !isset($options['target']) || !isset($options['type']))
+	    return Response::json(new APIResponse(APIResponse::CODE_FAILED, 'There must be 3 fields: "source", "target", "type"'));
+	switch ($action)
+	{
+	    case 'add':
+		$link = Link::create(array(
+			    'source_id' => $options['source'],
+			    'target_id' => $options['target'],
+			    'type' => $options['type']
+		));
+		return Response::json(new APIResponse(APIResponse::CODE_SUCCESS, $link->toArray()));
+		break;
+	    case 'remove':
+		Link::where('source_id', '=', $options['source'])
+		    ->where('target_id', '=', $options['target'])
+		    ->where('type', '=', $options['type'])
+		    ->delete();
+		return Response::json(new APIResponse(APIResponse::CODE_SUCCESS, "Deleted!"));
+		break;
+
+	    default:
+		return Response::json(new APIResponse(APIResponse:: CODE_FAILED, 'This method is not supported'));
+		break;
+	}
+    }
+
+    private function _getGanttActivity($id)
+    {
+	$activity = Activity::find($id);
+	if (!$activity)
+	    return Response::json(new APIResponse(APIResponse::CODE_FAILED, 'The id must be a valid activity ID'));
+	$data = array(
+	    'data' => $activity->toGanttData(),
+	    'links' => array(),
+	);
+	$activityIds = array_map(function($e){
+	    return $e['id'];
+	}, $data['data']);
+	$activityIds = array_unique($activityIds);
+	$links = Link::whereIn('source_id', $activityIds)->orWhereIn('target_id', $activityIds)
+		->distinct()->get();
+	foreach($links as $l)
+	{
+	    $data['links'][] = array(
+		'id' => $l->id,
+		'source' => $l->source_id,
+		'target' => $l->target_id,
+		'type' => $l->type,
+	    );
+	}
+	return Response::json(new APIResponse(APIResponse::CODE_SUCCESS, $data));
+    }
+
+    private function _updateActivity($id, $data)
+    {
+	$activity = Activity::find($id);
 	if (!$activity)
 	    return Response::json(new APIResponse(APIResponse::CODE_FAILED, 'This activity does not exist'));
 	$allowedProps = array(
@@ -56,6 +118,7 @@ class APIController extends BaseController
 	    'deadline',
 	    'start_time',
 	    'percentage',
+	    'duration'
 	);
 	foreach ($data as $key => $value)
 	{
@@ -69,6 +132,13 @@ class APIController extends BaseController
 		    $activity->deadline = new Carbon\Carbon($value);
 
 		    break;
+		case 'start_time':
+		    $activity->start_time = new \Carbon\Carbon($value);
+		    break;
+		case 'duration':
+		    $start = (isset($data['start_time']) ? new \Carbon\Carbon($data['start_time']) : new \Carbon\Carbon($activity->start_time->toISOString));
+		    $activity->deadline = $start->addDays($value - 1);
+		    break;
 
 		default:
 		    $activity->$key = $value;
@@ -76,11 +146,11 @@ class APIController extends BaseController
 	    }
 	    $activity->save();
 	}
-	
-	return Response::json(new APIResponse(APIResponse::CODE_SUCCESS, "Activity id '{$data['id']}' is updated"));
+
+	return Response::json(new APIResponse(APIResponse::CODE_SUCCESS, "Activity id '{$id}' is updated"));
     }
 
-    private function getUserList($options)
+    private function _getUserList($options)
     {
 	$default = array(
 	    ''

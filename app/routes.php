@@ -49,6 +49,8 @@ Route::group(array('before' => 'auth'), function(){
 	    ->where('id', '[0-9]+');
     Route::get('/activity/{id}/children', 'ActivityController@getChildActivities')
 	    ->where('id', '[0-9]+');
+    Route::get('/activity/{id}/gantt', 'ActivityController@getGanttView')
+	    ->where('id', '[0-9]+');
 });
 
 Route::group(array('before' => 'auth', 'prefix' => 'api'), function(){

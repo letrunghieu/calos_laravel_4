@@ -123,38 +123,7 @@ global $organization, $currentUser;
 	<div id="body-wrapper">
 	    <div class="container">
 		<div class="row">
-		    <div class="col-md-3 col-md-push-9">
-			
-			<div id='search-form' class="widget box">
-			    <form method='post'>
-				{{ Form::hidden('_token', csrf_token()) }}
-				
-				<div class='form-group'>
-				    <input type='text' name='s' class='form-control' placeholder="{{trans('global.type and enter to search')}}" />
-				</div>
-				<div class='form-group'>
-				    <label class="radio-inline">
-					<input type="radio" name="options"  checked="checked"/> <i class='fa fa-group' title="{{trans('user.search user')}}" data-toggle='tooltip' data-position='auto top'></i>
-				    </label>
-				    <label class="radio-inline">
-					<input type="radio" name="options"/> <i class='fa fa-tasks' title="{{trans('task.search task')}}" data-toggle='tooltip' data-position='auto top'></i>
-				    </label>
-				    <label class="radio-inline">
-					<input type="radio" name="options"/> <i class='fa fa-bullhorn' title="{{trans('organization.search announcement')}}" data-toggle='tooltip' data-position='auto top'></i>
-				    </label>
-				    <label class="radio-inline">
-					<input type="radio" name="options"/> <i class='fa fa-suitcase' title="{{trans('organization.search unit')}}" data-toggle='tooltip' data-position='auto top'></i>
-				    </label>
-				</div>
-
-			    </form>
-			</div>
-			<div>
-			    @yield('second-navbar')
-			</div>
-			
-		    </div>
-		    <div class="col-md-9 col-md-pull-3">
+		    <div class="col-xs-12">
 			@yield('content')
 		    </div>
 		</div>

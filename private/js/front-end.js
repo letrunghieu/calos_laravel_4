@@ -194,8 +194,8 @@ jQuery(document).ready(function($) {
 	$.post(
 		homeURL + "/api/v1/update_activity",
 		{
+		    id: actId,
 		    data: {
-			id: actId,
 			percentage: ev.value
 		    }
 		}

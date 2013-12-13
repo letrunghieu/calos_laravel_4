@@ -34,10 +34,10 @@ class ActivitySeeder extends Seeder
 	$rUser = $this->randomUser();
 	$act2->assignTo($rUser->id)->updateProgress(rand(30, 50))->save();
 	$act2->assignTo($rUser->id, 4, rand(30, 50), 'This is a **comment** for this task')->updateProgress(rand(50, 70))->save();
-	$act2->createTask('Chuẩn bị nội dung', '', $rUser, Carbon\Carbon::now(), Carbon\Carbon::now()->addDay(7), $contentUnit);
-	$act2->createTask('Lên kịch bản MC', '', $rUser, Carbon\Carbon::now(), Carbon\Carbon::now()->addDay(7), $MCUnit);
-	$act2->createTask('Làm poster', '', $rUser, Carbon\Carbon::now(), Carbon\Carbon::now()->addDay(3), $techUnit);
-	$act2->createTask('Dàn dựng sân khấu', '', $rUser, Carbon\Carbon::now()->addDays(9), Carbon\Carbon::now()->addDay(10), $supportUnit);
+	$act2->createTask('Chuẩn bị nội dung', '', $rUser, Carbon\Carbon::now(), Carbon\Carbon::now()->addDays(7), $contentUnit);
+	$act2->createTask('Lên kịch bản MC', '', $rUser, Carbon\Carbon::now(), Carbon\Carbon::now()->addDays(7), $MCUnit);
+	$act2->createTask('Làm poster', '', $rUser, Carbon\Carbon::now(), Carbon\Carbon::now()->addDays(3), $techUnit);
+	$act2->createTask('Dàn dựng sân khấu', '', $rUser, Carbon\Carbon::now()->addDays(9), Carbon\Carbon::now()->addDays(10), $supportUnit);
 	$act2->createMilestone('Tiến hành sinh hoạt', '', $rUser, Carbon\Carbon::now()->addDays(10));
 	// end $act2
     }

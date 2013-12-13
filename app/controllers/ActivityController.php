@@ -53,7 +53,7 @@ class ActivityController extends BaseController
 	    }
 	    if ($progress < 0)
 		$progress = 0;
-	    
+
 //	    var_dump($completedComment, $rating, $progress); die();
 	    if ($isTaskContinue && $nextAssigneeId)
 		$activity->assignTo($nextAssigneeId, $rating, $progress, $completedComment);
@@ -70,7 +70,7 @@ class ActivityController extends BaseController
 	    return Redirect::action('ActivityController@getActivity', array($id));
 	}
     }
-    
+
     public function getUpdateActivity($id)
     {
 	$data = array();
@@ -84,12 +84,12 @@ class ActivityController extends BaseController
 	$this->layout->pageHeader = trans('activity.title.update :name', array('name' => $activity->title));
 	return $this->layout->nest('content', 'activity.update', $data);
     }
-    
+
     public function postUpdateActivity($id)
     {
 	$activity = Activity::find($id);
 	if (!$activity)
-	    return Redirect::action ('ActivityController@getUpdateActivity', array($id));
+	    return Redirect::action('ActivityController@getUpdateActivity', array($id));
 	/* @var $activity Activity */
 	if (Input::get('update'))
 	{
@@ -101,14 +101,14 @@ class ActivityController extends BaseController
 	    $activity->deadline = $deadline;
 	    if (Input::get('activity-start'))
 	    {
-		$startDate = new Carbon\Carbon (Input::get ('activity-start'));
+		$startDate = new Carbon\Carbon(Input::get('activity-start'));
 		$activity->created_at = $startDate;
 	    }
 	    $activity->save();
-	    return Redirect::action ('ActivityController@getUpdateActivity', array($id));
+	    return Redirect::action('ActivityController@getUpdateActivity', array($id));
 	}
     }
-    
+
     public function getChildActivities($id)
     {
 	$data = array();
@@ -121,8 +121,24 @@ class ActivityController extends BaseController
 	}
 	addBodyClasses('logged activity activity-children');
 	$this->layout->title = trans('activity.title.children tasks of :name', array('name' => $activity->title));
-	$this->layout->pageHeader = trans('activity.title.children tasks of :name', array('name' => $activity->title));;
+	$this->layout->pageHeader = trans('activity.title.children tasks of :name', array('name' => $activity->title));
+	;
 	return $this->layout->nest('content', 'activity.children', $data);
+    }
+
+    public function getGanttView($id)
+    {
+	$data = array();
+	$activity = Activity::find($id);
+	if ($activity && !$activity->deleted_at && !$activity->parent_deleted)
+	{
+	    $data['activity'] = $activity;
+	}
+	addBodyClasses('logged activity activity-gantt');
+	$this->layout = View::make('layouts.front-end-logged-nosidebar')
+		->with('title', trans('activity.title.gantt view of :name', array('name' => $activity->title)))
+		->with('pageHeader', trans('activity.title.gantt view of :name', array('name' => $activity->title)));
+	return $this->layout->nest('content', 'activity.gantt', $data);
     }
 
 }

@@ -174,6 +174,33 @@ class Activity extends Eloquent
 	}
 	return $this;
     }
+    
+    public function toGanttData()
+    {
+	$deadline = new Carbon\Carbon($this->deadline);
+	$startDate = new Carbon\Carbon($this->start_time);
+	$data = array(
+	    'text' => $this->title,
+	    'start_date' => $startDate->startOfDay()->format('d-m-Y'),
+	    'duration' => $deadline->startOfDay()->diffInDays($startDate) + 1,
+	    'id' => $this->id,
+	    'progress' => $this->percentage / 100,
+	    'open' => true
+	);
+	if ($this->parent_id)
+	    $data['parent'] = $this->parent_id;
+	$result = array($data);
+	$children = $this->children()->getResults();
+	foreach($children as $child)
+	{
+	    $childData = $child->toGanttData();
+	    foreach($childData as $d)
+	    {
+		$result[] = $d;
+	    }
+	}
+	return $result;
+    }
 
     /**
      * 

@@ -95,6 +95,7 @@ Basset::collection('front-end-header', function($collection)
 	    $collection->add('../private/vendor/bootstrap/bootstrap-slider.css');
 	    $collection->add('../private/vendor/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.css');
 	    $collection->add('../private/vendor/fort-awesome/font-awesome.less')->apply('Less');
+	    $collection->add('../private/vendor/gantt/dhtmlxgantt.css');
 	    $collection->add('../private/less/front-end.less')->apply('Less');
 	    $collection->add('../private/vendor/angularjs/angular.min.js');
 	    $collection->add('../private/vendor/modernizr/modernizr-2.6.2-respond-1.1.0.min.js');
@@ -115,6 +116,8 @@ Basset::collection('front-end-footer', function($collection)
 	    $collection->add('../private/vendor/datatable/jquery.dataTables.min.js');
 	    $collection->add('../private/vendor/datatable/datatable.plugins.js');
 	    $collection->add('../private/vendor/epiceditor/js/epiceditor.min.js');
+	    $collection->add('../private/vendor/gantt/dhtmlxgantt.js');
+	    $collection->add('../private/js/gantt.js');
 	    $collection->add('../private/js/front-end.js');
 	});
 
