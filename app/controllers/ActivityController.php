@@ -137,7 +137,7 @@ class ActivityController extends BaseController
 	addBodyClasses('logged activity activity-gantt');
 	$this->layout = View::make('layouts.front-end-logged-nosidebar')
 		->with('title', trans('activity.title.gantt view of :name', array('name' => $activity->title)))
-		->with('pageHeader', trans('activity.title.gantt view of :name', array('name' => $activity->title)));
+		->with('pageHeader', trans('activity.title.gantt view of :name', array('name' => $activity->title)) . '<small>(' . HTML::linkAction('ActivityController@getActivity', trans('global.detail'), array($activity->id)) . ')</small>');
 	return $this->layout->nest('content', 'activity.gantt', $data);
     }
 

@@ -52,6 +52,7 @@ return array(
     'message.the email has been sent to your mail box' => 'Email đã được gửi, hãy kiểm tra hòm thư của mình.',
     'message.this link is expired, try to generate a new one' => 'Liên kết này đã hết hạn, hãy yêu cầu một lần nữa để có liên kết khác.',
     'message.your new password has been set, try to log in' => 'Mật khẩu mới đã được lưu, hãy thử đăng nhập lại',
+    'error.cannot send email, please try again after few minutes' => 'Có lỗi trong quá trình gửi mail, hãy thử lại sau một ít phút nữa',
     
     'menu.update profile' => 'Cập nhật hồ sơ',
     'menu.your profile' => 'Hồ sơ bản thân',

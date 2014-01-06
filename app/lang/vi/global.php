@@ -16,5 +16,6 @@ return array(
     'clear all' => 'làm lại',
     'select' => 'Chọn',
     'update' => 'Cập nhật',
+    'detail' => 'Chi tiết',
 );
 ?>

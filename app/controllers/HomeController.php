@@ -90,7 +90,7 @@ class HomeController extends BaseController
 		    $data['errors'] = $validator->getMessageBag();
 		} else
 		{
-		    if (User::resetPassword(trim(Input::get('email'))))
+		    if (!User::resetPassword(trim(Input::get('email'))))
 		    {
 			$data['messages']['danger'][] = trans('user.error.cannot send email, please try again after few minutes');
 		    } else

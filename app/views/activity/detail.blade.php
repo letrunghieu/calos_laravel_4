@@ -18,7 +18,12 @@ for ($i = 1; $i < $assignees->count(); $i++)
 ?>
 @section('second-navbar')
 <div id='second-navbar'>
-
+    <div class='list-group'>
+	<a class='list-group-item active' href='{{ URL::action("ActivityController@getActivity", array($activity->id)) }}'>{{trans('activity.detail')}}</a>
+	<a class='list-group-item' href='{{ URL::action("ActivityController@getUpdateActivity", array($activity->id)) }}'>{{trans('activity.edit')}}</a>
+	<a class='list-group-item' href='{{ URL::action("ActivityController@getChildActivities", array($activity->id)) }}'>{{trans('activity.children')}}</a>
+	<a class='list-group-item' href='{{ URL::action("ActivityController@getGanttView", array($activity->id)) }}'>{{trans('activity.gantt view')}}</a>
+    </div>
 </div>
 @stop
 
@@ -69,7 +74,7 @@ for ($i = 1; $i < $assignees->count(); $i++)
 	    </div>
 	    <div class="meta">
 		<div class="parent-activity">
-		    
+
 		    <?php
 		    $parent = $activity->parent_activity()->getResults();
 		    if ($parent)

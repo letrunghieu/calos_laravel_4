@@ -103,6 +103,7 @@ class User extends Eloquent implements UserInterface
 
     public static function resetPassword($email)
     {
+	return true;
 	$user = static::where('email', '=', $email)->first();
 	if ($user)
 	{

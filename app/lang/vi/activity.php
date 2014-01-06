@@ -19,6 +19,10 @@ return array(
     'created by :name at :time' => 'Được tạo bởi <span class="user name full-name">:name</span> vào lúc :time',
     'belong the root activity :name' => 'Hoạt động chính: :name',
     'the father task :name' => 'Là công việc con của: :name',
+    'detail' => 'Thông tin chi tiết',
+    'children' => 'Các công việc con',
+    'edit' => 'Chỉnh sửa',
+    'gantt view' => 'Sơ đồ Gantt',
     
     'help.if you think this task is no longer need review' => 'Nếu bạn nghĩ công việc này đã hoàn thành, điều chỉnh lại thanh tiến độ cho phù hợp với mức độ công việc đã được thực hiện. Bạn có thể để lại một nhận xét của mình vào lúc này. Sau khi xác nhận công việc đã hoàn thành, các thông tin về công việc sẽ không được thay đổi nữa.',
     
