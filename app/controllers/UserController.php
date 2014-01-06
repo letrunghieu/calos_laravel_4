@@ -24,6 +24,39 @@ class UserController extends BaseController
 	$this->layout->pageHeader = trans('user.title.user list');
 	$this->layout->nest('content', 'user.user_list', $data);
     }
+    
+    public function getUnitLeaders()
+    {
+	$data = array();
+	addBodyClasses('logged user user-list');
+	$data['unitWithLeaders'] = Unit::getUnitsWithLeaders();
+	$this->layout->title = trans('user.title.unit leaders');
+	$this->layout->pageHeader = trans('user.title.unit leaders');
+	$this->layout->nest('content', 'user.leader_list', $data);
+    }
+    
+    public function postUnitLeaders()
+    {
+	foreach(Input::get('unit', array()) as $u)
+	{
+	    $unit = Unit::find($u['id']);
+	    if ($unit)
+	    {
+		if ($u['leader_id'])
+		{
+		    $user = User::find($u['leader_id']);
+		    if ($user)
+			$unit->setLeader($user);
+		}
+		else
+		{
+		    $unit->removeLeader();
+		}
+	    }
+	}
+	return Redirect::action('UserController@getUnitLeaders')
+		->with('success', trans('organization.unit.leader updated'));
+    }
 
     /**
      * Show the vCard data of an user via QRCode

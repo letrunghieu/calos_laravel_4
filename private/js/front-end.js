@@ -2,6 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+var currentId = null;
 jQuery(document).ready(function($) {
     $('[data-toggle=tooltip]').tooltip();
     $('.mobile-phone, .phone').each(function(_, e) {
@@ -178,7 +179,7 @@ jQuery(document).ready(function($) {
 	    $('#next-assignee-id').val('');
 	}
     });
-    $('.choose-assignee').click(function(){
+    $('.choose-assignee, .btn-change-user').click(function() {
 	$('#select-user-modal').modal('show');
     });
 
@@ -207,6 +208,20 @@ jQuery(document).ready(function($) {
 	todayBtn: 1,
 	autoclose: 1,
 	todayHighlight: 1
+    });
+
+    $('.btn-change-user').click(function() {
+	currentId = $(this).parents('tr').attr('data-id');
+    });
+    $('.btn-remove-user').click(function() {
+	var cont = confirm("Bạn có chắc chắn muốn bãi miễn chức vụ chủ nhiệm hiện tại của đơn vị này?");
+	if (cont)
+	{
+	    var tr = $(this).parents('tr');
+	    tr.find('.unit-input-leader-id').val('');
+	    tr.find('.unit-leader-name').html('');
+	    tr.find('.unit-leader-from').html('');
+	}
     });
 });
 

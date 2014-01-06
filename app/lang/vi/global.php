@@ -17,5 +17,7 @@ return array(
     'select' => 'Chọn',
     'update' => 'Cập nhật',
     'detail' => 'Chi tiết',
+    'change' => 'Thay đổi',
+    'delete' => 'Xóa',
 );
 ?>

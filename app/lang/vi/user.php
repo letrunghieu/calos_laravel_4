@@ -36,6 +36,7 @@ return array(
     
     'title.log in' => 'Đăng nhập',
     'title.user list' => 'Danh bạ thành viên',
+    'title.unit leaders' => 'Chủ nhiệm các đơn vị',
     
     'help.your email here' => 'Nhập email ở đây',
     'help.your password here' => 'Nhập mật khẩu',

@@ -108,6 +108,16 @@ class Unit extends Eloquent
 	$leaderVacancy->users()->save($user);
     }
     
+    public function removeLeader()
+    {
+	$leaderVacancy = $this->vacancies()->getQuery()
+		->where('vacancies.order', '=', Vacancy::ORDER_LEADER)
+		->first();
+	if (!$leaderVacancy)
+	    return null;
+	DB::table('user_vacancy')->where('vacancy_id', '=', $leaderVacancy->id)->delete();
+    }
+    
     /**
      * 
      * @param type $title
@@ -153,12 +163,12 @@ class Unit extends Eloquent
 	{
 	    Vacancy::create(array(
 		'name' => trans('organization.vacancy.member'),
-		'order' => 1000,
+		'order' => Vacancy::ORDER_MEMBER,
 		'unit_id' => $obj->id
 	    ));
 	    Vacancy::create(array(
 		'name' => trans('organization.vacancy.leader'),
-		'order' => 0,
+		'order' => Vacancy::ORDER_LEADER,
 		'unit_id' => $obj->id
 	    ));
 	}
@@ -177,6 +187,35 @@ class Unit extends Eloquent
 	    return $query->first();
 	else
 	    return $query->where('site_id', '=', $id)->first();
+    }
+    
+    public static function getUnitsWithLeaders()
+    {
+	$units = static::all();
+	$leaders = User::leftJoin('user_vacancy', 'users.id', '=', 'user_vacancy.user_id')
+		->leftJoin('vacancies', 'user_vacancy.vacancy_id', '=', 'vacancies.id')
+		->where('vacancies.order', '=', Vacancy::ORDER_LEADER)
+		->whereNull('user_vacancy.deleted_at')
+		->whereNull('users.deleted_at')
+		->groupBy('vacancies.unit_id')
+		->orderBy('vacancies.unit_id')
+		->get(array(
+		    'users.*',
+		    'vacancies.unit_id',
+		    'user_vacancy.vacancy_id',
+		    'user_vacancy.created_at as assigned_at'
+		));
+	$result = array();
+	foreach($units as $unit)
+	{
+	    $result[$unit->id]['unit'] = $unit;
+	    $result[$unit->id]['leader'] = null;
+	}
+	foreach($leaders as $leader)
+	{
+	    $result[$leader->unit_id]['leader'] = $leader;
+	}
+	return $result;
     }
 
 }
